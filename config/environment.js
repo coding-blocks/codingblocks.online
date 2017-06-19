@@ -29,7 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.HOST = 'http://29964a64.ngrok.io'
+    ENV.HOST = 'http://srv4.cb.lk:3005'
     ENV['simple-auth'] = {
       crossOriginWhitelist:[ '*' ]
     }
