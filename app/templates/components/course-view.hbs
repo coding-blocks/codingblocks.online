@@ -1,0 +1,27 @@
+{{#link-to 'courses.course' course.id}}
+<div class="ui card">
+    <div class="image">
+        <img src="http://i.imgur.com/AiYpV3Bg.jpg">
+    </div>
+    <div class="content">
+        <a class="header"> {{course.name}} </a>
+        <div class="meta">
+            <span class="date">Joined in 2013</span>
+        </div>
+        <div class="description">
+            {{course.summary}}
+        </div>
+    </div>
+    <div class="extra content">
+        <a>
+            <i class="user icon"></i>
+            {{#if course.is_free}}
+              Free
+            {{else}}
+              Rs. {{course.fees}}
+            {{/if}}
+        </a>
+    </div>
+</div>
+{{/link-to}}
+{{yield}}

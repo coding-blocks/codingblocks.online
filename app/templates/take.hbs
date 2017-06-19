@@ -1,0 +1,25 @@
+<div class="main ui container"><div class="ui dividing right rail" style="min-height: 308px;">
+    <div class="ui sticky fixed top" style="left: 1131px; width: 283px !important; height: 308px !important; margin-top: 30px;">
+        <h4 class="ui header">{{course.name}}</h4>
+        <div class="ui vertical following fluid accordion text menu">
+            {{#each course.sections as |section| }}
+              <div class="item">
+                <a class="title">
+                    <i class="dropdown icon"></i>
+                    <b>{{section.name}}</b>
+                </a>
+                <div class="active content menu">
+                    {{#each section.contents as |content| }}
+                     {{#link-to 'take.content' content.id}}
+                         <a class="item" href="#sub-headers"> {{content.name}} </a>
+                     {{/link-to}}
+                    {{/each}}
+                </div>
+              </div>
+            {{/each}}
+
+        </div>
+    </div>
+</div>
+    {{outlet}}
+</div>
