@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'vlyop-frontend',
+    podModulePrefix: 'vlyop-frontend/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
