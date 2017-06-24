@@ -1,0 +1,25 @@
+<h2 class="ui dividing header">{{content.contentType}}<a class="anchor" id="types"></a></h2>
+
+<div class="example">
+    <h4 class="ui header">{{content.name}}</h4>
+    <i class="icon code"></i>
+    <a class="anchor" id="page-headers"></a>
+    <p class="header">{{content.description}}</p>
+</div>
+
+{{#if showResults}}
+  <h1> Your Score: {{results.score}} / {{content.questions.length}} <br> </h1>
+{{/if}}
+
+  {{#each content.questions as |question index| }}
+    {{question-view question=question index=index showResults=showResults}}
+  {{/each}}
+
+{{#if (not showResults)}}
+<button class="ui primary button" style="margin: 10px 0px" {{action 'results'}} >
+    Submit Quiz
+</button>
+{{/if}}
+
+
+{{yield}}

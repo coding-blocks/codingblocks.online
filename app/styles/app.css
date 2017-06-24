@@ -1,3 +1,19 @@
 #example{
   height: 900px;
 }
+.full-width{
+  width: 100%!important;
+}
+.choices > .item {
+  min-height: 30px;
+  margin: 10px 0px;
+  padding: 50px 0px;
+}
+.choices .content {
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+}
+.item.selected {
+  background: lightgrey;
+}
