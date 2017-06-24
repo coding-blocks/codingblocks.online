@@ -33,7 +33,8 @@ module.exports = function(environment) {
     ENV.HOST = 'http://srv4.cb.lk:3005'
     ENV['simple-auth'] = {
       crossOriginWhitelist:[ '*' ]
-    }
+    },
+    ENV.publicUrl = 'http://localhost:4200';
   }
 
   if (environment === 'test') {
@@ -48,7 +49,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.publicUrl = 'http://localhost:4200';
   }
 
   return ENV;
