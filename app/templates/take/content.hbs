@@ -1,1 +1,5 @@
-{{content-view content=model}}
+{{#if content.isQuestion}}
+  {{quiz-view content=model}}
+{{else}}
+  {{content-view content=model}}
+{{/if}}

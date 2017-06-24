@@ -1,0 +1,28 @@
+<div class="ui card full-width">
+    <div class="content">
+        <a class="header"> Question: # {{add index 1}} {{if markedCorrect '(Correct)'}} </a>
+        <div class="meta" style="margin: 10px 0px">
+            <span class="date"> {{question.type}}</span>
+        </div>
+        <div class="description">
+          {{question.text}}
+        </div>
+    </div>
+    <div class="extra content">
+        <div class="ui middle aligned divided list choices">
+          {{#each question.choices as |choice choiceIndex| }}
+              <div class="item {{if (eq choice.id question.myAnswer) 'selected'}}" {{action 'selectOption' choice.id}}>
+                  <div class="content">
+                      <a class="header">
+                       {{alphabet choiceIndex}}. &nbsp;  {{choice.text}}
+                      </a>
+                  </div>
+              </div>
+          {{/each}}
+        </div>
+        {{#if showResults}}
+          You answered: {{alphabet question.myAnswer}} <br>
+          Correct answered {{alphabet question.answer}}
+        {{/if}}
+    </div>
+</div>
