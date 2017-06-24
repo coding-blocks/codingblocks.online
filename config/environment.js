@@ -30,7 +30,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.HOST = 'http://srv4.cb.lk:3005'
+    ENV.apiEndpoint = 'http://192.168.1.18:3000';
     ENV['simple-auth'] = {
       crossOriginWhitelist:[ '*' ]
     },
