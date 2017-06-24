@@ -7,9 +7,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
     session: Ember.inject.service(),
-    currentUserSer: Ember.inject.service('current-user'),
-    model() {
-    },
+    currentUser: Ember.inject.service('current-user'),
     beforeModel(transition) {
         console.log("before model");
         if (!this.get('session.isAuthenticated') && transition.queryParams.code !== undefined) {
@@ -21,7 +19,10 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
         }).catch((reason) => {
             // console.log("not logged in", reason);
         });
+      }
+    },
+    setupController (controller,model) {
+      controller.set('user', this.get('currentUser') )
     }
-  }
 });
 
