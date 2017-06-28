@@ -17,3 +17,6 @@
 .item.selected {
   background: lightgrey;
 }
+.toc {
+  height: 900px;
+}

@@ -8,17 +8,17 @@
 </div>
 
 {{#if showResults}}
-  <h1> Your Score: {{results.score}} / {{content.questions.length}} <br> </h1>
+    <h1> Your Score: {{results.score}} / {{content.questions.length}} <br> </h1>
 {{/if}}
 
-  {{#each content.questions as |question index| }}
-    {{question-view question=question index=index showResults=showResults}}
-  {{/each}}
+{{#each content.questions as |question index| }}
+  {{question-view question=question index=index showResults=showResults}}
+{{/each}}
 
 {{#if (not showResults)}}
-<button class="ui primary button" style="margin: 10px 0px" {{action 'results'}} >
-    Submit Quiz
-</button>
+    <button class="ui primary button" style="margin: 10px 0px" {{action 'results'}} >
+        Submit Quiz
+    </button>
 {{/if}}
 
 

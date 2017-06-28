@@ -14,15 +14,15 @@
               <div class="item {{if (eq choice.id question.myAnswer) 'selected'}}" {{action 'selectOption' choice.id}}>
                   <div class="content">
                       <a class="header">
-                       {{alphabet choiceIndex}}. &nbsp;  {{choice.text}}
+                        {{alphabet choiceIndex}}. &nbsp;  {{choice.text}}
                       </a>
                   </div>
               </div>
           {{/each}}
         </div>
-        {{#if showResults}}
+      {{#if showResults}}
           You answered: {{alphabet question.myAnswer}} <br>
           Correct answered {{alphabet question.answer}}
-        {{/if}}
+      {{/if}}
     </div>
 </div>

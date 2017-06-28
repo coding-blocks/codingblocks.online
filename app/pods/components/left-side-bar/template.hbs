@@ -1,25 +1,23 @@
-<div class="toc">
-  <div class="ui sidebar inverted vertical menu visible">
-    <div class="item">
-      <a class="ui logo icon image" href="/">
-        <img src="/images/logo.png">
-      </a>
-      <a href="/"><b>Learn Hackerblocks</b></a>
-    </div>
-    <div class="item">
-        {{#if session.isAuthenticated}}
-          <a href="#"> Welcome {{log user}} </a>
-        {{else}}
-           <a href="#" {{action 'login'}}>Login</a>
-        {{/if}}
-    </div>
-    {{#link-to 'courses.index'}}
-    <div class="item">
-       <a href="#">Courses</a>
-    </div>
-    {{/link-to}}
+<div class="ui sidebar inverted vertical menu visible">
+  <div class="item">
+    <a class="ui logo icon image" href="/">
+      <img src="/images/logo.png">
+    </a>
+    <a href="/"><b>Learn Hackerblocks</b></a>
   </div>
-  <div class="pusher">
-    jkdshj
+  <div class="item">
+      {{#if session.isAuthenticated}}
+        <a href="#"> Welcome {{log user}} </a>
+      {{else}}
+         <a href="#" {{action 'login'}}>Login</a>
+      {{/if}}
   </div>
+  {{#link-to 'courses.index'}}
+  <div class="item">
+     <a href="#">Courses</a>
+  </div>
+  {{/link-to}}
+</div>
+<div class="pusher">
+  jkdshj
 </div>

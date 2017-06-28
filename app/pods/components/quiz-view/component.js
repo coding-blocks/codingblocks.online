@@ -12,9 +12,9 @@ export default Ember.Component.extend({
       // preprare results
       // use functional pipelining cuz it is cool af. *__*
       const score = this.get('content.questions')
-                      .toArray()
-                      .map(el => (el.get('myAnswer') == el.get('answer')))
-                      .reduce((acc,val) => acc+val,0)
+        .toArray()
+        .map(el => (el.get('myAnswer') == el.get('answer')))
+        .reduce((acc,val) => acc+val,0)
 
       this.set('results.score',score)
       this.set('showResults', true)

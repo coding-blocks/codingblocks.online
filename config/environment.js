@@ -30,7 +30,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.apiEndpoint = 'http://94223e7c.ngrok.io';
+    ENV.apiEndpoint = 'http://localhost:3000';
     ENV['simple-auth'] = {
       crossOriginWhitelist:[ '*' ]
     },
