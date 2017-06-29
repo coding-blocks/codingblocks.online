@@ -17,6 +17,11 @@
      <a href="#">Courses</a>
   </div>
   {{/link-to}}
+  {{#if session.isAuthenticated}}
+    <div class="item">
+      <button class="ui negative basic button" {{action "invalidateSession"}}>Logout</button>
+    </div>
+  {{/if}}
 </div>
 <div class="pusher">
   jkdshj

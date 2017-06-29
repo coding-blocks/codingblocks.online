@@ -12,6 +12,9 @@ export default Ember.Component.extend({
               "response_type=code" +
               "&client_id=2146237097" +
               "&redirect_uri=" + config.publicUrl
+        },
+        invalidateSession() {
+            this.get('session').invalidate();
         }
   }
 });
