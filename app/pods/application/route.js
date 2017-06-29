@@ -21,8 +21,16 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
             });
         }
     },
-    setupController (controller,model) {
-      controller.set('user', this.get('currentUser') )
+    model() {
+        if (this.get('session.isAuthenticated')) {
+            return this._loadCurrentUser();
+        }
+    },
+    setupController (controller, model) {
+        controller.set('user', this.get('currentUser') )
+    },
+    _loadCurrentUser() {
+        return this.get('currentUser').load();
     }
 });
 

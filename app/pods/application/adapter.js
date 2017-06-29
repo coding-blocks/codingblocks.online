@@ -10,5 +10,32 @@ export default DS.JSONAPIAdapter.extend(DataAdapterMixin,{
     const original = this._super(...arguments)
     return Ember.String.underscore(original)
   },
-  authorizer: 'authorizer:custom'
+  authorizer: 'authorizer:custom',
+  urlForQueryRecord(query) {
+    if(query.custom) {
+      switch (query.custom.ext){
+        case 'url' :
+          let url =  query.custom.url;
+          delete query.custom;
+          return `${this._super(...arguments)}/${url}`;
+        case 'weekly':
+          return `${this._super(...arguments)}/weekly/${query.problem_id}`;
+      }
+    } else  {
+      return this._super(...arguments);
+    }
+
+  },
+  urlForQuery(query) {
+    if(query.custom) {
+      switch (query.custom.ext) {
+        case 'url' :
+          let url =  query.custom.url;
+          delete query.custom;
+          return `${this._super(...arguments)}/${url}`;
+      }
+    } else  {
+      return this._super(...arguments);
+    }
+  }
 });

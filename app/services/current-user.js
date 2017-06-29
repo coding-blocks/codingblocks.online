@@ -10,7 +10,7 @@ export default Ember.Service.extend({
   load () {
     if (this.get('session.isAuthenticated')) {
       let token = this.get('session.data.authenticated.access_token');
-      return this.get('store').queryRecord('user', { me: true , token: token});
+      return this.get('store').queryRecord('user', { custom: {ext: 'url', url: 'me' }, token: token});
     }
   },
 
