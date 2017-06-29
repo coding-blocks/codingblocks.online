@@ -16,10 +16,10 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
             var retrievedPath = localStorage.getItem('redirection-path');
             localStorage.removeItem('redirection-path');
             window.location.href = retrievedPath;
-        }).catch((reason) => {
-            // console.log("not logged in", reason);
-        });
-      }
+            }).catch((reason) => {
+                // console.log("not logged in", reason);
+            });
+        }
     },
     setupController (controller,model) {
       controller.set('user', this.get('currentUser') )
