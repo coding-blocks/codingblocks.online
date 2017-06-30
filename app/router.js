@@ -9,8 +9,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('courses', function() {
     this.route('course', {path: 'c/:id'}, function () {
-      this.route('take' , function () {
-        this.route('content', {path: 'content/:id'})
+      this.route('run' , {path: 'run/:id'}, function () {
+        this.route('attempt')
       })
     });
   });

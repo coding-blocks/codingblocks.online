@@ -3,30 +3,31 @@
     <div class="two column">
       <iframe width="100%" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
     </div>
-    <div class="one column">
-      {{model.name}}
-    </div>
-  </div>
-  <div class="ui stackable grid container">
-    <div class="six column">
-      {{model.summary}}
-    </div>
-    <div class="six column">
-      <div class="ui list">
-        <a class="item">
-          <i class="right triangle icon"></i>
-          <div class="content">
-            <div class="header">Fees</div>
-            <div class="description">{{model.fees}}</div>
-          </div>
-        </a>
+    {{#each courseRuns as |run RunIndex| }}
+      <div class="one column">
+          {{course.name}} (Run name: {{run.name}} )
       </div>
-    </div>
+      <div class="ui stackable grid container">
+        <div class="six column">
+          {{course.summary}}
+        </div>
+        <div class="six column">
+          <div class="ui list">
+            <a class="item">
+              <i class="right triangle icon"></i>
+              <div class="content">
+                <div class="header">Fees</div>
+                <div class="description">{{course.fees}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{#link-to 'courses.course.run.attempt' run.id}}
+        <button>Take this course</button>
+      {{/link-to}}
+    {{/each}}
   </div>
-  {{#link-to 'courses.course.take'}}
-    <button>Take this course</button>
-  {{/link-to}}
-
 </div>
 
 {{outlet}}
