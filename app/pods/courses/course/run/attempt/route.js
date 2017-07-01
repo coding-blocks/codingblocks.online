@@ -7,10 +7,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   currentUser: Ember.inject.service('current-user'),
   beforeModel () {
-    // get a run attempt if exists for this run and user
-    const run = this.modelFor('courses.course.run')
-    const user = this.get('currentUser').load()
-    window.sameRun  = user.courseRuns.findBy('id',run.id)
+    // TODO: check if user is actually enrolled in this course
+    // const run = this.modelFor('courses.course.run')
+    // const user = this.get('currentUser').load()
+    // window.sameRun  = user.courseRuns.findBy('id',run.id)
   },
   model () {
     const course =  this.modelFor('courses.course')
