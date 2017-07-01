@@ -6,11 +6,14 @@ export default Ember.Service.extend({
   data: null,
   session: service('session'),
   store: service(),
-
+  user: null,
   load () {
     if (this.get('session.isAuthenticated')) {
-      let token = this.get('session.data.authenticated.access_token');
-      return this.get('store').queryRecord('user', { custom: {ext: 'url', url: 'me' }, token: token});
+      let token = this.get('session.data.authenticated.auth_token');
+     return this.get('store').queryRecord('user', { custom: {ext: 'url', url: 'me' }}).then(user=>{
+       this.set('user',user)
+       return user
+     })
     }
   },
 

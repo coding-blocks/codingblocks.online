@@ -23,10 +23,8 @@
           </div>
         </div>
       </div>
-      {{#link-to 'courses.course.run.attempt' run.id}}
-        <button>Take this course</button>
-      {{/link-to}}
-    {{/each}}
+       <button {{action 'enrollThisCourse' run}} >Enroll for this Run</button>
+       {{/each}}
   </div>
 </div>
 
