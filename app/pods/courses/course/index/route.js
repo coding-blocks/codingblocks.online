@@ -11,9 +11,9 @@ export default Ember.Route.extend({
     return this.modelFor('courses.course')
   },
   setupController (controller, model) {
-    const userEnrollled = model.get('runs').toArray()[0].get('users').findBy('id', this.get('currentUser.user').id )
-    controller.set('isEnrolled',Ember.isNone(userEnrollled.data))
-    controller.set("courseRuns", model.get('runs'))
+    const userEnrollled = model.get('runs').objectAt(0).get('users').findBy('id', this.get('currentUser.user').id );
+    controller.set('isEnrolled', userEnrollled != null);
+    controller.set("courseRuns", model.get('runs'));
     controller.set("course", model)
   }
 });

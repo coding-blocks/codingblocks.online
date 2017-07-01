@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel () {
-    const thisRun = this.store.findRecord('run', params.id)
+    // const thisRun = this.store.findRecord('run', params.id)
     /*
     thisRun.then(run =>{
       "use strict";
