@@ -6,13 +6,12 @@ module.exports = function(defaults) {
     // Add options here
   });
 
-  app.import('vendor/css/semantic.min.css');
+  app.import('vendor/css/bootstrap.min.css');
   app.import('vendor/css/docs.css');
 
-
-  app.import('vendor/js/jquery.min.js');
-  app.import('vendor/js/semantic.min.js');
-
+  app.import('vendor/js/jquery-slim.min.js');
+  app.import('vendor/js/tether.min.js');
+  app.import('vendor/js/bootstrap.min.js');
 
   return app.toTree();
 };
