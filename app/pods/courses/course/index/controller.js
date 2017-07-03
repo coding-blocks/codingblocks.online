@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 
       const userId = this.get('currentUser.user.id')
       console.log(userId)
-      this.get('api').request('/courseattempts', {
+      this.get('api').request('/run_attempts', {
         method: 'POST',
         data: {
           'user-id': userId,
@@ -16,6 +16,8 @@ export default Ember.Controller.extend({
         },
         json: true
       }).then(data=>{
+        window.d = data
+        console.log(data)
          if(data.status === 'success')
            this.transitionToRoute('courses.course.run.index')
       }).catch(err=> {
