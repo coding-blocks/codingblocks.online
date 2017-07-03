@@ -21,7 +21,7 @@ export default Base.extend({
   authenticate() {
       var args = [...arguments];
       return new Ember.RSVP.Promise(function(resolve, reject) {
-          $.get(env.apiEndpoint + '/oneauth/login?grant_code=' + args[0], function (data) {
+          Ember.$.get(env.apiEndpoint + '/oneauth/login?grant_code=' + args[0], function (data) {
               if (data.auth_token !== undefined) {
                   resolve(data);
               } else {
