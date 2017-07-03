@@ -12,5 +12,10 @@
                 <a class="nav-link" href="#">All Courses</a>
             {{/link-to}}
         </ul>
+        {{#if session.isAuthenticated}}
+            <button type="button" class="btn btn-outline-danger" {{action "invalidateSession"}}>Logout</button>
+        {{else}}
+            <button type="button" class="btn btn-outline-success" {{action "login"}}>Login</button>
+        {{/if}}
     </div>
 </nav>
