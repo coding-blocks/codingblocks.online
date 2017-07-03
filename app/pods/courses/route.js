@@ -1,8 +1,13 @@
+/**
+ * Created by abhishek on 03/07/17.
+ */
+'use strict';
+
 import Ember from 'ember';
 
 export default Ember.Route.extend({
   model () {
     "use strict";
-    return this.modelFor('courses')
+    return this.store.findAll('course')
   }
 });
