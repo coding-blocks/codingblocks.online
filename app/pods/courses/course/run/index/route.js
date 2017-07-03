@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel () {
+  beforeModel () { },
     // const thisRun = this.store.findRecord('run', params.id)
     /*
     thisRun.then(run =>{
@@ -14,9 +14,8 @@ export default Ember.Route.extend({
         payYouMotherFucker()
       }
     })*/
-
-  },
-  model (params) {
+  model () {
+    console.log('run.index')
     return this.modelFor('courses.course.run')
   },
   setupController (controller, model) {

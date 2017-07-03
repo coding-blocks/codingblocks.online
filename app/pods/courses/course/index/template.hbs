@@ -24,7 +24,7 @@
         </div>
       </div>
       {{#if isEnrolled}}
-        {{#link-to 'courses.course.run.index'  class="ui primary button"}}Resume Learning{{/link-to}}
+        {{#link-to 'courses.course.run.index' '1'  class="ui primary button"}}Resume Learning{{/link-to}}
       {{else}}
         <button class="ui primary button" {{action 'enrollThisCourse' run}} >Enroll</button>
       {{/if}}
