@@ -16,10 +16,8 @@ export default Ember.Controller.extend({
         },
         json: true
       }).then(data=>{
-        window.d = data
-        console.log(data)
          if(data.status === 'success')
-           this.transitionToRoute('courses.course.run.index')
+           this.transitionToRoute('courses.course.run.index', run.id)
       }).catch(err=> {
           // fuck off
       })
