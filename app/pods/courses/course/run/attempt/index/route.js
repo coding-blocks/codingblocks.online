@@ -7,9 +7,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model () {
-    return this.modelFor('courses.course.attempt')
+    return this.modelFor('courses.course.attempt')  // course
   },
   setupController (controller, model) {
-    controller.set('topContent', model.get('sections').toArray()[0].get('contents').toArray()[0])
+    controller.set('topContent', model.get('sections').objectAt(0).get('contents').objectAt(0))
   }
 })
