@@ -3,7 +3,7 @@
       <div class="ui sticky fixed top" style="width: 283px !important; height: 308px !important; margin-top: 30px;">
           <h4 class="ui header">{{course.title}}</h4>
           <div class="ui vertical following fluid accordion text menu">
-              {{#each course.sections as |section| }}
+              {{#each sections as |section| }}
                 <div class="item">
                   <a class="title">
                       <i class="dropdown icon"></i>
@@ -11,9 +11,7 @@
                   </a>
                   <div class="active content menu">
                       {{#each section.contents as |content| }}
-
-                           <a class="item" href="#sub-headers"> {{content.name}} </a>
-
+                           {{#link-to 'classroom.course.run.attempt.content' content.id class="item"}} {{content.name}} {{/link-to}}
                       {{/each}}
                   </div>
                 </div>

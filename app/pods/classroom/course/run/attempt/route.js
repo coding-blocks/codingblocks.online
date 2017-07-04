@@ -7,11 +7,15 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   currentUser: Ember.inject.service('current-user'),
   model () {
-    return this.modelFor('classroom.course')
+    const course = this.modelFor('classroom.course')
+    return Ember.RSVP.hash({
+      course,
+      sections: this.store.query('section', {courseId: course.id})
+    })
   },
-  setupController(controller,model){
-    controller.set('course',model);
-    controller.set('topContent',model.get('sections').objectAt(0).get('contents').objectAt(0) )
+  setupController(controller, model){
+    controller.set('course', model.course)
+    controller.set('sections', model.sections);
   }
 });
 
