@@ -13,11 +13,14 @@
             {{#link-to 'courses.index' class="nav-item" tagName="li"}}
                 <a class="nav-link" href="#">All Courses</a>
             {{/link-to}}
+            {{#link-to 'classroom.index' class="nav-item" tagName="li"}}
+                <a class="nav-link" href="#">My Classroom</a>
+            {{/link-to}}
         </ul>
         {{#if session.isAuthenticated}}
-            <button type="button" class="btn btn-outline-danger" {{action "invalidateSession"}}>Logout</button>
+            <button type="button" class="btn btn-danger" {{action "invalidateSession"}}>Logout</button>
         {{else}}
-            <button type="button" class="btn btn-outline-success" {{action "login"}}>Login</button>
+            <button type="button" class="btn btn-success" {{action "login"}}>Login</button>
         {{/if}}
     </div>
 </nav>

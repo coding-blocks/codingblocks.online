@@ -7,7 +7,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   currentUser: Ember.inject.service('current-user'),
   model () {
-    return this.modelFor('courses.course')
+    return this.modelFor('classroom.course')
   },
   setupController(controller,model){
     controller.set('course',model);

@@ -16,6 +16,14 @@ Router.map(function() {
     });
   });
 
+  this.route('classroom', function() {
+    this.route('course', {path: 'c/:id'}, function () {
+      this.route('run', {path: 'run/:id'}, function () {
+        this.route('attempt')
+        this.route('error');
+      })
+    });
+  });
 });
 
 export default Router;
