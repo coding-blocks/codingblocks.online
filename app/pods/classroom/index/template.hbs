@@ -1,8 +1,16 @@
-<div class="ui masthead vertical segment">
-  <div class="ui container">
-    {{#each model as |course|}}
-      {{course-view course=course}}
-    {{/each}}
-  </div>
+{{#each model as |run RunIndex| }}
+<div class="card" style="width: 30rem;">
+    <iframe width="100%" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
+    <div class="card-block">
+        <h4 class="card-title">{{run.course.name}} (Run name: {{run.name}} )</h4>
+        <p class="card-text">{{run.course.summary}}</p>
+        {{#link-to 'classroom.run.index' run.id  class="btn btn-success"}}Resume Learning{{/link-to}}
+        <!--
+        {{#if isEnrolled}}
+            {{#link-to 'classroom.run.index' run.id  class="btn btn-success"}}Resume Learning{{/link-to}}
+        {{else}}
+            <button class="btn btn-success" {{action 'enrollThisCourse' run}} >Enroll</button>
+        {{/if}}-->
+    </div>
 </div>
-{{outlet}}
+{{/each}}
