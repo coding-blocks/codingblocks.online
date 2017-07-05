@@ -17,10 +17,12 @@ Router.map(function() {
   });
 
   this.route('classroom', function() {
-    this.route('course', {path: 'c/:id'}, function () {
-      this.route('run', {path: 'run/:id'}, function () {
+    this.route('course', {path: 'c/:courseId'}, function () {
+      this.route('run', {path: 'run/:runId'}, function () {
         this.route('attempt', function () {
-          this.route('content', {path: 'content/:id'})
+          this.route('content', {path: 'content/:contentId'}, function() {
+            this.route('question');
+          })
         })
         this.route('error');
       })
