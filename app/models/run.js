@@ -9,5 +9,5 @@ export default DS.Model.extend({
   start: DS.attr(),
   end: DS.attr(),
   course: DS.belongsTo('course'),
-  users: DS.hasMany('user')
+  user: DS.belongsTo('user')
 })
