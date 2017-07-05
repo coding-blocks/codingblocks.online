@@ -15,8 +15,7 @@ export default Ember.Route.extend({
     })
   },
   setupController(controller, model) {
-    controller.set('course', model.course)
+    controller.set('course', model.course);
     controller.set('sections', model.sections);
   }
 });
-
