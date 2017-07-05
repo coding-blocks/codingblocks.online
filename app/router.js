@@ -20,8 +20,8 @@ Router.map(function() {
     this.route('run', {path: 'run/:runId'}, function () {
       this.route('attempt', function () {
         this.route('content', {path: 'content/:contentId'}, function () {
-            this.route('question');
-          })
+          this.route('quiz', {path: 'quiz/:quizId'});
+        })
         })
       })
       this.route('error');

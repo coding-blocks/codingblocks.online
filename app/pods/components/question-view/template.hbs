@@ -7,5 +7,10 @@
         <div class="description">
           {{question.text}}
         </div>
+        <ul>
+            {{#each question.choices as |choice|}}
+              <li> {{choice.text}} </li>
+            {{/each}}
+        </ul>
     </div>
 </div>
