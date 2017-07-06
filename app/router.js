@@ -8,12 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('courses', function() {
-    this.route('course', {path: 'c/:courseId'}, function () {
-      this.route('run' , {path: 'run/:runId'}, function () {
-        this.route('attempt')
-        this.route('error');
-      })
-    });
+    this.route('preview', {path: 'preview/:courseId'});
   });
 
   this.route('classroom', function() {
@@ -23,7 +18,7 @@ Router.map(function() {
             this.route('question');
           })
         })
-      })
+      });
       this.route('error');
     });
 });
