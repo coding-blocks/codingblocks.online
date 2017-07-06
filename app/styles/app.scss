@@ -62,3 +62,8 @@
 .sections {
   border-left: 1px solid grey;
 }
+
+// Remove this ******
+ul.question_choices li.selected {
+  background: yellow;
+}

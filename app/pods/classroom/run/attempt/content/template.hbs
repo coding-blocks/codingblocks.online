@@ -1,1 +1,11 @@
-{{component model.componentName content=model.payload}}
+<h2 class="ui dividing header">{{content.contentType}}<a class="anchor" id="types"></a></h2>
+
+<div class="example">
+    <h4 class="ui header">{{content.name}}</h4>
+    <i class="icon code"></i>
+    <a class="anchor" id="page-headers"></a>
+    <p class="header">{{content.description}}</p>
+</div>
+
+{{outlet}}
+{{!-- component model.componentName content=model.payload questionParam=q --}}
