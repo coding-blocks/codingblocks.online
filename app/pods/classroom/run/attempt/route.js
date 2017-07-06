@@ -8,7 +8,6 @@ export default Ember.Route.extend({
   currentUser: Ember.inject.service('current-user'),
   model () {
     const course = this.modelFor('classroom.run').get('course');
-    console.log(course.id)
     return Ember.RSVP.hash({
       course,
       sections: this.store.query('section', {courseId: course.get('id')})

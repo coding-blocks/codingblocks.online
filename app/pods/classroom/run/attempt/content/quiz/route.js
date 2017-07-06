@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model (params) {
-    return this.findRecord()
+    return this.store.findRecord('quiz',params.quizId)
   }
 });
