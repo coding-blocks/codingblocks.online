@@ -6,8 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     enrollThisCourse (run) {
 
-      const userId = this.get('currentUser.user.id')
-      console.log(userId)
+      const userId = this.get('currentUser.user.id');
       this.get('api').request('/run_attempts', {
         method: 'POST',
         data: {
@@ -17,7 +16,7 @@ export default Ember.Controller.extend({
         json: true
       }).then(data=>{
          if(data.status === 'success')
-           this.transitionToRoute('courses.course.run.index', run.id)
+           this.transitionToRoute('classroom.run.index', run.id)
       }).catch(err=> {
           // fuck off
       })
