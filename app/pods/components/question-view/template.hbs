@@ -1,15 +1,15 @@
 <div class="ui card full-width">
     <div class="content">
-        <a class="header"> Question: # {{add index 1}}  </a>
+        <a class="header"> Question: # {{questionSerialNumber}}  </a>
         <div class="meta" style="margin: 10px 0px">
             <span class="date"> {{question.type}}</span>
         </div>
         <div class="description">
           {{question.text}}
         </div>
-        <ul>
+        <ul class="question_choices">
             {{#each question.choices as |choice|}}
-              <li> {{choice.text}} </li>
+              <li {{action 'selectChoice' choice}} class="{{if (eq question.selectedChoice choice) 'selected'}}"  > {{choice.text}} </li>
             {{/each}}
         </ul>
     </div>

@@ -5,7 +5,7 @@
 {{/if}}
 --}}
 
-{{question-view question=question}}
+{{question-view question=question questionSerialNumber=q}}
 
 {{#if nextQuestion}}
   {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=nextQuestion) }} Next Question {{/link-to}}
@@ -15,6 +15,6 @@
   {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=prevQuestion) }} Prev Question {{/link-to}}
 {{/if}}
 
-<button class="ui primary button" style="margin: 10px 0px">
+<button class="ui primary button" style="margin: 10px 0px" {{action 'submitQuiz'}}>
     Submit Quiz
 </button>
