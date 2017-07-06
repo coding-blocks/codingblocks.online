@@ -6,9 +6,5 @@
 import env from '../config/environment'
 
 export default {
-  
-  api: (url) => {
-    `${env.apiEndpoint}/api/${url}`
-  }
-
+  api: (url) => `${env.apiEndpoint}/api/${url}`
 }

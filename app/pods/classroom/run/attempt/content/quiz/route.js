@@ -11,5 +11,6 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     controller.set('quiz', model.quiz)
     controller.set('runId', model.runId)
+    controller.set('contentId', model.contentId)
   }
 });

@@ -2,7 +2,7 @@ import Ember from 'ember';
 import U from '../../../../../../utils';
 
 export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
+  api: Ember.inject.service(),
   currentUser: Ember.inject.service(),
   notify: Ember.inject.service(),
   queryParams: ['q'],
@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
         })
       })
 
-      this.get('ajax').request(U.api('quizzes/submit'),{
+      this.get('api').request('quizzes/submit',{
         contentType: 'application/json; charset=utf-8',
         method: 'POST',
         data: {
