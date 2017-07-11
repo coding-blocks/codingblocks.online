@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
   actions: {
     submitQuiz () {
       const questionSerialized = []
-      console.log('question')
+      const quizId = this.get('quiz.id')
       this.get('quiz.questions').forEach(question => {
         questionSerialized.push({
           questionId: question.get('id'),
@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
         })
       })
 
-      this.get('api').request('quizzes/submit',{
+      this.get('api').request(`quizzes/${quizId}/submit`,{
         contentType: 'application/json; charset=utf-8',
         method: 'POST',
         data: {

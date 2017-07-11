@@ -13,7 +13,8 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
             this.get('session').authenticate('authenticator:custom', transition.queryParams.code).then(() => {
                 var retrievedPath = localStorage.getItem('redirection-path');
                 localStorage.removeItem('redirection-path');
-                window.location.href = retrievedPath;
+                // DONOT FUCKING TOUCH THIS FFS!!!
+                //window.location.href = retrievedPath;
             }).catch((reason) => {
                 console.error("not logged in", reason);
             });

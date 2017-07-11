@@ -17,11 +17,11 @@ Router.map(function() {
         this.route('content', {path: 'content/:contentId'}, function () {
           this.route('quiz', {path: 'quiz/:quizId'});
         })
-      });
         this.route('progress', {path: 'progress/:contentId'});
-      })
+      });
+    })
       this.route('error');
-    });
+  });
 });
 
 export default Router;
