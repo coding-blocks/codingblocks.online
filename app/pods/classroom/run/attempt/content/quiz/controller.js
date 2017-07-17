@@ -25,9 +25,10 @@ export default Ember.Controller.extend({
       const questionSerialized = []
       const quizId = this.get('quiz.id')
       this.get('quiz.questions').forEach(question => {
+        let selectedChoice = question.get('selectedChoice.id')
         questionSerialized.push({
           questionId: question.get('id'),
-          selectedChoiceId: question.get('selectedChoice.id')
+          selectedChoiceIds: Ember.isNone(selectedChoice) ? [] : [selectedChoice]
         })
       })
 
