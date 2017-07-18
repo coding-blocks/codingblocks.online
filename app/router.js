@@ -12,7 +12,7 @@ Router.map(function() {
   });
 
   this.route('classroom', function() {
-    this.route('run', {path: 'run/:runId'}, function () {
+    this.route('run', {path: 'run/:runAttemptId'}, function () {
       this.route('attempt', function () {
         this.route('content', {path: 'content/:contentId'}, function () {
           this.route('quiz', {path: 'quiz/:quizId'});

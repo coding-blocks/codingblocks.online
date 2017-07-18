@@ -4,10 +4,10 @@
     <div class="card-block">
         <h4 class="card-title">{{run.course.name}} (Run name: {{run.name}} )</h4>
         <p class="card-text">{{run.course.summary}}</p>
-        {{#link-to 'classroom.run.index' run.id  class="btn btn-success"}}Resume Learning{{/link-to}}
+        {{#link-to 'classroom.run.index' run.runAttemptId class="btn btn-success"}}Resume Learning{{/link-to}}
         <!--
         {{#if isEnrolled}}
-            {{#link-to 'classroom.run.index' run.id  class="btn btn-success"}}Resume Learning{{/link-to}}
+            {{#link-to 'classroom.run.index' class="btn btn-success"}}Resume Learning{{/link-to}}
         {{else}}
             <button class="btn btn-success" {{action 'enrollThisCourse' run}} >Enroll</button>
         {{/if}}-->

@@ -8,6 +8,7 @@ export default DS.Model.extend({
   name: DS.attr(),
   start: DS.attr(),
   end: DS.attr(),
+  runAttemptId: DS.attr(),
   course: DS.belongsTo('course'),
   user: DS.belongsTo('user')
 })

@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
         contentType: 'application/json; charset=utf-8',
         method: 'POST',
         data: {
-          "run-id": this.get('runId'),
+          "run-attempt-id": this.get('runAttemptId'),
           "user-id": this.get('currentUser.user.id'),
           "question": questionSerialized
         },

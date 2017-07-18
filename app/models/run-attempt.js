@@ -5,6 +5,6 @@
 
 import DS from 'ember-data';
 
-export default {
-  
-}
+export default DS.Model.extend({
+  run: DS.belongsTo('run')
+})
