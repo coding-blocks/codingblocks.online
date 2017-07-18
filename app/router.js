@@ -16,9 +16,15 @@ Router.map(function() {
       this.route('attempt', function () {
         this.route('content', {path: 'content/:contentId'}, function () {
           this.route('quiz', {path: 'quiz/:quizId'});
+          this.route('progress', function() {
+            this.route('quiz');
+          });
         })
-        this.route('progress', {path: 'progress/:contentId'});
+
+        this.route('progress', function() {});
       });
+
+      this.route('progress', function() {});
     })
       this.route('error');
   });

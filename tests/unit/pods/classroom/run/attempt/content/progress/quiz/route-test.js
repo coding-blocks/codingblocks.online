@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:classroom/run/attempt/progress', 'Unit | Route | classroom/run/attempt/progress', {
+moduleFor('route:classroom/run/attempt/content/progress/quiz', 'Unit | Route | classroom/run/attempt/content/progress/quiz', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

@@ -4,17 +4,25 @@
     <h1> Your Score: {{results.score}} / {{content.questions.length}} <br> </h1>
 {{/if}}
 --}}
+{{#if (eq progress.status 'ATTEMPTED') }}
+  This content is already attempted.
+  {{#link-to 'classroom.run.attempt.content.progress'}}
+      Click here to view progress
+  {{/link-to}}
 
-{{question-view question=question questionSerialNumber=q}}
+{{else}}
 
-{{#if nextQuestion}}
-  {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=nextQuestion) }} Next Question {{/link-to}}
+  {{question-view question=question questionSerialNumber=q}}
+
+  {{#if nextQuestion}}
+    {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=nextQuestion) }} Next Question {{/link-to}}
+  {{/if}}
+
+  {{#if prevQuestion}}
+    {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=prevQuestion) }} Prev Question {{/link-to}}
+  {{/if}}
+
+  <button class="ui primary button" style="margin: 10px 0px" {{action 'submitQuiz'}}>
+      Submit Quiz
+  </button>
 {{/if}}
-
-{{#if prevQuestion}}
-  {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=prevQuestion) }} Prev Question {{/link-to}}
-{{/if}}
-
-<button class="ui primary button" style="margin: 10px 0px" {{action 'submitQuiz'}}>
-    Submit Quiz
-</button>

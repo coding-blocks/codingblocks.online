@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
         },
         json: true
       }).then(suc => {
-        this.transitionToRoute('classroom.run.attempt.progress', this.get('contentId'))
+        this.transitionToRoute('classroom.run.attempt.content.progress')
       }).catch(err => {
           console.error(err)
           this.get('notify').alert('Something Went Wrong, Please try again!')
