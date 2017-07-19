@@ -1,39 +1,40 @@
-<div class="row justify-content-md-center">
-  <p class="display-4">{{model.title}}</p>
-</div>
-<div class="row justify-content-md-center">
-  <p class="lead">{{model.subtitle}}</p>
-</div>
-<div class="row justify-content-md-center">
-  <!--TODO: put video's preview URL here. Hardcode for now.-->
-  <iframe width="650px" height="340px" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
-</div>
-<div class="row">
-  <p class="h4">Available Runs</p>
-</div>
-{{#each  model.runs as |run index|}}
+<div class="container">
+  <div class="row justify-content-md-center">
+    <p class="display-4">{{model.title}}</p>
+  </div>
+  <div class="row justify-content-md-center">
+    <p class="lead">{{model.subtitle}}</p>
+  </div>
+  <div class="row justify-content-md-center">
+    <!--TODO: put video's preview URL here. Hardcode for now.-->
+    <iframe width="650px" height="340px" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
+  </div>
   <div class="row">
-    <div class="card">
-      <div class="card-header">
-        # {{sum index 1}}
-      </div>
-      <div class="card-block">
-        <h4 class="card-title">Special title treatment</h4>
-        <div class="row">
-          <div class="col-9">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="col-3">
-            {{#if session.isAuthenticated}}
-              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
-            {{else}}
-              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Login to enroll</a>
-            {{/if}}
+    <p class="h4">Available Runs</p>
+  </div>
+  {{#each  model.runs as |run index|}}
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          # {{sum index 1}}
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Special title treatment</h4>
+          <div class="row">
+            <div class="col-9">
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="col-3">
+              {{#if session.isAuthenticated}}
+                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
+              {{else}}
+                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Login to enroll</a>
+              {{/if}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  {{log run}}
-{{/each}}
-{{outlet}}
+  {{/each}}
+  {{outlet}}
+</div>
