@@ -38,7 +38,8 @@ export default Ember.Controller.extend({
         data: {
           "run-attempt-id": this.get('runAttemptId'),
           "user-id": this.get('currentUser.user.id'),
-          "question": questionSerialized
+          "question": questionSerialized,
+          "content-id": this.get('contentId')
         },
         json: true
       }).then(suc => {
