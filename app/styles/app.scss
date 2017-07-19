@@ -1,3 +1,30 @@
+// Colors [[
+$off-white: #fefefe;
+$light-gray: #e3e3e3;
+$black: rgba(0, 0, 0, 0.9);
+// ]] Colors
+
+// Util [[
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.mbt-5 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+// ]] Util
+
+// Global [[
+h2 {
+  line-height: 3.8rem;
+}
+// ]] Global
+
 #example{
   height: 900px;
 }
@@ -25,6 +52,7 @@
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 20px;
 }
 
 //Nested list styles begin
@@ -67,3 +95,83 @@
 ul.question_choices li.selected {
   background: yellow;
 }
+
+// Home Page
+.jumbotron-wrapper {
+  background: no-repeat center url('http://i.imgur.com/xZ1gbmd.jpg');
+  background-position: 100% 55%;
+
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .jumbotron {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// Course Cards
+.course-card-wrapper {
+}
+
+.course-cards {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+  font-size: 0.1rem;
+
+  h3 {
+    font-size: 1.2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .course-card {
+    border-radius: 3px;
+    padding-bottom: 1rem;
+  }
+
+  .course-card .course-card-content {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    padding-bottom: 1rem;
+
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+  }
+
+  .course-card .course-card-header {
+    img {
+      width: 100%;
+      height: 200px;
+      background: transparent;
+    }
+  }
+}
+
+// Marketing Banner [[
+.marketing-banner {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  .banner-left {
+  }
+
+  .banner-right {
+  }
+}
+
+.marketing-banner-inverse {
+  background-color: $black;
+  color: $off-white;
+  text-shadow: horizontal-offset vertical-offset blur color;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+// ]] Marketing Banner

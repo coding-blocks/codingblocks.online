@@ -1,0 +1,118 @@
+<div class="jumbotron-wrapper">
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Real Life ™</h1>
+			<p>Deep stained pain that I had dreamt, flaunted demise, life's punishment.</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="#" role="button">Just End It</a>
+				<a class="btn btn-danger btn-lg" href="#" role="button">Prolong Suffering</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="course-card-wrapper">
+	<div class="container">
+		<h2>Recommended Courses</h2>
+		<ul class="course-cards">
+			<div class="row">
+				{{#each model.recommendedCourses as |course|}}
+				<li class="course-card col-md-3">
+					<div class="course-card-content">
+						<div class="course-card-header">
+							<img src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
+							<h3>{{course.title}}</h3>
+						</div>
+						<div class="card-body">
+							<p>{{course.subtitle}}</p>
+							<strong><p>Rs. {{course.fees}}</p></strong>
+							<p></p>
+							{{#link-to 'courses.preview' course.id class='btn btn-primary'}}Enroll Now!{{/link-to}}
+						</div>
+					</div>
+				</li>
+				{{/each}}
+			</div>
+		</ul>
+	</div>
+</div>
+
+<div class="course-card-wrapper">
+	<div class="container">
+		<h2>All Courses</h2>
+		<ul class="course-cards">
+			<div class="row">
+				{{#each model.allCourses as |course|}}
+				<li class="course-card col-md-3">
+					<div class="course-card-content">
+						<div class="course-card-header">
+							<img src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
+							<h3>{{course.title}}</h3>
+						</div>
+						<div class="card-body">
+							<p>{{course.subtitle}}</p>
+							<strong><p>Rs. {{course.fees}}</p></strong>
+							<p></p>
+							{{#link-to 'courses.preview' course.id class='btn btn-primary'}}Enroll Now!{{/link-to}}
+						</div>
+					</div>
+				</li>
+				{{/each}}
+			</div>
+		</ul>
+	</div>
+</div>
+
+
+<div class="marketing-banner marketing-banner-inverse mbt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 banner-left">
+				<img src="https://placehold.it/450x250" />
+			</div>
+			<div class="col-md-5 offset-md-2 banner-right">
+				<h3>Marketing Mumbo Jumbo</h3>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="marketing-banner mbt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 banner-left">
+				<h3>Marketing Mumbo Jumbo</h3>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			</div>
+			<div class="col-md-5 offset-md-2 banner-right">
+				<img src="https://placehold.it/450x250" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="marketing-banner marketing-banner-inverse mbt-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 banner-left">
+				<img src="https://placehold.it/450x250" />
+			</div>
+			<div class="col-md-5 offset-md-2 banner-right">
+				<h3>Marketing Mumbo Jumbo</h3>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="alumni-wrapper">
+	<div class="container">
+		<h2>Alumni</h2>
+		<ul>
+			<li>
+				TODO
+			</li>
+		</ul>
+	</div>
+</div>
