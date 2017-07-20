@@ -26,7 +26,11 @@
             </div>
             <div class="col-3">
               {{#if session.isAuthenticated}}
-                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
+                {{#if run.user}}
+                  <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Already enrolled</a>
+                {{else}}
+                  <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
+                {{/if}}
               {{else}}
                 <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Login to enroll</a>
               {{/if}}
