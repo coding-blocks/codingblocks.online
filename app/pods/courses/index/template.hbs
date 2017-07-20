@@ -1,8 +1,20 @@
 <div class="ui masthead vertical segment">
   <div class="ui container">
-    {{#each model as |course|}}
-      {{course-view course=course}}
-    {{/each}}
+
   </div>
+</div>
+<div class="course-card-wrapper">
+	<div class="container">
+		<h2>Recommended Courses</h2>
+		<ul class="course-cards">
+			<div class="row">
+				{{#each model as |course|}}
+					<li class="course-card col-md-3">
+						{{course-view course=course}}
+					</li>
+				{{/each}}
+			</div>
+		</ul>
+	</div>
 </div>
 {{outlet}}
