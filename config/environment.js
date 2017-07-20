@@ -49,7 +49,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.publicUrl = 'http://localhost:4200';
+    ENV.publicUrl = 'http://online.codingblocks.com';
+    ENV.apiEndpoint = 'http://api-online.cb.lk';
   }
 
   return ENV;
