@@ -1,0 +1,43 @@
+{{!-- Toolbar --}}
+<div class="btn-group" role="group" style="margin: 10px 0">
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language ({{langName}})
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" {{action 'changeLanguage' 'cpp'}} >C++</a>
+            <a class="dropdown-item"{{action 'changeLanguage' 'c'}}>C</a>
+            <a class="dropdown-item"{{action 'changeLanguage' 'java'}}>JAVA</a>
+            <a class="dropdown-item"{{action 'changeLanguage' 'js'}}>Node Js</a>
+        </div>
+    </div>
+</div>
+
+<div id="editor" style="height: 350px; width: 100%">{{yield}}</div>
+
+
+<div class="card">
+    <div class="card-block">
+        <h5 class="card-title">Input</h5>
+        {{textarea class="form-control" rows="3"  value=customInput}}
+    </div>
+</div>
+
+
+{{#if runOutput}}
+<div class="card">
+    <div class="card-block">
+        <h5 class="card-title">Output</h5>
+      <pre>{{runOutput}}</pre>
+    </div>
+</div>
+{{/if}}
+
+<div class="btn-group" style="margin: 10px">
+    {{#if runCodeTask.isRunning}}
+        <button class="btn btn-primary disabled">Running...</button>
+    {{else}}
+        <button class="btn btn-primary" {{action 'runCode'}} >Run</button>
+    {{/if}}
+    <button class="btn btn-secondary" {{action 'submitCode'}} >Submit Code </button>
+</div>

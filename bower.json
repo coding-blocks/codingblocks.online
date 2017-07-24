@@ -1,0 +1,21 @@
+{
+  "name": "vlyop-frontend",
+  "description": "Small description for vlyop-frontend goes here",
+  "main": "",
+  "authors": [
+    "abhishek97 <hi@itsabhishek.me>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ace-builds": "^1.2.8"
+  }
+}

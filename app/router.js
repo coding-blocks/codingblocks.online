@@ -20,6 +20,7 @@ Router.map(function() {
             this.route('quiz');
           });
           this.route('lecture', {path: 'lecture/:lectureId'});
+          this.route('code', {path: 'code/:codeId'});
         })
 
         this.route('progress', function() {});
