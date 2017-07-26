@@ -1,0 +1,50 @@
+<h3>Your submissions:</h3>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Language</th>
+        <th>Submitted At</th>
+        <th>Score</th>
+        <th>Source Code</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each codeSubmissions as |codeSubmission|}}
+      <tr>
+          <th scope="row">{{codeSubmission.id}}</th>
+          <td>{{codeSubmission.langName}}</td>
+          <td>{{moment-format codeSubmission.createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+          <td>{{codeSubmission.score}}</td>
+          <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#codeModal{{codeSubmission.id}}">
+                  Launch demo modal
+              </button>
+          </td>
+      </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+{{#each codeSubmissions as |codeSubmission|}}
+<div class="modal fade" id="codeModal{{codeSubmission.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Source Code for Submission #{{codeSubmission.id}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <pre class=".pre-scrollable" style="background-color: #f7f7f9"><code>{{base64Decode codeSubmission.code}}</code></pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+{{outlet}}

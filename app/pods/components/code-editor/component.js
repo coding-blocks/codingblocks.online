@@ -84,7 +84,7 @@ export default Ember.Component.extend({
       this.get('runCodeTask').perform()
     },
     submitCode () {
-      const code = this.get('editor').getSession().getValue(),
+      const code = window.btoa(this.get('editor').getSession().getValue()),
         lang = this.get('lang')
 
       this.get('onSubmitTask').perform({code, lang})

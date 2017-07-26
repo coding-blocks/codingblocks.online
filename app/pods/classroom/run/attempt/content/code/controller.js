@@ -6,11 +6,12 @@ export default Ember.Controller.extend({
   submitCodeTask: task(function * ({code, lang}) {
     const api = this.get('api'),
       codeChallengeId = this.get('codeChallenge.id'),
-      runAttemptId = this.get('runAttemptId')
+      runAttemptId = this.get('runAttemptId'),
+      contentId  = this.get('contentId')
 
     const res = yield api.request(`/code_challenges/${codeChallengeId}/submit`, {
       method: 'POST',
-      data: {code, lang, runAttemptId},
+      data: {code, lang, runAttemptId, contentId},
       json: true
     })
 

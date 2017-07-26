@@ -18,6 +18,7 @@ Router.map(function() {
           this.route('quiz', {path: 'quiz/:quizId'});
           this.route('progress', function() {
             this.route('quiz');
+            this.route('code');
           });
           this.route('lecture', {path: 'lecture/:lectureId'});
           this.route('code', {path: 'code/:codeId'});
