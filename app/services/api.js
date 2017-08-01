@@ -12,12 +12,12 @@ export default AjaxService.extend({
   host: env.apiEndpoint,
   contentType: 'application/json; charset=utf-8',
   namespace: '/api',
-  headers: Ember.computed('session.data.authenticated.auth_token', {
+  headers: Ember.computed('session.data.authenticated.jwt', {
     get() {
       let headers = {};
-      const authToken = this.get('session.data.authenticated.auth_token');
-      if (authToken) {
-        headers['Authorization'] = `Bearer ${authToken}`;
+      const jwt = this.get('session.data.authenticated.jwt');
+      if (jwt) {
+        headers['Authorization'] = `JWT ${jwt}`;
       }
       return headers;
     }

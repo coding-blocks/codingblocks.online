@@ -10,7 +10,7 @@ import env from '../config/environment';
 export default Base.extend({
   restore(data) {
       return new Ember.RSVP.Promise(function (resolve, reject) {
-          if (data.auth_token) {
+          if (data.jwt) {
               resolve(data);
           } else {
               console.log("Old logging system detected. Logging out.");
@@ -22,7 +22,7 @@ export default Base.extend({
       var args = [...arguments];
       return new Ember.RSVP.Promise(function(resolve, reject) {
           Ember.$.get(env.apiEndpoint + '/oneauth/login?grant_code=' + args[0], function (data) {
-              if (data.auth_token !== undefined) {
+              if (data.jwt !== undefined) {
                   resolve(data);
               } else {
                   reject(data);
