@@ -10,5 +10,6 @@ export default DS.Model.extend({
   end: DS.attr(),
   runAttemptId: DS.attr(),
   course: DS.belongsTo('course'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  percentComplete: DS.attr()
 })
