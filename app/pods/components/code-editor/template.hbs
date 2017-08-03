@@ -39,5 +39,9 @@
     {{else}}
         <button class="btn btn-primary" {{action 'runCode'}} >Run</button>
     {{/if}}
-    <button class="btn btn-secondary" {{action 'submitCode'}} >Submit Code </button>
+    {{#if onSubmitTask.isRunning}}
+        <button class="btn btn-secondary" disabled> Submitting... </button>
+    {{else}}
+      <button class="btn btn-secondary" {{action 'submitCode'}} >Submit Code </button>
+    {{/if}}
 </div>

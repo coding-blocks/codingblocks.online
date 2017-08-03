@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
       data: {code, lang, runAttemptId, contentId},
       json: true
     })
-
-    console.log(res)
+    console.log('HERE')
+    this.transitionToRoute('classroom.run.attempt.content.code', codeChallengeId)
     })
 });
