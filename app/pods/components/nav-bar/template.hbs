@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<nav class="custom-nav navbar navbar-toggleable-md navbar-inverse ">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             {{#link-to 'index' class="nav-item" tagName="li"}}
-                <a class="nav-link" href="#">Home</a>
+                <a class="custom-nav-link nav-link" href="#">Home</a>
             {{/link-to}}
             {{#link-to 'courses.index' class="nav-item" tagName="li"}}
-                <a class="nav-link" href="#">All Courses</a>
+                <a class="custom-nav-link nav-link" href="#">All Courses</a>
             {{/link-to}}
             {{#if session.isAuthenticated}}
                 {{#link-to 'classroom.index' class="nav-item" tagName="li"}}
@@ -20,9 +20,9 @@
             {{/if}}
         </ul>
         {{#if session.isAuthenticated}}
-            <button type="button" class="btn btn-danger" {{action "invalidateSession"}}>Logout</button>
+            <button type="button" class="custom-btn" {{action "invalidateSession"}}>Logout</button>
         {{else}}
-            <button type="button" class="btn btn-success" {{action "login"}}>Login</button>
+            <button type="button" class="custom-btn" {{action "login"}}>Login</button>
         {{/if}}
     </div>
 </nav>

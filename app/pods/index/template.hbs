@@ -1,3 +1,4 @@
+<div class="cb-gradient"></div>
 <div class="jumbotron-wrapper">
 	<div class="container">
 		<div class="jumbotron">
@@ -13,12 +14,12 @@
 
 <div class="course-card-wrapper">
 	<div class="container">
-		<h2>Recommended Courses</h2>
+		<h2 class="heading-main">Recommended Courses</h2>
 		<ul class="course-cards">
 			<div class="row">
 				{{#each model.recommendedCourses as |course|}}
-				<li class="course-card col-md-3">
-					<div class="course-card-content">
+				<li class="course-card">
+					<div class="custom-course-card course-card-content">
 						<div class="course-card-header">
 							<img src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
 							<h3>{{course.title}}</h3>
@@ -43,7 +44,7 @@
 		<ul class="course-cards">
 			<div class="row">
 				{{#each model.allCourses as |course|}}
-				<li class="course-card col-md-3">
+				<li class="custom-course-card course-card">
 					<div class="course-card-content">
 						<div class="course-card-header">
 							<img src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
