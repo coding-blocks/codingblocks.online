@@ -3,8 +3,53 @@
 $off-white: #fefefe;
 $light-gray: #e3e3e3;
 $black: rgba(0, 0, 0, 0.9);
+$pink: #e24d82;
+$majenta: #d95787;
 
 // ]] Colors
+// ]] Mixins [[
+
+@mixin gradient {
+  background-image: linear-gradient(to right, $pink, $pink);
+  height: 800px;
+  z-index: 1000;
+  opacity: .9;
+  position: absolute;
+  width: 30%;
+}
+
+// ]]Animations [[
+
+@keyframes rotateWord {
+
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  5% {
+     opacity: 1;
+     transform: translateY(0px);
+   }
+
+  17% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  20% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  80% {
+      opacity: 0;
+    }
+
+  100% {
+       opacity: 0;
+     }
+}
 
 // Util [[
 .mb-5 {
@@ -71,7 +116,7 @@ h2 {
 
 .custom-nav {
   position: fixed;
-  z-index: 1000;
+  z-index: 10000;
   width: 100%;
 }
 
@@ -110,18 +155,75 @@ h2 {
   margin: 10px;
   height: 418px;
 }
+.children {
+  height: 800px;
+  img {
+    position: fixed;
+    height: 800px;
+    right: 0;
+    left:0;
+    z-index: -2000;
+    width: 100%;
 
-.cb-gradient {
-  content: '';
-  width: 100%;
-  height: 720px;
-  z-index: -1000;
-  background-image: linear-gradient(to right, rgb(33, 150, 243), rgb(244, 67, 54));
-  transform-origin: left bottom;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: skew(0deg,-20deg);
+  }
+  .p-gradient {
+    @include gradient;
+    .bg-text {
+      position: relative;
+      top: 40%;
+      left: 30%;
+      font-size: 20px;
+      color: white;
+
+      span {
+        position: absolute;
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        animation: rotateWord 18s linear infinite 0s;
+      }
+    }
+  }
+
+  .cb-gradient {
+    @include gradient;
+    content: '';
+    z-index: -1000;
+    opacity: .9;
+    position: absolute;
+    width: 100%;
+    transform-origin: left bottom;
+    left: 30%;
+    transform: skew(0deg,-50deg);
+  }
+
+}
+
+.img-main {
+  background: url('http://designova.net/themes/wordpress/live9/wp-content/uploads/2013/05/bg01.jpg') 0px -336.329px
+              repeat-y;
+  padding-bottom: 188px;
+
+  .heading-main {
+    text-align: center;
+    font-weight: 200;
+    padding: 50px;
+    font-size: 38px;
+    margin-top: 0;
+    color: $majenta;
+
+  }
+
+}
+.card-deck {
+  justify-content: center;
+}
+
+
+.course-card {
+  .course-title {
+
+  }
 }
 
 //Nested list styles begin

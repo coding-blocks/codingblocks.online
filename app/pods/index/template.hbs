@@ -1,23 +1,35 @@
-<div class="cb-gradient"></div>
-<div class="jumbotron-wrapper">
-	<div class="container">
-		<div class="jumbotron">
-			<h1>Real Life ™</h1>
-			<p>Deep stained pain that I had dreamt, flaunted demise, life's punishment.</p>
-			<p>
-				<a class="btn btn-primary btn-lg" href="#" role="button">Just End It</a>
-				<a class="btn btn-danger btn-lg" href="#" role="button">Prolong Suffering</a>
-			</p>
-		</div>
-	</div>
+<div class="children">
+  <img class="bg-image" src="http://futuremaker.in/wp-content/uploads/2017/03/Kickassd-Educational-Program.jpg" alt="program-img">
+  <div class="p-gradient">
+    <div class="bg-text">
+      <span>Unique</span>
+      <span>Simple</span>
+      <span>Modern</span>
+      <span>Creative</span>
+      <span>Parallaxhtml5</span>
+    </div>
+
+  </div>
+  <div class="cb-gradient"></div>
+</div>
+<div class="img-main container-fluid">
+
+  <h2 class="heading-main">Recommended Courses</h2>
+	<div class="card-deck">
+  {{#each model.recommendedCourses as |course|}}
+    {{card-component course=course}}
+  {{/each}}
+  </div>
 </div>
 
-<div class="course-card-wrapper">
+<div style="display:none;" class="course-card-wrapper">
 	<div class="container">
 		<h2 class="heading-main">Recommended Courses</h2>
 		<ul class="course-cards">
 			<div class="row">
+
 				{{#each model.recommendedCourses as |course|}}
+
 				<li class="course-card">
 					<div class="custom-course-card course-card-content">
 						<div class="course-card-header">
@@ -38,7 +50,7 @@
 	</div>
 </div>
 
-<div class="course-card-wrapper">
+<div style="display:none;" class="course-card-wrapper">
 	<div class="container">
 		<h2>All Courses</h2>
 		<ul class="course-cards">
@@ -65,7 +77,7 @@
 </div>
 
 
-<div class="marketing-banner marketing-banner-inverse mbt-5">
+<div style="display:none;" class="marketing-banner marketing-banner-inverse mbt-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 banner-left">
@@ -79,7 +91,7 @@
 	</div>
 </div>
 
-<div class="marketing-banner mbt-5">
+<div style="display:none;" class="marketing-banner mbt-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 banner-left">
@@ -93,7 +105,7 @@
 	</div>
 </div>
 
-<div class="marketing-banner marketing-banner-inverse mbt-5">
+<div style="display:none;" class="marketing-banner marketing-banner-inverse mbt-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 banner-left">
@@ -106,4 +118,5 @@
 		</div>
 	</div>
 </div>
+
 
