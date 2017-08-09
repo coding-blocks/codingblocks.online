@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   api: Ember.inject.service(),
   model (params) {
 
-    const lecture = this.store.findRecord('lecture', params.lectureId)
+    const lecture = this.store.findRecord('lecture', params.lectureId, {reload: true})
     const awsData = lecture.then(lecture => {
       const api = this.get('api')
       return api.request('/aws/cookie', {
