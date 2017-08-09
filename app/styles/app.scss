@@ -220,6 +220,13 @@ h2 {
   }
 
 }
+
+.card {
+  margin-left: 40px;
+   .card-block {
+     box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
+   }
+}
 .card-deck {
   justify-content: center;
 }

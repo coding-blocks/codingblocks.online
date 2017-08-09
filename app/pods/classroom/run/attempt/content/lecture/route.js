@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   api: Ember.inject.service(),
   model (params) {
+
     const lecture = this.store.findRecord('lecture', params.lectureId)
     const awsData = lecture.then(lecture => {
       const api = this.get('api')
