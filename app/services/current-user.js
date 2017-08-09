@@ -10,10 +10,10 @@ export default Ember.Service.extend({
   load () {
     if (this.get('session.isAuthenticated')) {
       let token = this.get('session.data.authenticated.jwt');
-     return this.get('store').queryRecord('user', { custom: {ext: 'url', url: 'me' }}).then(user=>{
-       this.set('user',user)
-       return user
-     })
+      return this.get('store').queryRecord('user', { custom: {ext: 'url', url: 'me' }}).then(user=>{
+        this.set('user',user)
+        return user
+      })
     }
   },
 

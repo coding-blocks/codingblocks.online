@@ -1,4 +1,4 @@
-<form action="/purchase" method="POST">
+<form action="http://localhost:3000/api/checkout" method="POST">
   <!-- Note that the amount is in paise = 50 INR -->
   <script
     src="https://checkout.razorpay.com/v1/checkout.js"
@@ -12,5 +12,6 @@
     data-prefill.email="{{user.email}}"
     data-theme.color="#F37254"
   ></script>
-  <input type="hidden" value="Hidden Element" name="hidden">
+  <input type="hidden" value="{{user.id}}" name="user_id">
+  <input type="hidden" value="{{run.id}}" name="run_id">
 </form>
