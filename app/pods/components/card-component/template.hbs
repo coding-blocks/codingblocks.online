@@ -1,0 +1,13 @@
+<div class="card ">
+  <div class="card-block ">
+    <img class="card-img-top" src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
+      <h3 class="card-title">{{course.title}}</h3>
+    <div class="card-text">
+      <p>{{course.subtitle}}</p>
+      <strong><p>Rs. {{course.fees}}</p></strong>
+      <p></p>
+      {{#link-to 'courses.preview' course.id class='btn btn-primary'}}Enroll Now!{{/link-to}}
+    </div>
+  </div>
+</div>
+{{yield}}
