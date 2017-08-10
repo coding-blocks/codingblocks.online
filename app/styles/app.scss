@@ -126,8 +126,8 @@ h2 {
 }
 
 .custom-btn {
-  background: #cc253c;
-  border: solid 1px #cc253c;
+  background: #dc5a86;
+  border: solid 1px #dc5a86;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -203,6 +203,21 @@ h2 {
     transform: skew(0deg,-50deg);
   }
 
+}
+
+.nav-white {
+  background-color: white;
+  box-shadow: rgba(46, 61, 73, 0.15) 12px 2px 20px 0px;
+  .nav-link {
+    color: black;
+  }
+}
+.nav-transparent {
+  background-color: transparent;
+  box-shadow: none;
+  .nav-link {
+    color: white
+  }
 }
 
 .img-main {
@@ -339,12 +354,12 @@ ul.question_choices li.selected {
   .course-card {
     border-radius: 3px;
     padding-bottom: 1rem;
-    @include bounceInUp(
-      $duration: 2s,
-      $delay: .6s,
-      $function: ease,
-      $fill: both
-    );
+    //@include bounceInUp(
+    //  $duration: 2s,
+    //  $delay: .6s,
+    //  $function: ease,
+    //  $fill: both
+    //);
   }
 
   .course-card .course-card-content {
