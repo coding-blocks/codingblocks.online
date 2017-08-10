@@ -15,10 +15,20 @@
 <div class="img-main container-fluid">
 
   <h2 class="heading-main">Recommended Courses</h2>
+  <hr class="text">
 	<div class="card-deck">
   {{#each model.recommendedCourses as |course|}}
     {{card-component course=course}}
   {{/each}}
+  </div>
+  <div class="horizontal-img-main">
+    <h2 class="heading-main">All Courses</h2>
+    <hr class="underline">
+    <div class="card-deck">
+      {{#each model.allCourses as |course|}}
+        {{card-component course=course}}
+      {{/each}}
+    </div>
   </div>
 </div>
 
@@ -53,6 +63,7 @@
 <div style="display:none;" class="course-card-wrapper">
 	<div class="container">
 		<h2>All Courses</h2>
+    <hr class="underline">
 		<ul class="course-cards">
 			<div class="row">
 				{{#each model.allCourses as |course|}}

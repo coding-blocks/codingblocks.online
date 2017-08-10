@@ -7,7 +7,9 @@ export default Ember.Component.extend({
     const self = this
     const config = {
       xhrSetup (xhr, url) {
-        //TODO: send a request to backend and get a signed url to the segment as 301
+
+        // TODO: send a request to backend and get a signed url to the segment as 301
+
         try {
           const awsData = self.get('awsData')
           const encoded = Ember.$.param({
