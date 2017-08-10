@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super(...arguments)
     const video = this.$('#video')[0]
-    const self = this
+    const self = this;
     const config = {
       xhrSetup (xhr, url) {
 

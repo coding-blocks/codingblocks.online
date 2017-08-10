@@ -1,0 +1,17 @@
+<form action="http://localhost:3000/api/checkout" method="POST">
+  <!-- Note that the amount is in paise = 50 INR -->
+  <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_ORbGvOOPwQfeYK"
+    data-amount="{{price}}"
+    data-buttontext="{{text}}"
+    data-name="{{name}}"
+    data-description="{{description}}"
+    data-image="https://your-awesome-site.com/your_logo.jpg"
+    data-prefill.name="{{user.name}}"
+    data-prefill.email="{{user.email}}"
+    data-theme.color="#F37254"
+  ></script>
+  <input type="hidden" value="{{user.id}}" name="user_id">
+  <input type="hidden" value="{{run.id}}" name="run_id">
+</form>

@@ -18,16 +18,3 @@ export default Ember.Route.extend({
 
 });
 
-
-
-/*
- $(window).scroll(function(e){
- var doc = document.documentElement;
- var left = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
- var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-
- $('.img-main').css('background-position-y', -top+$('.img-main').offset().top  )
-
-
- })
- */
