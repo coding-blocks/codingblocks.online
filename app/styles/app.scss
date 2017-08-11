@@ -8,14 +8,21 @@ $majenta: #d95787;
 
 // ]] Colors
 // ]] Mixins [[
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   box-sizing: border-box;
   max-width: 100vw;
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
 @mixin gradient {
-  background-image: linear-gradient(to right, $pink, $pink);
+  background: $pink;
   height: 800px;
   z-index: 1000;
   opacity: .9;
@@ -151,6 +158,7 @@ h2 {
   font-weight: 400;
   line-height: 1.50rem;
   text-align: left;
+  color: white;
 }
 
 .custom-course-card {
@@ -194,12 +202,16 @@ h2 {
   .cb-gradient {
     @include gradient;
     content: '';
-    z-index: -1000;
+    z-index: 100;
     opacity: .9;
     position: absolute;
     width: 100%;
     transform-origin: left bottom;
     left: 30%;
+    -ms-transform: skew(0deg,-50deg);
+    -webkit-transform: skew(0deg,-50deg);
+    -moz-transform: skew(0deg,-50deg);
+    -o-transform: skew(0deg,-50deg);
     transform: skew(0deg,-50deg);
   }
 
@@ -208,21 +220,18 @@ h2 {
 .nav-white {
   background-color: white;
   box-shadow: rgba(46, 61, 73, 0.15) 12px 2px 20px 0px;
-  .nav-link {
-    color: black;
-  }
 }
 .nav-transparent {
   background-color: transparent;
   box-shadow: none;
-  .nav-link {
-    color: white
-  }
 }
 
+
 .img-main {
+
   background: url('http://designova.net/themes/wordpress/live9/wp-content/uploads/2013/05/bg01.jpg') 0px -336.329px
-              repeat-y;
+              repeat-y #f2f2f2;
+
   padding-bottom: 188px;
 
   .heading-main {
@@ -238,6 +247,12 @@ h2 {
   .horizontal-img-main {
     margin-top: 140px;
 
+  }
+
+  hr {
+    top: -55px !important;
+    width: 35em !important;
+    position: relative;
   }
 
 }
@@ -266,13 +281,6 @@ h2 {
 }
 .card-deck {
   justify-content: center;
-}
-
-
-.course-card {
-  .course-title {
-
-  }
 }
 
 
