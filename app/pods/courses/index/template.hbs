@@ -9,9 +9,13 @@
 		<ul class="course-cards">
 			<div class="row">
 				{{#each model as |course|}}
-					<li class="course-container col-sm-6 col-lg-3 col-md-3 col-xs-12">
-						{{course-card course=course}}
-					</li>
+
+            <li class="course-container col-sm-6 col-lg-3 col-md-3 col-xs-12">
+              {{#link-to 'courses.preview' course.id }}
+              {{course-card course=course}}
+              {{/link-to}}
+            </li>
+
 				{{/each}}
 			</div>
 		</ul>

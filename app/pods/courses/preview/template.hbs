@@ -1,10 +1,35 @@
-<div class="container">
-  <div class="row justify-content-md-center">
-    <p class="display-4">{{model.title}}</p>
+<div class="course-preview">
+  <div class="color-line" style="background:#0c9dbf"></div>
+  <div class="background-image">
+    <div class="row">
+        <div class="col-6" style="color: #0e98b9;">
+          <div class="row title justify-content-md-center">
+            <p class="display-4">
+              {{model.title}}
+               <p class="subtitle">
+                  {{model.subtitle}}
+               </p>
+            </p>
+
+          </div>
+        </div>
+        <div class="sample-video col-6">
+          <div class="row">
+            <div class="col-3 video-button">
+              <a href="https://www.youtube.com/embed/oPp4htuqDOs" target="_blank">
+              <img src="/images/play-video.png" alt="play-video button">
+              </a>
+            </div>
+
+            <div class="col-9 display-4">
+              <p> Sample Video</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
   </div>
-  <div class="row justify-content-md-center">
-    <p class="lead">{{model.subtitle}}</p>
-  </div>
+
   <div class="row justify-content-md-center">
     <!--TODO: put video's preview URL here. Hardcode for now.-->
     <iframe width="650px" height="340px" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
