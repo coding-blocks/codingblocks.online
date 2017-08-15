@@ -40,6 +40,7 @@ export default Ember.Component.extend({
    didInsertElement() {
      this.get('navCustomisation').setNavColor(this.get('routing.currentRouteName'));
      this.get('navCustomisation').scrollHomepage();
+
    }
 
 });
