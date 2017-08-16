@@ -391,6 +391,13 @@ h2 {
       margin-top: 5px;
     }
 
+  .course-container {
+    margin: 0;
+    .course-card:nth-of-type(1){
+      margin-left: 160px;
+    }
+  }
+
   .background-image {
     background: url('/images/course1.jpg');
     background-repeat: no-repeat;
@@ -664,10 +671,18 @@ footer a:hover{
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  width: 1000px;
+  width: 100vw;
 
+  .ember-card {
+      &:nth-child(1) {
+        .course-card {
+          margin-left: 160px;
+        }
+      }
+  }
 
 }
+
 
 @media (min-width: 576px) {
   .modal-dialog {
