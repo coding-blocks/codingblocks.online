@@ -1,0 +1,35 @@
+<div class="course-card">
+  <div class="card ">
+    <div class="card-block ">
+      <div class="heading-main">
+        # {{sum index 1}}
+      </div>
+      <img class="card-img-top" src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
+      <h3 class="card-title">{{course.title}}</h3>
+      <div class="card-text">
+        <p>{{course.subtitle}}</p>
+        <strong><p>Rs. {{course.fees}}</p></strong>
+        <p></p>
+        {{#if session.isAuthenticated}}
+          {{#if run.user}}
+            <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Already enrolled</a>
+          {{else}}
+            {{#if model.isFree}}
+              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">
+                Enroll
+
+              </a>
+
+            {{else}}
+              {{#razorpay-buy-button price=(mul model.fees 100) name=model.title text="Buy to enroll" user=user run=run}}{{/razorpay-buy-button}}
+            {{/if}}
+          {{/if}}
+        {{else}}
+          <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled ">Login to Enroll</a>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+</div>
+{{yield}}
