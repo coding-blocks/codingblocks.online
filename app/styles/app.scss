@@ -659,6 +659,15 @@ footer a:hover{
     }
   }
 }
+.flex-model {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 1000px;
+
+
+}
 
 @media (min-width: 576px) {
   .modal-dialog {
