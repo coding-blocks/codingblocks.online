@@ -17,5 +17,7 @@ export default DS.Model.extend({
   video: DS.belongsTo('attachment'),
   image: DS.belongsTo('attachment'),
   runs: DS.hasMany('run'),
-  sections: DS.hasMany('section')
+  sections: DS.hasMany('section'),
+  color: DS.attr(),
+  backgroundImage: DS.attr()
 })
