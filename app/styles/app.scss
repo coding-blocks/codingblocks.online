@@ -114,49 +114,7 @@ body {
      }
 }
 
-// Util [[
-.mb-5 {
-  margin-bottom: 5rem;
-}
 
-.mt-5 {
-  margin-top: 5rem;
-}
-
-.mbt-5 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-// ]] Util
-
-// Global [[
-h2 {
-  line-height: 3.8rem;
-}
-// ]] Global
-
-#example{
-  height: 900px;
-}
-.full-width{
-  width: 100%!important;
-}
-.choices > .item {
-  min-height: 30px;
-  margin: 10px 0px;
-  padding: 50px 0px;
-}
-.choices .content {
-  margin-left: 5px;
-  position: relative;
-  top: 5px;
-}
-.item.selected {
-  background: lightgrey;
-}
-.toc {
-  height: 900px;
-}
 
 .container {
   padding-top: 20px;
@@ -168,13 +126,6 @@ h2 {
         font-weight: 100;
         margin-top: 50px;
     }
-}
-
-.jumbotron {
-  margin-top: 30px;
-  box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
-  transition: all .3s ease;
-  z-index: 1000px;
 }
 
 .custom-nav {
@@ -463,63 +414,9 @@ h2 {
 }
 
 //Nested list styles begin
-.just-padding {
-  padding: 15px;
-}
-
-.list-group.list-group-root {
-  padding: 0;
-  overflow: hidden;
-}
-
-.list-group.list-group-root .list-group {
-  margin-bottom: 0;
-}
-
-.list-group.list-group-root .list-group-item {
-  border-radius: 0;
-  border-width: 1px 0 0 0;
-}
-
-.list-group.list-group-root > .list-group-item:first-child {
-  border-top-width: 0;
-}
-
-.list-group.list-group-root > .list-group > .list-group-item {
-  padding-left: 50px;
-}
-
-.list-group.list-group-root > .list-group > .list-group > .list-group-item {
-  padding-left: 45px;
-}
-//Nested list styles end
-
-.sections {
-  border-left: 1px solid grey;
-}
-
-// Remove this ******
-ul.question_choices li.selected {
-  background: yellow;
-}
-
-// Home Page
-.jumbotron-wrapper {
-  background-position: 100% 55%;
-
-  .container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-
-  .jumbotron {
-    background: rgba(255, 255, 255, 0.5);
-  }
-}
 
 // Course Cards
-.course-card-wrapper {
-}
+
 
 .course-cards {
   list-style: none;
