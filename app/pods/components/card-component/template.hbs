@@ -6,7 +6,12 @@
       <p>{{course.subtitle}}</p>
       <strong><p>Rs. {{course.fees}}</p></strong>
       <p></p>
-      {{#link-to 'courses.preview' course.id class='btn btn-primary'}}Enroll Now!{{/link-to}}
+      {{#if session.isAuthenticated}}
+          {{#link-to 'courses.preview' course.id class='btn btn-primary'}}Preview{{/link-to}}
+      {{else}}
+          <button type="button" class="btn btn-primary" {{action "login"}}>Login</button>
+      {{/if}}
+      
     </div>
   </div>
 </div>
