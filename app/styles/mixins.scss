@@ -1,0 +1,91 @@
+@mixin section-heading {
+  text-align: center;
+  font-weight: 200;
+  padding: 50px;
+  font-size: 38px;
+  margin-top: 0;
+  color: $majenta;
+}
+
+@mixin end-line {
+  top: -55px !important;
+  width: 35em !important;
+  position: relative;
+}
+
+
+
+@mixin margin($top:null, $right:null, $bottom:null, $left:null) {
+  @if $top {
+    margin-top: $top;
+  }
+  @if $right {
+    margin-right: $right;
+  }
+  @if $bottom {
+    margin-bottom: $bottom;
+  }
+  @if $left {
+    margin-left: $left;
+  }
+}
+
+@mixin padding($top:null, $right:null, $bottom:null, $left:null) {
+  @if $top {
+    padding-top: $top;
+  }
+  @if $right {
+    padding-right: $right;
+  }
+  @if $bottom {
+    padding-bottom: $bottom;
+  }
+  @if $left {
+    padding-left: $left;
+  }
+}
+
+@mixin position($type:null, $top:null, $right:null, $bottom:null, $left:null) {
+  position: $type;
+  top: $top;
+  right: $right;
+  left: $left;
+}
+
+@mixin width-height ($width:null, $height:null) {
+  @if $width {
+    width: $width;
+  }
+  @if $height {
+    height: $height;
+  }
+}
+
+@mixin button($font-weight, $font-size, $color, $line-height, $white-space, $min-height, $min-width) {
+  background: $color;
+  border: solid 1px $color;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: $white-space;
+  transition: background 300ms ease-out;
+  border-radius: 2px;
+  box-sizing: border-box;
+  min-height: $min-height;
+  min-width: $min-width;
+  outline: 0 none;
+}
+
+@mixin transform-skew($from, $to) {
+  -ms-transform: skew($from,$to);
+  -webkit-transform: skew($from,$to);
+  -moz-transform: skew($from,$to);
+  -o-transform: skew($from,$to);
+  transform: skew($from,$to);
+}
