@@ -15,13 +15,9 @@
             <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Already enrolled</a>
           {{else}}
             {{#if model.isFree}}
-              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">
-                Enroll
-
-              </a>
-
+              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
             {{else}}
-              {{#razorpay-buy-button price=(mul model.fees 100) name=model.title text="Buy to enroll" user=user run=run}}{{/razorpay-buy-button}}
+              {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy to enroll" user=user run=run}}{{/razorpay-buy-button}}
             {{/if}}
           {{/if}}
         {{else}}

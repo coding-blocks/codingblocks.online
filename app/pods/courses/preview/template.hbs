@@ -1,8 +1,8 @@
 <div class="course-preview">
-  <div class="color-line" style="background:{{model}}"></div>
+  <div class="color-line" style="background:{{model.color}}"></div>
   <div class="background-image">
     <div class="row">
-        <div class="col-6" style="{{model.color}}">
+        <div class="col-6" style="color:{{model.color}}">
           <div class="row title justify-content-md-center">
             <p class="display-4">
               {{model.title}}
@@ -27,7 +27,7 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <button class="enroll-btn">Enroll</button>
+              <button class="enroll-btn" style="background:{{model.color}}; border: {{model.color}}">Enroll</button>
             </div>
           </div>
         </div>

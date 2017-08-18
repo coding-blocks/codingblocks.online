@@ -253,14 +253,7 @@ body {
       background: rgba(0,0,0,.5);
     }
 
-    &::after {
-      content: "";
-      @include position(absolute,null, null, 0, 15px);
-      bottom: 0;
-      @include width-height(calc(100% - 14px), null);
-      border-bottom: 13px solid #0c9dbf;
-      z-index: 10000;
-    }
+
 
     .card-img-top {
        @include width-height(100%, 280px);
