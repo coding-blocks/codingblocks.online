@@ -479,3 +479,12 @@ footer a:hover{
     max-width: 800px;
   }
 }
+
+.all-courses-btn {
+	@include button(null,null,blue,null,null,null,null); 
+	width:20%;
+	display:block;
+	margin:0 auto;
+	margin-top: 2%;
+
+}
