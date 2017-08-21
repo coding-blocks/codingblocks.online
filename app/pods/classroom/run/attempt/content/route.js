@@ -11,11 +11,10 @@ export default Ember.Route.extend({
   },
   afterModel (model, transition) {
     if (model.get('contentable') === 'quiz')
-      // return a promise to block rendering of template
       this.transitionTo('classroom.run.attempt.content.quiz', model.get('quiz.id'), { queryParams: {q: 1} } )
     else if (model.get ('contentable') === 'lecture')
       this.transitionTo('classroom.run.attempt.content.lecture', model.get('lecture.id'))
     else if (model.get ('contentable') === 'code-challenge')
-      this.transitionTo('classroom.run.attempt.content.code', model.get('codeChallenge.id'))
+      this.transitionTo('classroom.run.attempt.content.code', model.get('code-challenge.id'))
   }
 });
