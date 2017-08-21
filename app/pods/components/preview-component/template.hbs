@@ -12,7 +12,7 @@
         <p></p>
         {{#if session.isAuthenticated}}
           {{#if run.user}}
-            <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Already enrolled</a>
+            {{#link-to 'classroom.run.index' run.user.runAttempt.id class="btn btn-primary"}}Resume Course{{/link-to}}
           {{else}}
             {{#if course.isFree}}
               <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
