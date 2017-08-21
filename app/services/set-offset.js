@@ -26,17 +26,18 @@ export default Ember.Service.extend({
     var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
     var navbar = Ember.$('.custom-nav');
     var navLink = Ember.$('.custom-nav-link');
-    var mainSection = Ember.$('.img-main').offset().top;
+    if (Ember.$('.img-main').offset() != null) {
+      var mainSection = Ember.$('.img-main').offset().top;
 
-    if (top >= (mainSection - 54) )  {
-      navbar.removeClass('nav-transparent').addClass('nav-white');
-      navLink.css('color','black')
+      if (top >= (mainSection - 54) )  {
+        navbar.removeClass('nav-transparent').addClass('nav-white');
+        navLink.css('color','black')
+      }
+      else {
+        navbar.removeClass('nav-white').addClass('nav-transparent');
+        navLink.css('color','white');
+      }
     }
-    else {
-      navbar.removeClass('nav-white').addClass('nav-transparent');
-      navLink.css('color','white');
-    }
-
   },
   scrollHomepage() {
     $(window).scroll(this.scrollTop);
