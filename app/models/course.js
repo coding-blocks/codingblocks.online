@@ -1,11 +1,18 @@
 import DS from 'ember-data';
-
+import Ember from 'ember';
 export default DS.Model.extend({
   name: DS.attr(),
   title: DS.attr(),
   subtitle: DS.attr(),
   summary: DS.attr(),
   fees: DS.attr(),
+  price: Ember.computed('fees', function () {
+    let price = this.get('fees');
+    let pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(price))
+      price = price.replace(pattern, "$1,$2");
+    return price;
+  }),
   popularity: DS.attr(),
   hoursPerDay: DS.attr(),
   isFree: DS.attr(),
