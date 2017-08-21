@@ -4,21 +4,21 @@
   </div>
 </div>
 <div class="course-card-wrapper">
-	<div class="courses container">
-		<h2 class="heading-main">Courses</h2>
-		<ul class="course-cards">
-			<div class="row">
-				{{#each model as |course|}}
+  <div class="courses container">
+    <h2 class="heading-main">Courses</h2>
+    <ul class="course-cards justify-content-center">
+      <div class="row">
+        {{#each model as |course|}}
 
-            <li class="course-container col-sm-6 col-lg-3 col-md-3 col-xs-12">
-              {{#link-to 'courses.preview' course.id }}
+          <li class="course-container col-xs-12 col-sm-6  col-md-4 col-lg-4">
+            {{#link-to 'courses.preview' course.id }}
               {{course-card course=course}}
-              {{/link-to}}
-            </li>
+            {{/link-to}}
+          </li>
 
-				{{/each}}
-			</div>
-		</ul>
-	</div>
+        {{/each}}
+      </div>
+    </ul>
+  </div>
 </div>
 {{outlet}}
