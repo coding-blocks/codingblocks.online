@@ -11,5 +11,6 @@ export default DS.Model.extend({
   lastName: DS.attr(),
   email: DS.attr(),
   contents: DS.hasMany('content'),
-  courseRuns: DS.hasMany('run')
+  courseRuns: DS.hasMany('run'),
+  runAttempt: DS.belongsTo('run-attempt')
 });

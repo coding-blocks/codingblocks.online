@@ -12,9 +12,9 @@
         <p></p>
         {{#if session.isAuthenticated}}
           {{#if run.user}}
-            <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary disabled">Already enrolled</a>
+            {{#link-to 'classroom.run.index' run.user.runAttempt.id class="btn btn-primary"}}Resume Course{{/link-to}}
           {{else}}
-            {{#if model.isFree}}
+            {{#if course.isFree}}
               <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
             {{else}}
               {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy to enroll" user=user run=run}}{{/razorpay-buy-button}}
@@ -26,6 +26,5 @@
       </div>
     </div>
   </div>
-
 </div>
 {{yield}}
