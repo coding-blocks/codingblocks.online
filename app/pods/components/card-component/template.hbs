@@ -1,18 +1,52 @@
-<div class="card ">
-  <div class="card-block ">
-    <img class="card-img-top" src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
-      <h3 class="card-title">{{course.title}}</h3>
-    <div class="card-text">
-      <p>{{course.subtitle}}</p>
-      <strong><p>Rs. {{course.fees}}</p></strong>
-      <p></p>
-      {{#if session.isAuthenticated}}
-          {{#link-to 'courses.preview' course.id class='btn btn-primary'}}Preview{{/link-to}}
-      {{else}}
-          <button type="button" class="btn btn-primary" {{action "login"}}>Login</button>
-      {{/if}}
-      
-    </div>
-  </div>
-</div>
+<div class="card-container">
+  <div class="card">
+    <div class="front" style="border-bottom: 7px solid {{course.color}}">
+      <div class="cover" style="border-bottom: 7px solid {{course.color}}">
+        <img
+          src="https://scontent.fdel1-2.fna.fbcdn.net/v/t1.0-9/16142858_1840930636125271_6662086394327276901_n.jpg?oh=d430f2422e84552b2acd847b24988bc4&oe=5A1F94B7">
+      </div>
+      <div class="user">
+        <img class="img-circle" src="http://codingblocks.com/assets/images/cb/logosc/color_algo.svg">
+      </div>
+      <div class="content">
+        <div class="main">
+          <h3 class="name">{{course.title}}</h3>
+          <p class="subtitle">{{course.subtitle}}</p>
+          <div class="text-center">
+            <span class="review-star review-star--active">★</span>
+            <span class="review-star review-star--active">★</span>
+            <span class="review-star review-star--active">★</span>
+            <span class="review-star review-star--active">★</span>
+            <span class="review-star review-star--active">★</span>
+          </div>
+          <p class="price">₹{{course.price}}</p>
+        </div>
+        <div class="footer">
+          {{#link-to 'courses.preview' course.id}}
+            <button class="btn" style="background: {{course.color}}">View Course</button>
+          {{/link-to}}
+        </div>
+      </div>
+    </div> <!-- end front panel -->
+    <div class="back" style="border-bottom: 7px solid {{course.color}}">
+      <div class="cover" style="background: {{course.color}};border-bottom: 7px solid {{course.color}}"></div>
+      <div class="user">
+        <img class="img-circle" src="http://codingblocks.com/assets/images/cb/team/wprateek.jpg">
+      </div>
+      <div class="content">
+        <div class="main">
+          <h3 class="name">Prateek Narang</h3>
+          <p class="subtitle">Instructor</p>
+          <p class="bio">Passionate about teaching, Prateek is a CS graduate from DTU. He has previously worked with
+            SanDisk, HackerEarth. His interactive CV (www.prateeknarang.com) is also popular in 120+ countries.</p>
+        </div>
+        <div class="footer">
+          {{#link-to 'courses.preview' course.id}}
+            <button class="btn" style="background: {{course.color}}">View Course</button>
+          {{/link-to}}
+        </div>
+      </div>
+    </div> <!-- end back panel -->
+  </div> <!-- end card -->
+</div> <!-- end card-container -->
 {{yield}}
