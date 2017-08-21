@@ -51,7 +51,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <h2>Available Runs</h2>
+        <h2 class="heading-main" style="color:{{model.color}}">Available Runs</h2>
       </div>
       <div class="course-card-wrapper row">
         <div class="courses">
@@ -69,16 +69,20 @@
 
   <section>
     <div class="container">
-      <div class="row">
-        <h2>Course Contents</h2>
+      <div class="col-12">
+        <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
       </div>
-      <div class="row">
-        {{#each model.section as courseSection}}
-          <h1>Loop 1</h1>
-          {{#each courseSection.content as content}}
-            <h1>Loop 2</h1>
-            {{content.payload.name}}
-          {{/each}}
+      <div class="col-12 course-content">
+        {{#each model.sections as |section index|}}
+          <div class="row">
+            <h3>{{index}}) {{section.name}}</h3>
+          </div>
+          <div>
+            {{#each section.contents as |content index|}}
+              <h4>Loop {{index}}</h4>
+              {{content.payload.name}}
+            {{/each}}
+          </div>
         {{/each}}
       </div>
     </div>
