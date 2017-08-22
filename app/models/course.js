@@ -14,10 +14,11 @@ export default DS.Model.extend({
   ratingCount: DS.attr(),
   videosDuration: DS.attr(),
   type: DS.attr(),
+  color: DS.attr(),
+  backgroundImage: DS.attr(),
   video: DS.belongsTo('attachment'),
   image: DS.belongsTo('attachment'),
   runs: DS.hasMany('run'),
   sections: DS.hasMany('section'),
-  color: DS.attr(),
-  backgroundImage: DS.attr()
+  instructor: DS.belongsTo('instructor')
 })
