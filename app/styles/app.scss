@@ -118,6 +118,10 @@ body {
 .custom-btn {
   @include button(500, .875rem, #dc5a86, 1.875rem, nowrap, 32px, 32px);
   @include padding(0, 30px, 0, 30px);
+  &:hover, &:focus, &:active {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .custom-nav-link {
@@ -232,244 +236,242 @@ body {
 //}
 
 /* entire container, keeps perspective */
+
 .card-container {
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
   -o-perspective: 800px;
   perspective: 800px;
   margin-bottom: 30px;
-}
-
-/* flip the pane when hovered */
-.card-container:not(.manual-flip):hover .card,
-.card-container.hover.manual-flip .card {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-.card-container.static:hover .card,
-.card-container.static.hover .card {
-  -webkit-transform: none;
-  -moz-transform: none;
-  -o-transform: none;
-  transform: none;
-}
-
-/* flip speed goes here */
-.card {
-  -webkit-transition: -webkit-transform .5s;
-  -moz-transition: -moz-transform .5s;
-  -o-transition: -o-transform .5s;
-  transition: transform .5s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-/* hide back of pane during swap */
-.front, .back {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #FFF;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
-}
-
-/* front pane, placed above back */
-.front {
-  z-index: 2;
-}
-
-/* back, initially hidden pane */
-.back {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  z-index: 3;
-}
-
-.back .btn-simple {
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-}
-
-/*        Style       */
-
-.card {
-  background: none repeat scroll 0 0 #FFFFFF;
-  border-radius: 4px;
-  color: inherit;
-
-  .bio {
-    text-align: center;
-    height: 70px;
-    overflow: hidden;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-
-  button {
-    color: white;
-    font-weight: 300;
-    text-transform: capitalize;
-    cursor: pointer;
-  }
-}
-
-.card-container, .front, .back {
-  width: 100%;
   height: 420px;
-  border-radius: 4px;
-}
-
-.card .cover {
-  height: 105px;
-  overflow: hidden;
-  border-radius: 4px 4px 0 0;
-}
-
-.card .cover img {
-  width: 100%;
-}
-
-.card .user {
-  border-radius: 50%;
-  display: block;
-  height: 120px;
-  margin: -55px auto 0;
-  overflow: hidden;
-  width: 120px;
-  .img-circle {
-    border-radius: 50%;
+  /* flip the pane when hovered */
+  &:not(.manual-flip):hover, &.hover.manual-flip {
+    .card {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
   }
-}
 
-.card .user img {
-  background: none repeat scroll 0 0 #FFFFFF;
-  border: 4px solid #FFFFFF;
-  width: 100%;
-}
+  &.static.hover, &.static:hover {
+    .card {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -o-transform: none;
+      transform: none;
+    }
+  }
 
-.card .content {
-  background-color: rgba(0, 0, 0, 0);
-  box-shadow: none;
-  padding: 5px 20px 20px;
-}
+  .front, .back {
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+  }
 
-.card .content .main {
-  min-height: 160px;
-}
+  .card {
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    transition: transform .5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    color: inherit;
+    /* hide back of pane during swap */
+    .front, .back {
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #FFF;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+    }
 
-.card .back .content .main {
-  height: 160px;
-}
+    /* front pane, placed above back */
+    .front {
+      z-index: 2;
+    }
 
-.card .name {
-  height: 30px;
-  overflow: hidden;
-  font-size: 28px;
-  line-height: 28px;
-  margin: 5px 0 0;
-  text-align: center;
-  text-transform: capitalize;
-}
+    /* back, initially hidden pane */
+    .back {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      z-index: 3;
 
-.card h5 {
-  margin: 5px 0;
-  font-weight: 400;
-  line-height: 20px;
-}
+      .content {
+        .main {
+          height: 160px;
+        }
+      }
 
-.card .subtitle {
-  font-size: 20px;
-  height: 25px;
-  color: #999999;
-  text-align: center;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  overflow: hidden;
-}
+      .btn-simple {
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+      }
+    }
+    
+    .bio {
+      text-align: center;
+      height: 70px;
+      overflow: hidden;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
 
-.card .price {
-  font-size: 40px;
-  font-weight: 300;
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
+    button {
+      color: white;
+      font-weight: 300;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
 
-.card .footer {
-  //border-top: 1px solid #EEEEEE;
-  color: #999999;
-  margin: 10px 0 0;
-  padding: 0;
-  text-align: center;
-}
+    .cover {
+      height: 105px;
+      overflow: hidden;
+      border-radius: 4px 4px 0 0;
 
-.card .footer .social-links {
-  font-size: 18px;
-}
+      img {
+        width: 100%;
+      }
+    }
 
-.card .footer .social-links a {
-  margin: 0 7px;
-}
+    .user {
+      border-radius: 50%;
+      display: block;
+      height: 120px;
+      margin: -55px auto 0;
+      overflow: hidden;
+      width: 120px;
 
-.card .footer .btn-simple {
-  margin-top: -6px;
-}
+      .img-circle {
+        border-radius: 50%;
+      }
 
-.card .header {
-  padding: 15px 20px;
-  height: 90px;
-}
+      img {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 4px solid #FFFFFF;
+        width: 100%;
+      }
+    }
 
-.card .motto {
-  border-bottom: 1px solid #EEEEEE;
-  color: #999999;
-  font-size: 14px;
-  font-weight: 400;
-  padding-bottom: 10px;
-  text-align: center;
-}
+    .content {
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      padding: 5px 20px 20px;
 
-.card .stats-container {
-  width: 100%;
-  margin-top: 50px;
-}
+      .main {
+        min-height: 160px;
+      }
+    }
 
-.card .stats {
-  display: block;
-  float: left;
-  width: 33.333333%;
-  text-align: center;
-}
+    .name {
+      height: 30px;
+      overflow: hidden;
+      font-size: 28px;
+      line-height: 28px;
+      margin: 5px 0 0;
+      text-align: center;
+      text-transform: capitalize;
+    }
 
-.card .stats:first-child {
-  border-right: 1px solid #EEEEEE;
-}
+    h5 {
+      margin: 5px 0;
+      font-weight: 400;
+      line-height: 20px;
+    }
 
-.card .stats:last-child {
-  border-left: 1px solid #EEEEEE;
-}
+    .subtitle {
+      font-size: 20px;
+      height: 25px;
+      color: #999999;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
 
-.card .stats h4 {
-  font-weight: 300;
-  margin-bottom: 5px;
-}
+    .price {
+      font-size: 40px;
+      font-weight: 300;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
 
-.card .stats p {
-  color: #777777;
+    .footer {
+      color: #999999;
+      margin: 10px 0 0;
+      padding: 0;
+      text-align: center;
+
+      .social-links {
+        font-size: 18px;
+
+        a {
+          margin: 0 7px;
+        }
+      }
+
+      .btn-simple {
+        margin-top: -6px;
+      }
+    }
+
+    .header {
+      padding: 15px 20px;
+      height: 90px;
+    }
+
+    .motto {
+      border-bottom: 1px solid #EEEEEE;
+      color: #999999;
+      font-size: 14px;
+      font-weight: 400;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .stats-container {
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .stats {
+      display: block;
+      float: left;
+      width: 33.333333%;
+      text-align: center;
+
+      &:first-child {
+        border-right: 1px solid #EEEEEE;
+      }
+
+      &:last-child {
+        border-left: 1px solid #EEEEEE;
+      }
+
+      h4 {
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: #777777;
+      }
+    }
+  }
 }
 
 .card-deck {
@@ -480,6 +482,12 @@ body {
 .courses-section {
   margin-left: auto;
   margin-right: auto;
+
+}
+
+.all-courses-btn {
+  @include button(400, 16px, $pink, 1.1, normal, auto, 240px);
+  @include padding(15px, 30px, 15px, 30px);
 }
 
 .courses {
@@ -877,14 +885,6 @@ footer a:hover {
       }
     }
   }
-}
-
-.all-courses-btn {
-  @include button(null, null, blue, null, null, null, null);
-  width: 20%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 2%;
 }
 
 // review stars
