@@ -113,6 +113,7 @@ body {
   @include position(fixed);
   z-index: 10000;
   @include width-height(100%);
+  max-width: 100vw;
 }
 
 .custom-btn {
@@ -142,11 +143,12 @@ body {
 
 .children {
   height: 800px;
+  max-width: 100vw;
+  overflow-x: hidden;
   img {
     z-index: -2000;
-    @include width-height(100%, 800px);
+    @include width-height(100vw, 800px);
     @include position(fixed, null, 0, null, 0);
-
   }
 
   .p-gradient {
@@ -320,7 +322,7 @@ body {
         bottom: 4px;
       }
     }
-    
+
     .bio {
       text-align: center;
       height: 70px;
