@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       runId: this.modelFor('classroom.run').get('id'),
       contentId: contentId,
-      quiz: this.store.findRecord('quiz',params.quizId),
+      quiz: this.store.findRecord('quiz',params.quizId, {reload: true}),
       // getRunAttemptId from params of parent
       runAttemptId: runAttemptId,
       progress: this.store.queryRecord('progress', {
