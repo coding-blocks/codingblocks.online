@@ -16,5 +16,7 @@ export default Ember.Route.extend({
       this.transitionTo('classroom.run.attempt.content.lecture', model.get('lecture.id'))
     else if (model.get ('contentable') === 'code-challenge')
       this.transitionTo('classroom.run.attempt.content.code', model.get('code-challenge.id'))
+    else if (model.get ('contentable') === 'document')
+      this.transitionTo('classroom.run.attempt.content.document', model.get('document.id'))
   }
 });
