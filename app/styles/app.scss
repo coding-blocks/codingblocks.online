@@ -96,9 +96,16 @@ body {
   @include padding(20px, 10px, 20px, 10px);
 
   .heading-main {
-    color: white;
-    font-weight: 100;
-    @include margin(50px);
+    text-align: center;
+    font-weight: 200;
+    padding: 50px;
+    font-size: 38px !important;
+    margin-top: 0;
+    color: #d95787;
+    text-align: left;
+    font-size: 1.7em;
+    padding: 30px 30px 30px 0;
+    text-transform: capitalize;
   }
 }
 
@@ -106,11 +113,16 @@ body {
   @include position(fixed);
   z-index: 10000;
   @include width-height(100%);
+  max-width: 100vw;
 }
 
 .custom-btn {
   @include button(500, .875rem, #dc5a86, 1.875rem, nowrap, 32px, 32px);
   @include padding(0, 30px, 0, 30px);
+  &:hover, &:focus, &:active {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .custom-nav-link {
@@ -131,11 +143,12 @@ body {
 
 .children {
   height: 800px;
+  max-width: 100vw;
+  overflow-x: hidden;
   img {
     z-index: -2000;
-    @include width-height(100%, 800px);
+    @include width-height(100vw, 800px);
     @include position(fixed, null, 0, null, 0);
-
   }
 
   .p-gradient {
@@ -201,27 +214,266 @@ body {
 
 }
 
-.card {
-  @include margin(null, null, null, 40px);
-  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);;
-  .card-block {
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+//.card {
+//  @include margin(null, null, null, 40px);
+//  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);;
+//  .card-block {
+//    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+//
+//    .card-title {
+//      padding: 10px 15px;
+//      font-weight: 200;
+//      text-align: center;
+//    }
+//    .card-text {
+//      @include width-height(100%);
+//      box-sizing: border-box;
+//      font-weight: 700;
+//      padding: 20px 10px;
+//      text-align: center;
+//      top: 50%;
+//    }
+//  }
+//
+//}
 
-    .card-title {
-      padding: 10px 15px;
-      font-weight: 200;
-      text-align: center;
-    }
-    .card-text {
-      @include width-height(100%);
-      box-sizing: border-box;
-      font-weight: 700;
-      padding: 20px 10px;
-      text-align: center;
-      top: 50%;
+/* entire container, keeps perspective */
+
+.card-container {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  margin-bottom: 30px;
+  height: 420px;
+  /* flip the pane when hovered */
+  &:not(.manual-flip):hover, &.hover.manual-flip {
+    .card {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
     }
   }
 
+  &.static.hover, &.static:hover {
+    .card {
+      -webkit-transform: none;
+      -moz-transform: none;
+      -o-transform: none;
+      transform: none;
+    }
+  }
+
+  .front, .back {
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+  }
+
+  .card {
+    -webkit-transition: -webkit-transform .5s;
+    -moz-transition: -moz-transform .5s;
+    -o-transition: -o-transform .5s;
+    transition: transform .5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    color: inherit;
+    /* hide back of pane during swap */
+    .front, .back {
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #FFF;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+    }
+
+    /* front pane, placed above back */
+    .front {
+      z-index: 2;
+    }
+
+    /* back, initially hidden pane */
+    .back {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      z-index: 3;
+
+      .content {
+        .main {
+          height: 160px;
+        }
+      }
+
+      .btn-simple {
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+      }
+    }
+
+    .bio {
+      text-align: center;
+      height: 70px;
+      overflow: hidden;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    button {
+      color: white;
+      font-weight: 300;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+
+    .cover {
+      height: 105px;
+      overflow: hidden;
+      border-radius: 4px 4px 0 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .user {
+      border-radius: 50%;
+      display: block;
+      height: 120px;
+      margin: -55px auto 0;
+      overflow: hidden;
+      width: 120px;
+
+      .img-circle {
+        border-radius: 50%;
+      }
+
+      img {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 4px solid #FFFFFF;
+        width: 100%;
+      }
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      padding: 5px 20px 20px;
+
+      .main {
+        min-height: 160px;
+      }
+    }
+
+    .name {
+      height: 30px;
+      overflow: hidden;
+      font-size: 28px;
+      line-height: 28px;
+      margin: 5px 0 0;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    h5 {
+      margin: 5px 0;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      height: 25px;
+      color: #999999;
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: 300;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .footer {
+      color: #999999;
+      margin: 10px 0 0;
+      padding: 0;
+      text-align: center;
+
+      .social-links {
+        font-size: 18px;
+
+        a {
+          margin: 0 7px;
+        }
+      }
+
+      .btn-simple {
+        margin-top: -6px;
+      }
+    }
+
+    .header {
+      padding: 15px 20px;
+      height: 90px;
+    }
+
+    .motto {
+      border-bottom: 1px solid #EEEEEE;
+      color: #999999;
+      font-size: 14px;
+      font-weight: 400;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .stats-container {
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .stats {
+      display: block;
+      float: left;
+      width: 33.333333%;
+      text-align: center;
+
+      &:first-child {
+        border-right: 1px solid #EEEEEE;
+      }
+
+      &:last-child {
+        border-left: 1px solid #EEEEEE;
+      }
+
+      h4 {
+        font-weight: 300;
+        margin-bottom: 5px;
+      }
+
+      p {
+        color: #777777;
+      }
+    }
+  }
 }
 
 .card-deck {
@@ -229,6 +481,17 @@ body {
 }
 
 // Styles for Course Page
+.courses-section {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.all-courses-btn {
+  @include button(400, 16px, $pink, 1.1, normal, auto, 240px);
+  @include padding(15px, 30px, 15px, 30px);
+}
+
 .courses {
 
   .heading-main {
@@ -626,10 +889,14 @@ footer a:hover {
   }
 }
 
-.all-courses-btn {
-	@include button(null,null,blue,null,null,null,null); 
-	width:20%;
-	display:block;
-	margin:0 auto;
-	margin-top: 2%;
+// review stars
+
+.review-star {
+  color: #B6C2CC;
+  font-size: 18px;
+}
+
+.review-star--active {
+  color: #FFD700;
+  font-size: 18px;
 }

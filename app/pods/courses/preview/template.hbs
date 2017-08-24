@@ -1,66 +1,91 @@
 <div class="course-preview">
-  <div class="color-line" style="background:{{model.color}}"></div>
-  <div class="background-image">
-    <div class="row">
-      <div class="course-title col-xs-12 col-sm-12 col-md-6 col-lg-6" style="color:{{model.color}}">
-        <div class="row title">
-          <div class=" title-wrap">
-            <h1 class="display-4">
-              {{model.title}}
-            </h1>
+  <section>
+    <div class="color-line" style="background:{{model.color}}"></div>
+    <div class="background-image">
+      <div class="row">
+        <div class="course-title col-xs-12 col-sm-12 col-md-6 col-lg-6" style="color:{{model.color}}">
+          <div class="row title">
+            <div class=" title-wrap">
+              <h1 class="display-4">
+                {{model.title}}
+              </h1>
+            </div>
+            <h3 class="subtitle">
+              {{model.subtitle}}
+            </h3>
           </div>
-          <h3 class="subtitle">
-            {{model.subtitle}}
-          </h3>
+        </div>
+        <div class="sample-video-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="row">
+            <div class="col-md-4 col-xs-4 offset-xs-4 video-button justify-content-center">
+              <img src="/images/play-video.png" alt="play-video button" data-toggle="modal" data-target="#exampleModal">
+            </div>
+            <div class="col-md-8 hidden-sm-down display-4">
+              <p> Sample Video</p>
+            </div>
+          </div>
+          <div class="enroll-row row col-12">
+            <div class="enroll-wrap col-xs-12 col-sm-12 offset-md-4 col-md-8 ">
+              <button class="enroll-btn" style="background:{{model.color}}; border: {{model.color}}">Enroll</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="sample-video-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="row">
-          <div class="col-md-4 col-xs-4 offset-xs-4 video-button justify-content-center">
-            <img src="/images/play-video.png" alt="play-video button" data-toggle="modal" data-target="#exampleModal">
-          </div>
-          <div class="col-md-8 hidden-sm-down display-4">
-            <p> Sample Video</p>
-          </div>
-        </div>
-        <div class="enroll-row row col-12">
-          <div class="enroll-wrap col-xs-12 col-sm-12 offset-md-4 col-md-8 ">
-            <button class="enroll-btn" style="background:{{model.color}}; border: {{model.color}}">Enroll</button>
+
+    </div>
+
+    <!-- Button trigger modal -->
+    <div class="modal" id="exampleModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!--TODO: put video's preview URL here. Hardcode for now.-->
+            <iframe class="iframe-video" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0"
+                    allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-
-  <!-- Button trigger modal -->
-  <div class="modal" id="exampleModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <!--TODO: put video's preview URL here. Hardcode for now.-->
-          <iframe class="iframe-video" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0"
-                  allowfullscreen></iframe>
+  <section>
+    <div class="container">
+      <div class="row">
+        <h2 class="heading-main" style="color:{{model.color}}">Available Runs</h2>
+      </div>
+      <div class="course-card-wrapper row">
+        <div class="courses">
+          <div class="course-cards">
+            <div class="flex-model row">
+              {{#each  model.runs as |run index|}}
+                {{preview-component run=run index=index course=model class="ember-card"}}
+              {{/each}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-
-  <div class="row">
-    <p class="h4">Available Runs</p>
-  </div>
-
-  <div class="course-card-wrapper row">
-    <div class="courses">
-      <div class="course-cards">
-        <div class="flex-model row">
-          {{#each  model.runs as |run index|}}
-            {{preview-component run=run index=index course=model class="ember-card"}}
-
-          {{/each}}
-        </div>
+  <section>
+    <div class="container">
+      <div class="col-12">
+        <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
+      </div>
+      <div class="col-12 course-content">
+        {{#each model.sections as |section index|}}
+          <div class="row">
+            <h3>{{index}}) {{section.name}}</h3>
+          </div>
+          <div>
+            {{#each section.contents as |content index|}}
+              <h4>Loop {{index}}</h4>
+              {{content.payload.name}}
+            {{/each}}
+          </div>
+        {{/each}}
       </div>
     </div>
-  </div>
+  </section>
+
 </div>

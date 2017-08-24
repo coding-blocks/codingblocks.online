@@ -1,6 +1,5 @@
 <div class="ui masthead vertical segment">
   <div class="ui container">
-
   </div>
 </div>
 <div class="course-card-wrapper">
@@ -9,13 +8,11 @@
     <ul class="course-cards justify-content-center">
       <div class="row">
         {{#each model as |course|}}
-
           <li class="course-container col-xs-12 col-sm-6  col-md-4 col-lg-4">
             {{#link-to 'courses.preview' course.id }}
               {{course-card course=course}}
             {{/link-to}}
           </li>
-
         {{/each}}
       </div>
     </ul>
