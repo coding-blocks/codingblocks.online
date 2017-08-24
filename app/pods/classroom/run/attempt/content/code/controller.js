@@ -15,5 +15,6 @@ export default Ember.Controller.extend({
       json: true
     })
     this.transitionToRoute('classroom.run.attempt.content.code', codeChallengeId)
+    return res
   })
 });

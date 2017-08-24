@@ -11,6 +11,7 @@ export default Ember.Component.extend({
   customInput: '',
   theme: 'ace/theme/chaos',
   runOutput: null,
+  submitOutput:null,
   editor: null,
   editorMode: Ember.computed('lang', function () {
     ace.require("ace/src/snippets");
@@ -46,7 +47,7 @@ export default Ember.Component.extend({
         wait: true
       },
       headers: {
-        'Access-Token': '79f3c2f8301fc60565de003f4ac76a1d4e5242cb0836995ec2bd28fd083ce86f'
+        'Access-Token': '79f3c2f8301fc60565de003f4ac76a1d4e5242cb0836995ec2bd28fd083ce86g'
       }
     }).catch(err=>{
       this.get('notify').alert('Some error occurred.Please try again later');
@@ -95,7 +96,15 @@ export default Ember.Component.extend({
       const code = window.btoa(this.get('editor').getSession().getValue()),
         lang = this.get('lang')
 
-      this.get('onSubmitTask').perform({code, lang})
+      this.get('onSubmitTask').perform({code, lang}).then(res => {
+	      if(res.result =="compile_error") {
+		      res.data = window.atob(res.error);
+	      }
+	      else if(res.result == "success") {
+		      res.data = res.data.testcases
+	      }
+	      this.set("submitOutput",res);
+      })
     }
   }
 });

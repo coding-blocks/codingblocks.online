@@ -33,6 +33,22 @@
 </div>
 {{/if}}
 
+{{#if submitOutput}}
+<div class="card">
+    <div class="card-block">
+        <h5 class="card-title">Output</h5>
+      <pre>{{submitOutput.result}}</pre>
+      {{#if (eq submitOutput.result "compile_error")}}
+          <pre>{{submitOutput.data}}</pre>
+      {{else}}
+         {{#each submitOutput.data as |testcase_result index|}}
+            <pre>Testcase #{{index}} {{testcase_result.result}}</pre>
+         {{/each}}
+      {{/if}}  
+    </div>
+</div>
+{{/if}}
+
 <div class="btn-group" style="margin: 10px">
     {{#if runCodeTask.isRunning}}
         <button class="btn btn-primary disabled">Running...</button>
