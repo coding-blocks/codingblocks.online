@@ -26,8 +26,8 @@ export default Ember.Service.extend({
     var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
     var navbar = Ember.$('.custom-nav');
     var navLink = Ember.$('.custom-nav-link');
-    if (Ember.$('.img-main').offset() != null) {
-      var mainSection = Ember.$('.img-main').offset().top;
+    if (Ember.$('#main-start').offset() != null) {
+      var mainSection = Ember.$('#main-start').offset().top;
 
       if (top >= (mainSection - 54) )  {
         navbar.removeClass('nav-transparent').addClass('nav-white');
