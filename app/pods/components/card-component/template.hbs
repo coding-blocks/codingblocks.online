@@ -31,14 +31,13 @@
     <div class="back" style="border-bottom: 7px solid {{course.color}}">
       <div class="cover" style="background: {{course.color}};border-bottom: 7px solid {{course.color}}"></div>
       <div class="user">
-        <img class="img-circle" src="http://codingblocks.com/assets/images/cb/team/wprateek.jpg">
+        <img class="img-circle" src="{{course.instructor.photo}}">
       </div>
       <div class="content">
         <div class="main">
-          <h3 class="name">Prateek Narang</h3>
+          <h3 class="name">{{course.instructor.name}}</h3>
           <p class="subtitle">Instructor</p>
-          <p class="bio">Passionate about teaching, Prateek is a CS graduate from DTU. He has previously worked with
-            SanDisk, HackerEarth. His interactive CV (www.prateeknarang.com) is also popular in 120+ countries.</p>
+          <p class="bio">{{course.instructor.description}}</p>
         </div>
         <div class="footer">
           {{#link-to 'courses.preview' course.id}}

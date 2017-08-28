@@ -28,6 +28,23 @@ body {
   font-family: 'Assistant', sans-serif;
 }
 
+section {
+  @include padding(40px, null, 40px, null);
+
+  .heading-main {
+    @include section-heading;
+  }
+
+  .horizontal-img-main {
+    @include margin(140px);
+
+  }
+
+  hr {
+    @include end-line;
+  }
+}
+
 %gradient {
   @include width-height(30%, 800px);
   @include position(absolute);
@@ -193,25 +210,9 @@ body {
   box-shadow: none;
 }
 
-.img-main {
+.bg-secondary {
 
-  background: url('http://designova.net/themes/wordpress/live9/wp-content/uploads/2013/05/bg01.jpg') 0px -336.329px repeat-y #f2f2f2;
-
-  padding-bottom: 188px;
-
-  .heading-main {
-    @include section-heading;
-  }
-
-  .horizontal-img-main {
-    @include margin(140px);
-
-  }
-
-  hr {
-    @include end-line;
-  }
-
+  background: #f2f2f2;
 }
 
 //.card {
@@ -596,6 +597,10 @@ body {
   .color-line {
     @include width-height(null, 10px);
     @include margin(5px, null, null, null);
+  }
+
+  section {
+    padding-top: 0;
   }
 
   .course-container {
