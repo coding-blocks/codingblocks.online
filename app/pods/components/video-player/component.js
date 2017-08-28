@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  playbackRate:1,
   didInsertElement() {
     this._super(...arguments)
     const video = this.$('#video')[0]
@@ -31,5 +32,15 @@ export default Ember.Component.extend({
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play()
     })
+  },
+  actions:{
+     changeSpeed(val){
+         const rate = this.get('playbackRate')+val;
+         const video = this.$('#video')[0];
+         if(rate<=3 && rate>=0.5){
+     	   video.playbackRate = rate;
+	   this.set('playbackRate',rate);
+         }
+     }
   }
 });
