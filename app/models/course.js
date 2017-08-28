@@ -7,11 +7,7 @@ export default DS.Model.extend({
   summary: DS.attr(),
   fees: DS.attr(),
   price: Ember.computed('fees', function () {
-    let price = this.get('fees');
-    let pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(price))
-      price = price.replace(pattern, "$1,$2");
-    return price;
+    return this.get('fees').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }),
   popularity: DS.attr(),
   hoursPerDay: DS.attr(),
