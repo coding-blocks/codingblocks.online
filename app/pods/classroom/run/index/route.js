@@ -5,7 +5,21 @@ export default Ember.Route.extend({
     return this.modelFor('classroom.run')
   },
   setupController (controller, model) {
-    controller.set('run', model)
+    controller.set('run', model);
     controller.set('course', model.get('course'));
+    let sections = model.get('course.sections');
+    let breakFlag = false;
+    for (let i = 0; i < sections.get('length'); ++i) {
+      let section = sections.objectAt(i);
+      for (let j = 0; j < section.get('contents.length'); ++j) {
+        let content = section.get('contents').objectAt(j);
+        if (content.get('progress').content == null) {
+          controller.set('contentToResume', content.id);
+          breakFlag = true;
+          break;
+        }
+      }
+      if (breakFlag) break;
+    }
   }
 });
