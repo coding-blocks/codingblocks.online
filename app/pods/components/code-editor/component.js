@@ -1,18 +1,21 @@
 import Ember from 'ember';
 import {task, timeout} from 'ember-concurrency';
+import getSnippet from '../../../utils/get-snippet';
 
 export default Ember.Component.extend({
   ajax: Ember.inject.service(),
   api: Ember.inject.service(),
   notify: Ember.inject.service('notify'),
   lang: 'c',
+  onceEdit: false,
   customInput: '',
   theme: 'ace/theme/chaos',
   runOutput: null,
+  submitOutput:null,
   editor: null,
   editorMode: Ember.computed('lang', function () {
+    ace.require("ace/src/snippets");
     const lang = this.get('lang')
-    console.log(lang)
     if (['c','cpp'].includes(lang) )
       return `ace/mode/c_cpp`
     else if (lang === 'js')
@@ -44,7 +47,7 @@ export default Ember.Component.extend({
         wait: true
       },
       headers: {
-        'Access-Token': '79f3c2f8301fc60565de003f4ac76a1d4e5242cb0836995ec2bd28fd083ce86f'
+        'Access-Token': '79f3c2f8301fc60565de003f4ac76a1d4e5242cb0836995ec2bd28fd083ce86g'
       }
     }).catch(err=>{
       this.get('notify').alert('Some error occurred.Please try again later');
@@ -64,6 +67,10 @@ export default Ember.Component.extend({
     ace.config.set('basePath', '/assets/ace');
     this._super(...arguments);
     let editor = ace.edit("editor");
+    let self = this;
+    editor.textInput.getElement().onkeyup = function (event) {
+	   self.set("onceEdit",true);
+    }; 
     //editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/c_cpp");
     editor.setOptions({
@@ -71,7 +78,7 @@ export default Ember.Component.extend({
       enableSnippets: true,
       enableLiveAutocompletion: true
     });
-
+    editor.session.setValue(getSnippet('c'));
     this.set('editor', editor)
   },
   actions: {
@@ -79,6 +86,8 @@ export default Ember.Component.extend({
       this.set('lang', newLang)
       const editor = this.get('editor')
       editor.session.setMode(this.get('editorMode'))
+      if(this.get("onceEdit") == false)
+          editor.session.setValue(getSnippet(this.get('lang')));
     },
     runCode () {
       this.get('runCodeTask').perform()
@@ -87,7 +96,15 @@ export default Ember.Component.extend({
       const code = window.btoa(this.get('editor').getSession().getValue()),
         lang = this.get('lang')
 
-      this.get('onSubmitTask').perform({code, lang})
+      this.get('onSubmitTask').perform({code, lang}).then(res => {
+	      if(res.result =="compile_error") {
+		      res.data = window.atob(res.error);
+	      }
+	      else if(res.result == "success") {
+		      res.data = res.data.testcases
+	      }
+	      this.set("submitOutput",res);
+      })
     }
   }
 });

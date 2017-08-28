@@ -22,6 +22,7 @@ Router.map(function() {
           });
           this.route('lecture', {path: 'lecture/:lectureId'});
           this.route('code', {path: 'code/:codeId'});
+          this.route('document', {path: 'doc/:documentId'});
         })
 
         this.route('progress', function() {});

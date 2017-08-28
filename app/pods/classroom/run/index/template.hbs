@@ -1,2 +1,11 @@
-<h1>TODO: List the current status of the user's course</h1>
-{{#link-to 'classroom.run.attempt' class="btn"}}Resume{{/link-to}}
+<h1>Index</h1>
+{{#link-to 'classroom.run.attempt' class="btn btn-success"}}Resume{{/link-to}}
+
+{{#each course.sections as |section sIndex| }}
+  <hr>
+  <ul>
+    {{#each section.contents as |content cIndex| }}
+      <li>{{content.payload.name}} {{#if content.progress}} <strong>ATTEMPTED</strong>{{/if}}</li>
+    {{/each}}
+  </ul>
+{{/each}}
