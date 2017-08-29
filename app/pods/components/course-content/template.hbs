@@ -1,0 +1,10 @@
+<div class="card-container manual-flip content-container">
+  <div class="card" style="border-bottom: 7px solid {{course.color}}">
+    <h3 class="name">{{section.name}}</h3>
+    <div class="sub-topic">
+      {{#each contents as |content index|}}
+        <p>{{content.payload.name}}</p>
+      {{/each}}
+    </div>
+  </div>
+</div>
