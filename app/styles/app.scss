@@ -110,9 +110,8 @@ section {
 }
 
 .main-wrapper-raised {
-  margin: -120px 30px 0px;
+  margin: 20px 30px 0px;
   border-radius: 6px;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .main-wrapper {
@@ -179,6 +178,7 @@ section {
   height: 90vh;
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
 
   background: url("http://futuremaker.in/wp-content/uploads/2017/03/Kickassd-Educational-Program.jpg") #FFFFFF;
   img {
@@ -213,7 +213,7 @@ section {
     z-index: 0;
     opacity: .9;
     @include position(absolute);
-    @include width-height(100%,80vh);
+    @include width-height(100%,90vh);
     transform-origin: left bottom;
     left: 30%;
 
