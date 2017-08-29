@@ -1,12 +1,23 @@
-<section class="bg-secondary">
-  <div class="container-fluid">
-    <h2 class="heading-main">Courses</h2>
-    <hr class="text">
-    <div class="courses-section row container">
-      {{#each model as |course|}}
-        {{card-component course=course class="col-xs-12 col-sm-6 col-md-4 col-lg-4"}}
-      {{/each}}
+<div class="header">
+  <div class="color-line"></div>
+  <section>
+    <div class="heading">
+      <h1>Code your way to Success!</h1>
     </div>
-  </div>
-</section>
+  </section>
+</div>
+
+<div class="main-wrapper main-wrapper-raised">
+  <section>
+    <div class="container-fluid">
+      <h2 class="heading-main">Courses</h2>
+      <hr class="text">
+      <div class="courses-section row container">
+        {{#each model as |course|}}
+          {{card-component course=course class="col-xs-12 col-sm-6 col-md-4 col-lg-4"}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</div>
 {{outlet}}

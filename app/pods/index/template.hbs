@@ -1,6 +1,4 @@
 <div class="children">
-  <img class="bg-image" src="http://futuremaker.in/wp-content/uploads/2017/03/Kickassd-Educational-Program.jpg"
-       alt="program-img">
   <div class="p-gradient">
     <div class="bg-text">
       <span>Unique</span>
@@ -13,18 +11,21 @@
   </div>
   <div class="cb-gradient"></div>
 </div>
-<section id="main-start" class="bg-secondary">
-  <div class="container-fluid">
 
-    <h2 class="heading-main">Recommended Courses</h2>
-    <hr class="text">
-    <div class="courses-section row container">
-      {{#each model.recommendedCourses as |course|}}
-        {{card-component course=course class="col-xs-12 col-sm-6 col-md-4 col-lg-4"}}
-      {{/each}}
+<div id="main-start" class=" main-wrapper main-wrapper-raised">
+  <section>
+    <div class="container-fluid">
+
+      <h2 class="heading-main">Recommended Courses</h2>
+      <hr class="text">
+      <div class="courses-section row container">
+        {{#each model.recommendedCourses as |course|}}
+          {{card-component course=course class="col-xs-12 col-sm-6 col-md-4 col-lg-4"}}
+        {{/each}}
+      </div>
+      <div class="container justify-content-center text-center">
+        {{#link-to 'courses' class='all-courses-btn' tagName='button'}}View All Courses{{/link-to}}
+      </div>
     </div>
-    <div class="container justify-content-center text-center">
-      {{#link-to 'courses' class='all-courses-btn' tagName='button'}}View All Courses{{/link-to}}
-    </div>
-  </div>
-</section>
+  </section>
+</div>

@@ -46,6 +46,23 @@
       </div>
     </div>
   </section>
+</div>
+
+
+<div class="main-wrapper main-wrapper-raised">
+  <section>
+    <div class="container-fluid">
+      <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
+      <hr class="text">
+
+      <div class="flex-model row">
+        {{#each model.sections as |section index|}}
+          {{course-content  section=section contents=section.contents course=model index=index
+                            class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ember-card"}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
 
   <section id="runs">
     <div class="container">
@@ -65,25 +82,4 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="container">
-      <div class="col-12">
-        <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
-      </div>
-      <div class="col-12 course-content">
-        {{#each model.sections as |section index|}}
-          <div class="row">
-            <h3>{{index}}) {{section.name}}</h3>
-          </div>
-          <div>
-            {{#each section.contents as |content index|}}
-              <h4>Loop {{index}}</h4>
-              {{content.payload.name}}
-            {{/each}}
-          </div>
-        {{/each}}
-      </div>
-    </div>
-  </section>
-
 </div>
