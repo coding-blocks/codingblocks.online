@@ -8,6 +8,15 @@ export default Ember.Route.extend({
     controller.set('run', model);
     controller.set('course', model.get('course'));
     let sections = model.get('course.sections');
+
+    sections.find( section => {
+      const contentToResume = section.get('contents').find( content => {
+        return content.get('progress').content === null
+      })
+      if (contentToResume)
+        return controller.set('contentToResume', contentToResume.id)
+    })
+    /*
     let breakFlag = false;
     for (let i = 0; i < sections.get('length'); ++i) {
       let section = sections.objectAt(i);
@@ -21,5 +30,6 @@ export default Ember.Route.extend({
       }
       if (breakFlag) break;
     }
+    */
   }
 });
