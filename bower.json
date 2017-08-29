@@ -16,7 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "ace-builds": "^1.2.8",
-    "plyr": "^2.0.13"
+    "ace-builds": "^1.2.8"
   }
 }
