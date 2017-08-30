@@ -2,5 +2,6 @@
 {{outlet}}
 {{!-- require to show notifications --}}
 {{ember-notify closeAfter=4000 messageStyle='bootstrap'}}
-
-{{#foot-er}}{{/foot-er}}
+{{#if (not (starts-with routing.currentRouteName 'classroom.run.attempt.content')) }}
+  {{#foot-er}}{{/foot-er}}
+{{/if}}

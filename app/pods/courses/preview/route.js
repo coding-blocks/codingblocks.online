@@ -7,6 +7,9 @@ export default Ember.Route.extend({
   },
   setupController(controller, model) {
     this._super(controller, model);
-    controller.set('user', this.get('current-user').get('user'));
+    //FIXME: .getUSer() doesn't work for some reason. Needs to be fixed. Calling load() creates an extra http request.
+    this.get('current-user').load().then(user => {
+      controller.set('user', user);
+    });
   }
 });
