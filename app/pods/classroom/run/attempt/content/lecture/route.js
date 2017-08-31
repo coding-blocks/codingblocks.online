@@ -22,5 +22,16 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     controller.set('lecture', model.lecture)
     controller.set('awsData', model.awsData)
+  },
+  afterModel () {
+    // make this content attempted
+    return this.get('api').request('/progresses',{
+      method: 'POST',
+      data: {
+        contentId: this.paramsFor('classroom.run.attempt.content').contentId,
+        runAttemptId: this.paramsFor('classroom.run').runAttemptId,
+        status: 'ATTEMPTED'
+      }
+    })
   }
 });
