@@ -8,9 +8,15 @@
     </div>
     <div class="just-padding">
       <div class="list-group list-group-root well">
-        {{#each sections as |section| }}
-          <a href="#" class="list-group-item">{{section.name}}</a>
-          <div class="list-group-child">
+        {{#each sections as |section index| }}
+          <div class="content-toggle" data-toggle="collapse" data-target="#{{index}}" >
+             <a href="#" class="list-group-item">{{section.name}}
+             </a>
+             <i  class="icon-chevron-down" aria-hidden="true"></i>
+          </div>
+
+
+          <div id={{index}} class="collapse list-group-child">
             {{#each section.contents as |content| }}
               {{#link-to 'classroom.run.attempt.content' content.id class="list-group-child"}}{{content.payload.name}}{{/link-to}}
             {{/each}}
