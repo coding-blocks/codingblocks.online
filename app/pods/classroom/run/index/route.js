@@ -10,11 +10,12 @@ export default Ember.Route.extend({
     let sections = model.get('course.sections');
 
     sections.find( section => {
-      const contentToResume = section.get('contents').find( content => {
+      const contentToResume = section.get('contents').find(content => {
         return content.get('progress').content === null
       })
       if (contentToResume)
         return controller.set('contentToResume', contentToResume.id)
+      //TODO: We probably need an else condition here
     })
     /*
     let breakFlag = false;

@@ -7,11 +7,12 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   currentUser: Ember.inject.service('current-user'),
   model () {
-    const course = this.modelFor('classroom.run').get('course');
+    const run = this.modelFor('classroom.run');
+    const course = run.get('course');
     return Ember.RSVP.hash({
       course,
       //TODO: Remove this call. sections are already present inside course.
-      sections: this.store.query('section', {courseId: course.get('id')})
+      sections: this.store.query('section', {courseId: course.get('id'), runId: run.id})
     })
   },
   setupController(controller, model) {
