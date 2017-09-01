@@ -16,6 +16,11 @@
             {{/each}}
           </div>
         {{/each}}
+        {{#if (not-eq sections.length course.sections.length)}}
+          <div class="alert alert-warning" role="alert">
+            Please buy the course to unlock further.
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>

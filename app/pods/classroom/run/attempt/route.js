@@ -11,7 +11,6 @@ export default Ember.Route.extend({
     const course = run.get('course');
     return Ember.RSVP.hash({
       course,
-      //TODO: Remove this call. sections are already present inside course.
       sections: this.store.query('section', {courseId: course.get('id'), runId: run.id})
     })
   },
