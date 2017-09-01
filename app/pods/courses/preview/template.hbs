@@ -74,7 +74,7 @@
           <div class="course-cards">
             <div class="flex-model row">
               {{#each  model.runs as |run index|}}
-                {{preview-component run=run index=index course=model class="ember-card"}}
+                {{preview-component run=run index=index course=model user=user transition=(action 'transitionTo') class="ember-card"}}
               {{/each}}
             </div>
           </div>
