@@ -995,20 +995,61 @@ footer a:hover {
   font-size: 18px;
 }
 
-.video-container {
-  width: 75vw;
-  height: 60vw;
-  @include width-height(75vw,60vw);
-  @include position(fixed);
-  @include padding(null,null,120px,null);
-  z-index: 1000;
-  left: 0;
+.video-section {
+  background-color: #363636;
+  .video-container {
+    width: 75vw;
+    height: 60vw;
+    @include width-height(75vw,60vw);
+    @include position(fixed);
+    @include padding(null,null,20px,null);
+    z-index: 1000;
+    left: 0;
     video {
       height: 100%;
       background: #222222;
-      padding: 0;
+      padding: 55px;
     }
+
+    .section-heading {
+      position: absolute;
+      top: 60px;
+      padding: 10px;
+      min-height: 100px;
+      color: white;
+      width: 100%;
+      font-size: 35px;
+      background: linear-gradient(180deg,rgba(0,0,0,.8) 0,transparent);
+      display: none;
+      padding-left: 10px;
+
+         p {
+           min-width: 95%;
+         }
+        .toggle-button {
+          background: transparent;
+          color: white;
+          border: none;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+
+          &:hover {
+            color: #d95787;
+         }
+
+      }
+    }
+
+
+    &:hover {
+      .section-heading {
+        display: flex;
+      }
+    }
+  }
 }
+
 
 .sections {
   color: #dc5a86;
