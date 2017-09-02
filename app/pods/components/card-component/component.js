@@ -16,7 +16,7 @@ export default Ember.Component.extend({
       }
     }
 
-    $(window).scroll(setBackground);
+    //$(window).scroll(setBackground);
   },
   actions: {
     login() {

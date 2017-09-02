@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   playbackRate:1,
+  toggle: true,
   didInsertElement() {
     this._super(...arguments)
     const video = this.$('#video')[0]
@@ -18,7 +19,7 @@ export default Ember.Component.extend({
             "Signature": awsData.signature,
             "Policy": awsData.policyString
           })
-          console.log(url, encoded)
+          console.log(url, encoded);
           xhr.open('GET', `${url}?${encoded}`, true)
         } catch(e) {
           console.error(e)
@@ -33,14 +34,45 @@ export default Ember.Component.extend({
       video.play()
     })
   },
+  hidePlaylist(playlist,video) {
+    playlist.css({transform: 'translateX(1800px)',
+      transition: '.5s'
+    });
+    video.css({width: '100vw',
+      transition: '.4s'}
+    );
+  },
+  showPlaylist(playlist,video) {
+    playlist.css({transform: 'translateX(0px)',
+      transition: '.5s'
+    });
+    video.css({width: '75vw',
+               transition: '.5s'}
+             );
+  },
   actions:{
      changeSpeed(val){
          const rate = this.get('playbackRate')+val;
          const video = this.$('#video')[0];
          if(rate<=3 && rate>=0.5){
-     	   video.playbackRate = rate;
-	   this.set('playbackRate',rate);
+     	    video.playbackRate = rate;
+	        this.set('playbackRate',rate);
          }
-     }
+     },
+    togglePlaylist() {
+       console.log("main");
+       const playlist = Ember.$('.sections');
+       const video    = Ember.$('.video-container');
+
+       if(this.toggle) {
+         this.hidePlaylist(playlist,video);
+       }
+       else {
+         this.showPlaylist(playlist,video);
+       }
+      console.log(this.toggle);
+       this.toggle = !this.toggle;
+    }
+
   }
 });
