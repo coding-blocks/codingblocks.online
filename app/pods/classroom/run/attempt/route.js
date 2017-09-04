@@ -11,11 +11,17 @@ export default Ember.Route.extend({
     const course = run.get('course');
     return Ember.RSVP.hash({
       course,
-      sections: this.store.query('section', {courseId: course.get('id'), runId: run.id})
+      sections: this.store.query('section', {courseId: course.get('id'), runId: run.id}),
+      run
     })
   },
   setupController(controller, model) {
     controller.set('course', model.course);
     controller.set('sections', model.sections);
+    controller.set('run', model.run);
+    this.get('currentUser').getUser().then(user => {
+      console.log(user);
+      controller.set('user', user);
+    });
   }
 });
