@@ -35,6 +35,7 @@ module.exports = function(environment) {
       crossOriginWhitelist:[ '*' ]
     },
     ENV.publicUrl = 'http://localhost:4200';
+    ENV.clientId = 7642172843
   }
 
   if (environment === 'test') {
@@ -51,6 +52,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.publicUrl = 'http://online.codingblocks.com';
     ENV.apiEndpoint = 'http://api-online.cb.lk';
+    ENV.clientId = 9011721314
   }
 
   return ENV;
