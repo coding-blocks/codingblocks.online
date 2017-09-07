@@ -1,11 +1,6 @@
 <div class = "video-container">
    <video id="video"class="w-100" controls></video>
-   <div class="section-heading">
-      <p>Course Title</p>
-      <button  class="toggle-button" type="toggleplaylist" {{action 'togglePlaylist' }}>
-       <i class="fa fa-bars" aria-hidden="true"></i>
-      </button>
-   </div>
+   {{toggle-component}}
    <div class="video-controls col-sm-12 offset-sm-5">
       <button type="video-fast-fwd" {{action 'changeSpeed' -0.5}} id="video-fbwd"><i class="icon-fast-backward"></i></button>
       <label id="playback-speed">{{playbackRate}}X</label>

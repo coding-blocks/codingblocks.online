@@ -1000,6 +1000,12 @@ footer a:hover {
       padding: 55px;
     }
 
+    .video-padding {
+      @include padding(null,null,93px,null);
+      @include margin(53px,null,null,null);
+      @include width-height(100%, 100%)
+    }
+
     .section-heading {
       position: absolute;
       top: 60px;
