@@ -16,6 +16,13 @@ $majenta: #d95787;
   outline: none !important;
 }
 
+a {
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
 html {
   @include width-height(100%, 100%);
 }
@@ -131,8 +138,42 @@ section {
 .custom-btn {
   @include button(500, .875rem, #dc5a86, 1.875rem, nowrap, 32px, 32px);
   @include padding(0, 30px, 0, 30px);
-  &:hover, &:focus, &:active {
+  &::before {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    position:absolute;
+    top:0;
+    left:50%;
+    right:50%;
+    bottom:0;
+    opacity:0;
+    content:'';
+    width: 0;
+    background-color: white;
+    z-index:-2;
+    cursor: pointer;
+  }
+   &:hover {
+     &::before {
+       transition: 0.5s all ease;
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       opacity: 1;
+       content: '';
+       width: 100%;
+       background-color: rgba(23, 22, 22, 0.17);;
+       z-index: 200;
+       color: white;
+     }
+   }
+   &:focus, &:active {
+
     color: white;
+    opacity: .8;
+    transition: .5s;
     text-decoration: none;
   }
 }
@@ -990,8 +1031,9 @@ footer a:hover {
 
   .quiz-container {
     background-color: white;
-    .button-container {
-      padding-bottom: 30px;
+    border-bottom: none;
+    .content-buttons {
+      padding-left: 40px;
     }
   }
 
@@ -1056,11 +1098,13 @@ footer a:hover {
   .full-width {
     background-color: #ffffff;
     margin-top: 70px;
+    border-bottom: none;
 
     .content {
       min-height: 80vh;
       border: 1px solid rgba(54, 54, 54, 0.1);
       margin: 40px;
+      margin-bottom: 20px;
       border-radius: 4px;
       padding: 40px;
       max-height: 236px;
@@ -1073,6 +1117,8 @@ footer a:hover {
         padding-bottom: 4px;
         font-size: 20px;
       }
+
+
       .header {
         font-size: 25px;
       }
