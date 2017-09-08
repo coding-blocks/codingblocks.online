@@ -11,7 +11,7 @@
   {{/link-to}}
 
 {{else}}
-
+<div class="quiz-container">
   {{question-view question=question questionSerialNumber=q}}
 
   {{#if nextQuestion}}
@@ -23,6 +23,8 @@
   {{/if}}
 
   <button class="ui primary button" style="margin: 10px 0px" {{action 'submitQuiz'}}>
-      Submit Quiz
+    Submit Quiz
   </button>
+</div>
+
 {{/if}}

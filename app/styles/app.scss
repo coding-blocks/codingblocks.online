@@ -338,6 +338,7 @@ section {
       z-index: 3;
 
       .content {
+
         .main {
           height: 160px;
         }
@@ -986,6 +987,14 @@ footer a:hover {
 
 .video-section {
   background-color: #363636;
+
+  .quiz-container {
+    background-color: white;
+    .button-container {
+      padding-bottom: 30px;
+    }
+  }
+
   .video-container {
     width: 75vw;
     height: 60vw;
@@ -1049,17 +1058,42 @@ footer a:hover {
     margin-top: 70px;
 
     .content {
-      padding: 20px;
       min-height: 80vh;
+      border: 1px solid rgba(54, 54, 54, 0.1);
+      margin: 40px;
+      border-radius: 4px;
+      padding: 40px;
+      max-height: 236px;
+      overflow-y: scroll;
+
+      a {
+        color: #363636;
+        font-weight: 500px;
+        border-bottom: 4px solid #dc5a86;
+        padding-bottom: 4px;
+        font-size: 20px;
+      }
       .header {
         font-size: 25px;
       }
       .description {
         font-size: 20px;
+
       }
       .question_choices {
         font-size: 20px;
         margin-top: 20px;
+        padding-left: 0;
+        li {
+          list-style: none;
+          cursor: pointer;
+          margin-bottom: 2px;
+          padding-bottom: 2px;
+
+          .input_element {
+            margin-right: 10px;
+          }
+        }
       }
     }
   }
