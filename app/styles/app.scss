@@ -627,7 +627,14 @@ section {
   background-position: 0 0px;
   background-attachment: fixed;
 
-
+  &::before {
+    @include position(absolute);
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background: rgba(0, 0, 0, .82);
+  }
 
   .color-line {
     @include width-height(null, 10px);
