@@ -5,7 +5,12 @@ var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    'esw-cache-fallback': {
+      patterns: [
+        'http://localhost:3000/api/(.+)',
+        'https://api-online.cb.lk/api/(.+)'
+      ]
+    }
   });
 
   app.import('vendor/css/bootstrap.min.css');

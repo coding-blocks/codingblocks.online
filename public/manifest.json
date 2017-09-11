@@ -1,0 +1,21 @@
+{
+  "name": "Online Courses Coding Blocks",
+  "short_name": "cb amoeba",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#E24D82",
+  "icons": [
+    {
+      "src": "https://codingblocks.com/img/cb/cb_tshirt_logo.png",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#4f4f4f",
+  "permissions": [
+    "http://account.codingblocks.com",
+    "https://account.codingblocks.com",
+    "http://online.codingblocks.com",
+    "https://online.codingblocks.com"
+  ]
+}
