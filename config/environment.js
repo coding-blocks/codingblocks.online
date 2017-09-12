@@ -50,8 +50,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.publicUrl = 'http://online.codingblocks.com/';
-    ENV.apiEndpoint = 'http://api-online.cb.lk';
+    ENV.publicUrl = 'https://online.codingblocks.com/';
+    ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
   }
 
