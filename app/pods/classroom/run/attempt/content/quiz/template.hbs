@@ -5,11 +5,15 @@
 {{/if}}
 --}}
 {{#if (eq progress.status 'ATTEMPTED') }}
-  This content is already attempted.
-  {{#link-to 'classroom.run.attempt.content.progress'}}
-      Click here to view progress
-  {{/link-to}}
+  <div class="quiz-completed">
+    <p>This content is already attempted.</p>
 
+
+  {{#link-to 'classroom.run.attempt.content.progress'}}
+
+     <p>Click here to view progress</p>
+  {{/link-to}}
+  </div>
 {{else}}
 <div class="quiz-container">
   {{question-view question=question questionSerialNumber=q}}
