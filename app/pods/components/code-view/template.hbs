@@ -1,9 +1,11 @@
-<h2>{{code.title}}</h2>
 
-<p>
-    {{code.description}}
-</p>
+<div class="question-container">
+  <h2>{{code.title}}</h2>
 
+  <p>
+      {{code.description}}
+  </p>
+</div>
 {{code-editor codeChallenge=code onSubmitTask=submitCodeTask}}
 
 {{yield}}

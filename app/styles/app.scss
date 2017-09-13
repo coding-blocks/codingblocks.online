@@ -9,6 +9,7 @@ $black: rgba(0, 0, 0, 0.9);
 $pink: #e24d82;
 $majenta: #d95787;
 
+
 // ]] Colors
 // ]] Mixins [[
 
@@ -32,7 +33,24 @@ body {
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Assistant', sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+// bootstrap overwrite
+
+.alert-warning {
+  background-color: #363636 !important;
+  border-color: #363636 !important;
+  color: white;
+  margin-bottom: 0;
+    .custom-btn {
+      margin-top: 10px;
+    }
+    .razorpay-payment-button {
+      background-color: #dc5a86;
+      border: none;
+      color: white;
+    }
 }
 
 section {
@@ -115,10 +133,7 @@ section {
   @include padding(20px, 10px, 20px, 10px);
 
   .heading-main {
-    text-align: center;
     font-weight: 200;
-    padding: 50px;
-    font-size: 38px !important;
     margin-top: 0;
     color: #d95787;
     text-align: left;
@@ -184,7 +199,7 @@ section {
   font-weight: 400;
   line-height: 1.50rem;
   text-align: left;
-  color: white;
+  color: rgba(255,255,255,.5);
 }
 
 .custom-course-card {
@@ -1028,12 +1043,47 @@ footer a:hover {
 
 .video-section {
   background-color: #363636;
-
+  .code-editor {
+    background: white;
+    padding: 20px;
+    padding-top: 60px;
+      .question-container {
+        background-color: #F8F8F8;
+        padding: 20px;
+      }
+  }
+  .main {
+    padding: 0;
+    background-color: white;
+  }
   .quiz-result {
     background-color: white;
-    padding:100px;
+    padding: 100px;
     height: 800px;
-    border: 7px solid rgba(128, 128, 128, 0.26);
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 2px solid rgba(128, 128, 128, 0.26);
+
+      .inner-quiz-result {
+        margin: 4px;
+        border: 1px solid #F8F8F8;
+        min-height: 75vh;
+        font-size: 20px;
+        padding: 20px;
+        color: rgb(54, 54, 54);
+        box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
+        border-radius: .375rem;
+        transition: all .3s ease;
+
+        p {
+          word-wrap: break-word;
+          color: #868686;
+          text-align: justify;
+          font-size: 20px;
+          overflow-y: auto;
+          max-height: 70vh;
+        }
+      }
       h3 {
         font-size: 1.4rem;
         padding-bottom: 15px;
@@ -1212,6 +1262,15 @@ footer a:hover {
     margin-top: 124px;
     .list-group {
       background: #222222;
+      border-left: 1px solid #292828;
+
+      .list-group-child {
+        .active {
+          color: white !important;
+          background-color: #363636 !important;
+        }
+      }
+
       .list-group-item {
         background: #363636 ;
         color: #dc5a86;
@@ -1390,4 +1449,8 @@ footer a:hover {
 
 .selected {
   color: red ;
+}
+
+.active {
+  color: white !important;
 }

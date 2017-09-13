@@ -17,7 +17,7 @@ export default Ember.Service.extend({
     } else {
       // Set Transparent
       navbar.removeClass('nav-white')
-        .addClass('nav-transparent')
+        .addClass('nav-transparent');
       navLink.css('color','white')
     }
   },
