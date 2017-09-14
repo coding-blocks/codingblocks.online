@@ -10,10 +10,9 @@
         <ul class="question_choices">
             {{#each question.choices as |choice index| }}
               <span></span>
-              <li onclick={{action 'selectChoice' choice}} class="{{if (eq question.selectedChoice choice) 'selected'}}"  >
+              <li onclick={{action 'selectChoice' choice index}} class="{{if (eq question.selectedChoice choice) 'selected'}}"  >
                 <input type="radio" id='answer{{index}}' name="answer" value={{index}} class="input_element">
-                {{choice.text}}
-
+                <label for='answer{{index}}'>{{choice.text}}</label>
               </li>
             {{/each}}
         </ul>
