@@ -28,28 +28,13 @@ export default Ember.Component.extend({
     }
     const hls = new Hls(config)
     window.h = hls
-    hls.loadSource(this.get('src'))
-    hls.attachMedia(video)
+    hls.loadSource(this.get('src'));
+    hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play()
     })
   },
-  hidePlaylist(playlist,video) {
-    playlist.css({transform: 'translateX(1800px)',
-      transition: '.5s'
-    });
-    video.css({width: '100vw',
-      transition: '.4s'}
-    );
-  },
-  showPlaylist(playlist,video) {
-    playlist.css({transform: 'translateX(0px)',
-      transition: '.5s'
-    });
-    video.css({width: '75vw',
-               transition: '.5s'}
-             );
-  },
+
   actions:{
      changeSpeed(val){
          const rate = this.get('playbackRate')+val;
@@ -58,21 +43,7 @@ export default Ember.Component.extend({
      	    video.playbackRate = rate;
 	        this.set('playbackRate',rate);
          }
-     },
-    togglePlaylist() {
-       console.log("main");
-       const playlist = Ember.$('.sections');
-       const video    = Ember.$('.video-container');
-
-       if(this.toggle) {
-         this.hidePlaylist(playlist,video);
-       }
-       else {
-         this.showPlaylist(playlist,video);
-       }
-      console.log(this.toggle);
-       this.toggle = !this.toggle;
-    }
+     }
 
   }
 });

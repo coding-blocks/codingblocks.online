@@ -22,15 +22,15 @@ export default Ember.Controller.extend({
   }),
   actions: {
     submitQuiz () {
-      const questionSerialized = []
-      const quizId = this.get('quiz.id')
+      const questionSerialized = [];
+      const quizId = this.get('quiz.id');
       this.get('quiz.questions').forEach(question => {
         let selectedChoice = question.get('selectedChoice.id')
         questionSerialized.push({
           questionId: question.get('id'),
           selectedChoiceIds: Ember.isNone(selectedChoice) ? [] : [selectedChoice]
         })
-      })
+      });
 
       this.get('api').request(`quizzes/${quizId}/submit`,{
         contentType: 'application/json; charset=utf-8',
@@ -45,7 +45,7 @@ export default Ember.Controller.extend({
       }).then(suc => {
         this.transitionToRoute('classroom.run.attempt.content.progress')
       }).catch(err => {
-          console.error(err)
+          console.error(err);
           this.get('notify').alert('Something Went Wrong, Please try again!')
       })
     }
