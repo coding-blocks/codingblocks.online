@@ -1,6 +1,6 @@
 <div class="ui card full-width">
     <div class="content">
-        <a class="header"> Question: # {{questionSerialNumber}}  </a>
+        <a> Question: # {{questionSerialNumber}}  </a>
         <div class="meta" style="margin: 10px 0px">
             <span class="date"> {{question.type}}</span>
         </div>
@@ -8,8 +8,13 @@
           {{question.text}}
         </div>
         <ul class="question_choices">
-            {{#each question.choices as |choice|}}
-              <li {{action 'selectChoice' choice}} class="{{if (eq question.selectedChoice choice) 'selected'}}"  > {{choice.text}} </li>
+            {{#each question.choices as |choice index| }}
+              <span></span>
+              <li onclick={{action 'selectChoice' choice}} class="{{if (eq question.selectedChoice choice) 'selected'}}"  >
+                <input type="radio" id='answer{{index}}' name="answer" value={{index}} class="input_element">
+                {{choice.text}}
+
+              </li>
             {{/each}}
         </ul>
     </div>

@@ -28,8 +28,8 @@ export default Ember.Component.extend({
     }
     const hls = new Hls(config)
     window.h = hls
-    hls.loadSource(this.get('src'))
-    hls.attachMedia(video)
+    hls.loadSource(this.get('src'));
+    hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play()
     })

@@ -5,24 +5,33 @@
 {{/if}}
 --}}
 {{#if (eq progress.status 'ATTEMPTED') }}
-  This content is already attempted.
+  <div class="quiz-completed">
+    <p>This content is already attempted.</p>
+
+
   {{#link-to 'classroom.run.attempt.content.progress'}}
-      Click here to view progress
+
+     <p>Click here to view progress</p>
   {{/link-to}}
-
+  </div>
 {{else}}
-
+<div class="quiz-container">
   {{question-view question=question questionSerialNumber=q}}
 
-  {{#if nextQuestion}}
-    {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=nextQuestion) }} Next Question {{/link-to}}
-  {{/if}}
+  <div class="content-buttons">
+    {{#if nextQuestion}}
+      {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=nextQuestion) class="custom-btn"}} Next Question {{/link-to}}
+    {{/if}}
 
-  {{#if prevQuestion}}
-    {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=prevQuestion) }} Prev Question {{/link-to}}
-  {{/if}}
+    {{#if prevQuestion}}
+      {{#link-to 'classroom.run.attempt.content.quiz' (query-params q=prevQuestion) class="custom-btn" }} Prev Question {{/link-to}}
+    {{/if}}
 
-  <button class="ui primary button" style="margin: 10px 0px" {{action 'submitQuiz'}}>
+    <button class="ui primary button custom-btn" style="margin: 10px 0" {{action 'submitQuiz'}}>
       Submit Quiz
-  </button>
+    </button>
+  </div>
+
+</div>
+
 {{/if}}
