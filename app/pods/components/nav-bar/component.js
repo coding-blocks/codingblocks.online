@@ -4,7 +4,6 @@ import config from '../../../config/environment';
 export default Ember.Component.extend({
     session: Ember.inject.service('session'),
     routing: Ember.inject.service('-routing'),
-    navCustomisation: Ember.inject.service('set-offset'),
     $ : Ember.$,
     img : null,
     navbar: null,
@@ -32,12 +31,5 @@ export default Ember.Component.extend({
             this.get('session').invalidate();
         }
 
-    },
-
-   didInsertElement() {
-     this.get('navCustomisation').setNavColor(this.get('routing.currentRouteName'));
-     this.get('navCustomisation').scrollHomepage();
-
-   }
-
+    }
 });
