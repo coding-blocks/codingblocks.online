@@ -59,6 +59,11 @@ section {
 
   .heading-main {
     @include section-heading;
+
+  }
+
+  .text {
+    width: 50% !important;
   }
 
   .horizontal-img-main {
@@ -292,6 +297,7 @@ section {
       top: -350px;
       text-align: center;
       font-size: 30px;
+      width: 100%;
       color: #aa446a;
         p {
           color: white;
