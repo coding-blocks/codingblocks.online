@@ -54,6 +54,14 @@ body {
     }
 }
 
+.toggler-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(36, 36, 39, 0.52);
+}
+
 section {
   @include padding(40px, null, 40px, null);
 
@@ -237,7 +245,7 @@ section {
 
 .container-main {
     .children {
-      height: 75vh;;
+      height: 80vh;;
       max-width: 100vw;
       overflow-x: hidden;
       position: relative;
