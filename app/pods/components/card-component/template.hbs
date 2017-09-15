@@ -37,7 +37,7 @@
         <div class="main">
           <h3 class="name">{{course.instructor.name}}</h3>
           <p class="subtitle">Instructor</p>
-          <p class="bio">{{course.instructor.description}}</p>
+          <p class="bio">{{markdown-to-html course.instructor.description}}</p>
         </div>
         <div class="footer">
           {{#link-to 'courses.preview' course.id}}
