@@ -1,7 +1,7 @@
 {{!-- Toolbar --}}
 <div class="btn-group" role="group" style="margin: 10px 0">
     <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="btnGroupDrop1" type="button" class="dropdown-toggle custom-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Language ({{langName}})
         </button>
         <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -44,20 +44,20 @@
          {{#each submitOutput.data as |testcase_result index|}}
             <pre>Testcase #{{index}} {{testcase_result.result}}</pre>
          {{/each}}
-      {{/if}}  
+      {{/if}}
     </div>
 </div>
 {{/if}}
 
 <div class="btn-group" style="margin: 10px">
     {{#if runCodeTask.isRunning}}
-        <button class="btn btn-primary disabled">Running...</button>
+        <button class="custom-btn disabled" style="margin-right: 10px; background-color: #363636; border:  #363636">Running...</button>
     {{else}}
-        <button class="btn btn-primary" {{action 'runCode'}} >Run</button>
+        <button class="custom-btn" {{action 'runCode'}} style="margin-right: 10px; background-color: #363636; border:#363636" >Run</button>
     {{/if}}
     {{#if onSubmitTask.isRunning}}
-        <button class="btn btn-secondary" disabled> Submitting... </button>
+        <button class="custom-btn disabled"> Submitting... </button>
     {{else}}
-      <button class="btn btn-secondary" {{action 'submitCode'}} >Submit Code </button>
+      <button class="custom-btn" {{action 'submitCode'}} >Submit Code </button>
     {{/if}}
 </div>

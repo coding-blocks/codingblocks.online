@@ -1,9 +1,12 @@
 <div class="code-editor">
+
   {{#if (eq progress.status 'ATTEMPTED') }}
-    This code is already attempted.
-    {{#link-to 'classroom.run.attempt.content.progress'}}
-      Click here to view progress
-    {{/link-to}}
+    <div class="code-completed">
+      This code is already attempted.
+      {{#link-to 'classroom.run.attempt.content.progress'}}
+        Click here to view progress
+      {{/link-to}}
+    </div>
   {{else}}
     {{code-view code=codeChallenge submitCodeTask=submitCodeTask}}
   {{/if}}

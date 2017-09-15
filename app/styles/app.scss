@@ -15,6 +15,7 @@ $majenta: #d95787;
 
 * {
   outline: none !important;
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -33,7 +34,7 @@ body {
   box-sizing: border-box;
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Lato', sans-serif;
+
 }
 
 // bootstrap overwrite
@@ -148,6 +149,26 @@ section {
   z-index: 10000;
   @include width-height(100%);
   max-width: 100vw;
+  background-color: white;
+
+  .logo {
+
+    max-height: 100px;
+    width: 280px;
+    transform: translateY(-12%);
+
+    h5 {
+      color: $majenta;
+      padding-right: 6px;
+      border-right: 1px solid $majenta;
+      display: inline-block;
+    }
+    p {
+      color: black;
+      display: inline-block;
+    }
+  }
+
 }
 
 .custom-btn {
@@ -199,7 +220,7 @@ section {
   font-weight: 400;
   line-height: 1.50rem;
   text-align: left;
-  color: rgba(255,255,255,.5);
+  color: black !important;
 }
 
 .custom-course-card {
@@ -214,8 +235,8 @@ section {
   max-width: 100vw;
   overflow-x: hidden;
   position: relative;
-
-  background: url("http://futuremaker.in/wp-content/uploads/2017/03/Kickassd-Educational-Program.jpg") rgba(33, 34, 34, 0.58);
+  background: url("../images/cover.jpg") rgba(33, 34, 34, 0.58);
+  opacity: .6;
   img {
     z-index: -2000;
     @include width-height(100vw, 90vh);
@@ -1051,6 +1072,14 @@ footer a:hover {
         background-color: #F8F8F8;
         padding: 20px;
       }
+      .code-completed {
+          position: relative;
+          top: 120px;
+          padding: 40px;
+          background-color: white;
+          margin: 20px;
+          box-shadow: 2px 5px 5px 0 rgba(46, 61, 73, 0.15);
+      }
   }
   .main {
     padding: 0;
@@ -1116,8 +1145,9 @@ footer a:hover {
     position: relative;
     top: 120px;
     padding: 40px;
-    border: 1px solid gray;
     background-color: white;
+    margin: 20px;
+    box-shadow: 2px 5px 5px 0 rgba(46, 61, 73, 0.15);
   }
 
 
