@@ -1,10 +1,6 @@
-{{#each model as |run RunIndex| }}
-<div class="card" style="width: 30rem;">
-    <iframe width="100%" src="https://www.youtube.com/embed/oPp4htuqDOs" frameborder="0" allowfullscreen></iframe>
-    <div class="card-block">
-        <h4 class="card-title">{{run.course.title}} ( {{run.name}} ) ( {{run.percentComplete}}% )</h4>
-        <p class="card-text">{{run.course.summary}}</p>
-        {{#link-to 'classroom.run.index' run.runAttemptId class="btn btn-success"}}Resume Learning{{/link-to}}
-    </div>
+
+<div class="classroom">
+    {{#each model as |run RunIndex| }}
+      {{material-card-component run= run RunIndex= RunIndex class="material-card offset-md-1 col-md-4 col-xs-12 col-sm-12"}}
+    {{/each}}
 </div>
-{{/each}}

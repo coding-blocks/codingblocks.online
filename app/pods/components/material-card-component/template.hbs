@@ -1,0 +1,11 @@
+
+
+<div class="card-container manual-flip content-container">
+  <div class="card" >
+      <h3 class="name">{{run.course.title}} ( {{run.name}} ) ( {{run.percentComplete}}% )</h3>
+      <div class="sub-topic">{{run.course.summary}}</div>
+      {{#link-to 'classroom.run.index' run.runAttemptId class="custom-btn"}}Resume Learning{{/link-to}}
+
+  </div>
+
+</div>
