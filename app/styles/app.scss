@@ -62,6 +62,10 @@ body {
   color: rgba(36, 36, 39, 0.52);
 }
 
+.progress-bar {
+  background-color: #dc5b86 !important;
+}
+
 section {
   @include padding(40px, null, 40px, null);
 
@@ -359,6 +363,11 @@ section {
         padding-bottom: 20px;
       }
 
+      .run-name {
+        font-size: 15px;
+        text-align: right;
+
+      }
       .sub-topic {
         max-height: 160px;
         overflow: scroll;
