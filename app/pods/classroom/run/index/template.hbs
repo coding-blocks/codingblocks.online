@@ -1,11 +1,39 @@
-<h1>Index</h1>
-{{#link-to 'classroom.run.attempt.content' contentToResume class="btn btn-success"}}Resume{{/link-to}}
-
 {{#each course.sections as |section sIndex| }}
+
+  <h4> Section {{sIndex}}</h4>
   <hr>
-  <ul>
-    {{#each section.contents as |content cIndex| }}
-      <li>{{content.payload.name}} {{#if content.progress}} <strong>ATTEMPTED</strong>{{/if}}</li>
-    {{/each}}
+  <ul class="row timeline">
+
+
+      {{#each section.contents as |content cIndex| }}
+
+
+        <div class="col-xs-1 col-md-1 col-lg-1">
+
+          {{#if content.progress}}
+              <div class="circle-attempted">
+                <i class="fa fa-check" aria-hidden="true"></i>
+              </div>
+              <div class="stick-attempted">
+
+              </div>
+          {{else}}
+              <div class="circle">
+              </div>
+              <div class="stick">
+
+              </div>
+          {{/if}}
+
+
+        </div>
+        <div class="payload-name col-xs-11 col-md-11 col-lg-11">
+          <li> {{content.payload.name}} </li>
+        </div>
+      {{/each}}
+
+
   </ul>
 {{/each}}
+
+

@@ -1533,6 +1533,16 @@ section {
 .classroom {
   padding-top: 120px ;
   margin-top: 20px;
+     h6 {
+       margin-left: 9.33%;
+       font-weight: bolder;
+       margin-bottom: 0;
+     }
+
+    .card-container {
+      margin-bottom:  0;
+    }
+
     .material-card {
       display: inline-block;
 
@@ -1543,6 +1553,7 @@ section {
         margin: 0 auto;
         margin-top: 30px;
         padding: 20px;
+
           .name {
             font-weight: 600;
             color: #2e3d49;
@@ -1561,9 +1572,74 @@ section {
           }
           a {
             position: relative;
-            left: 265px;
+            left: 250px;
             bottom: -30px;
           }
       }
     }
+}
+
+.timeline {
+   position: relative;
+    .circle {
+      width: 25px !important;
+      height: 25px !important;
+      padding: 10px;
+      border-radius: 50%;
+      background-color: rgba(169, 169, 169, 0.36);
+      display: block;
+      margin: 1px auto;
+      position: relative;
+      z-index: 100;
+    }
+
+    .circle-attempted {
+      width: 25px !important;
+      height: 25px !important;
+      padding: 10px;
+      border-radius: 50%;
+      background-color: $majenta;
+      display: block;
+      margin: 1px auto;
+      position: relative;
+      z-index: 100;
+        i {
+          color: white;
+          position: relative;
+          top: -8px;
+          right: 4px;
+
+        }
+    }
+    .stick-attempted  {
+      width: 3px;
+      height: 20px;
+      background-color: #d95787;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .stick {
+      width: 3px;
+      height: 20px;
+      background-color: rgba(169, 169, 169, 0.36);
+      display: block;
+      margin: 0 auto;
+    }
+   .payload-name {
+     list-style: none;
+     padding-left: 0;
+     transform: translateY(25%);
+   }
+}
+
+.progress-main {
+  padding: 40px;
+  margin-top: 70px;
+}
+
+.resume {
+  float: right;
+  position: relative;
+  top: -50px;
 }
