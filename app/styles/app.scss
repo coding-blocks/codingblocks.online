@@ -1631,15 +1631,30 @@ section {
      padding-left: 0;
      transform: translateY(25%);
    }
+
+   @media screen and (max-width: 768px) {
+     .payload-name {
+        text-align: center;
+       margin-bottom: 6px;
+     }
+   }
 }
 
 .progress-main {
   padding: 40px;
   margin-top: 70px;
+  padding-top: 80px;
 }
 
 .resume {
   float: right;
   position: relative;
   top: -50px;
+    a {
+      margin-right: -10px;
+      background-color: transparent;
+      color: #dc5b86;
+      margin-top: 20px;
+    }
 }
+

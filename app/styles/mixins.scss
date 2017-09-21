@@ -79,6 +79,7 @@
   min-height: $min-height;
   min-width: $min-width;
   outline: 0 none;
+  margin-right: 30px;
 }
 
 @mixin transform-skew($from, $to) {
