@@ -1,3 +1,9 @@
+
+<div class = "progress-main">
+<div class="resume">
+  {{#link-to 'classroom.run.attempt.content' contentToResume class="custom-btn " }}Resume{{/link-to}}
+</div>
+
 {{#each course.sections as |section sIndex| }}
 
   <h4> Section {{sIndex}}</h4>
@@ -34,6 +40,14 @@
 
 
   </ul>
+
 {{/each}}
+<div class="resume">
+  {{#link-to 'classroom.run.attempt.content' contentToResume class="custom-btn " }}Resume{{/link-to}}
+</div>
+
+</div>
+
+
 
 
