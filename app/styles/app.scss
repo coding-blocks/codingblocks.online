@@ -71,6 +71,7 @@ section {
 
   .heading-main {
     @include section-heading;
+    padding-top: 0;
 
   }
 
@@ -164,6 +165,7 @@ section {
 .custom-nav {
   @include position(fixed);
   z-index: 10000;
+  box-shadow: 4px 3px 2px 1px rgba(108, 97, 97, 0.42);
   @include width-height(100%);
   max-width: 100vw;
   background-color: white;
@@ -1110,9 +1112,11 @@ section {
 .video-section {
   background-color: #363636;
   .code-editor {
+    position: fixed;
     background: white;
     padding: 20px;
     padding-top: 60px;
+    width: 75%;
       .question-container {
         background-color: #F8F8F8;
         padding: 20px;
@@ -1131,6 +1135,8 @@ section {
     background-color: white;
   }
   .quiz-result {
+    position: fixed;
+    width: 75%;
     background-color: white;
     padding: 100px;
     height: 800px;
@@ -1145,7 +1151,6 @@ section {
         font-size: 20px;
         padding: 20px;
         color: rgb(54, 54, 54);
-        box-shadow: 12px 15px 20px 0 rgba(46,61,73,.15);
         border-radius: .375rem;
         transition: all .3s ease;
 
@@ -1629,7 +1634,7 @@ section {
    .payload-name {
      list-style: none;
      padding-left: 0;
-     transform: translateY(25%);
+     transform: translateY(5%);
    }
 
    @media screen and (max-width: 768px) {
