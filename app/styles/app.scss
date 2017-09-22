@@ -81,13 +81,14 @@ section {
 
     .text {
       width: 30% !important;
+      display: none;
     }
 
     i {
       text-align: center;
       color: #dc5b86;
       position: relative;
-      top: -60px;
+      top: -50px;
     }
     .horizontal-img-main {
       @include margin(140px);
