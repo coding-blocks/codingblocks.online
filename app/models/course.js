@@ -6,6 +6,7 @@ export default DS.Model.extend({
   subtitle: DS.attr(),
   summary: DS.attr(),
   fees: DS.attr(),
+  promoVideo: DS.attr(),
   price: Ember.computed('fees', function () {
     return this.get('fees').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }),
