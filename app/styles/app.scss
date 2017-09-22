@@ -69,23 +69,34 @@ body {
 section {
   @include padding(40px, null, 40px, null);
 
-  .heading-main {
-    @include section-heading;
-    padding-top: 0;
+  .heading-container {
+    text-align: center;
+    height: 80px;
+    .heading-main {
+      @include section-heading;
+      padding-top: 0;
+      font-size: 1.83em;
 
-  }
+    }
 
-  .text {
-    width: 50% !important;
-  }
+    .text {
+      width: 30% !important;
+    }
 
-  .horizontal-img-main {
-    @include margin(140px);
+    i {
+      text-align: center;
+      color: #dc5b86;
+      position: relative;
+      top: -60px;
+    }
+    .horizontal-img-main {
+      @include margin(140px);
 
-  }
+    }
 
-  hr {
-    @include end-line;
+    hr {
+      @include end-line;
+    }
   }
 }
 
@@ -250,9 +261,12 @@ section {
   @include width-height(348px, 418px);
 }
 
+
 .container-main {
+     height: 55vh;
+
     .children {
-      height: 80vh;;
+      height: 55vh;
       max-width: 100vw;
       overflow-x: hidden;
       position: relative;
@@ -309,7 +323,7 @@ section {
 
     .text {
       position: relative;
-      top: -350px;
+      top: -250px;
       text-align: center;
       font-size: 30px;
       width: 100%;
@@ -322,6 +336,9 @@ section {
     }
 }
 
+.main-start {
+  padding-top: 20px;
+}
 
 .nav-white {
   background-color: white;
@@ -1228,7 +1245,7 @@ section {
       min-height: 100px;
       color: white;
       width: 100%;
-      font-size: 35px;
+      font-size: 38px;
       background: linear-gradient(180deg,rgba(0,0,0,.8) 0,transparent);
       display: none;
       padding-left: 10px;
@@ -1663,3 +1680,10 @@ section {
     }
 }
 
+
+#main-start {
+  section {
+    padding-top: 20px;
+  }
+
+}
