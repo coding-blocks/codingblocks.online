@@ -6,7 +6,6 @@ export default Ember.Component.extend({
     routing: Ember.inject.service('-routing'),
     $ : Ember.$,
     img : null,
-    navbar: null,
     anchorColor: null,
     mainSection: null,
 
@@ -14,11 +13,6 @@ export default Ember.Component.extend({
       this._super();
       this.get('routing.currentRouteName');
     },
-
-    checkRoute: Ember.observer('routing.currentRouteName', function () {
-
-        this.get('navCustomisation').setNavColor(this.get('routing.currentRouteName'));
-    }),
 
     actions: {
         login() {
