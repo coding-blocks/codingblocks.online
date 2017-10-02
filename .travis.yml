@@ -10,6 +10,7 @@ cache:
 
 install:
   - yarn install
+  - bower install
 
 before_script: 
     - openssl aes-256-cbc -d -in key.pem.enc -out key.pem -k $ENC_KEY
