@@ -1,6 +1,6 @@
 {{!--
   <iframe width="560" height="315" src={{embed lecture.video_url}}  frameborder="0" allowfullscreen></iframe>
   --}}
-{{video-player src=lecture.video_url awsData=awsData}}
-
+{{log lecture.name}}
+	{{video-player src=lecture.video_url awsData=awsData}}
 {{outlet}}

@@ -1689,3 +1689,8 @@ section {
   }
 
 }
+
+// THE ONLY CSS WRITTEN BY @abhishek97, do not touch !
+a.content-link-sidebar.active {
+  pointer-events: none;
+}
