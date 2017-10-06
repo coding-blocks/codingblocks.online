@@ -1222,14 +1222,14 @@ section {
 
   .video-container {
     width: 75vw;
-    height: 60vw;
+    height: 50vw;
     @include width-height(75vw,60vw);
     @include position(fixed);
     @include padding(null,null,20px,null);
     z-index: 1000;
     left: 0;
     video {
-      height: 100%;
+      height: 87%;
       background: #222222;
       padding: 55px;
     }
@@ -1237,7 +1237,7 @@ section {
     .video-padding {
       @include padding(null,null,93px,null);
       @include margin(53px,null,null,null);
-      @include width-height(100%, 100%)
+      @include width-height(90%, 100%)
     }
 
     .section-heading {
@@ -1693,4 +1693,11 @@ section {
 // THE ONLY CSS WRITTEN BY @abhishek97, do not touch !
 a.content-link-sidebar.active {
   pointer-events: none;
+}
+
+.video-controls {
+  position: absolute;
+  display: block;
+  margin-top: -3rem;
+  color: white;
 }
