@@ -3,15 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   playbackRate:1,
   toggle: true,
-  didInsertElement() {
+  didRender() {
     this._super(...arguments)
     const video = this.$('#video')[0]
     const self = this;
     const config = {
       xhrSetup (xhr, url) {
-
         // TODO: send a request to backend and get a signed url to the segment as 301
-
         try {
           const awsData = self.get('awsData')
           const encoded = Ember.$.param({
@@ -19,7 +17,6 @@ export default Ember.Component.extend({
             "Signature": awsData.signature,
             "Policy": awsData.policyString
           })
-          console.log(url, encoded);
           xhr.open('GET', `${url}?${encoded}`, true)
         } catch(e) {
           console.error(e)
@@ -35,7 +32,7 @@ export default Ember.Component.extend({
     })
   },
 
-  actions:{
+  actions: {
      changeSpeed(val){
          const rate = this.get('playbackRate')+val;
          const video = this.$('#video')[0];
@@ -44,6 +41,5 @@ export default Ember.Component.extend({
 	        this.set('playbackRate',rate);
          }
      }
-
   }
 });

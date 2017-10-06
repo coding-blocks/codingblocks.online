@@ -17,7 +17,9 @@
 
           <div id={{index}} class="collapse list-group-child">
             {{#each section.contents as |content| }}
-              {{#link-to 'classroom.run.attempt.content' content.id class="list-group-child"}}{{content.payload.name}}{{/link-to}}
+              {{#link-to 'classroom.run.attempt.content' content.id class="list-group-child content-link-sidebar"}}
+                {{content.payload.name}}
+              {{/link-to}}
             {{/each}}
           </div>
         {{/each}}
