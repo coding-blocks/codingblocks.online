@@ -1236,8 +1236,8 @@ section {
 
     .video-padding {
       @include padding(null,null,93px,null);
-      @include margin(53px,null,null,null);
-      @include width-height(100%, 100%)
+      @include margin(80px,null,null,null);
+      @include width-height(100%, 100%);
     }
 
     .section-heading {
