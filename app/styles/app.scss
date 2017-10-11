@@ -1236,13 +1236,13 @@ section {
 
     .video-padding {
       @include padding(null,null,93px,null);
-      @include margin(53px,null,null,null);
-      @include width-height(90%, 100%)
+      @include margin(90px,null,null,null);
+      @include width-height(100%, 85%)
     }
 
     .section-heading {
       position: absolute;
-      top: 60px;
+      top: 80px;
       padding: 10px;
       min-height: 100px;
       color: white;

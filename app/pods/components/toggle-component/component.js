@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
+  titleText: Ember.computed('title', function () {
+    const title = this.get('title')
+    if (Ember.isNone(title) || title === '')
+      return 'Video';
+    else
+      return this.get('title')
+  }),
   toggle: true,
   hidePlaylist(playlist,video) {
     playlist.css({transform: 'translateX(1800px)',
