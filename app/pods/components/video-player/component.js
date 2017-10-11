@@ -1,12 +1,17 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { action } from 'ember-decorators/object'
 
-export default Ember.Component.extend({
-  playbackRate:1,
-  toggle: true,
-  didRender() {
+export default class VideoPlayer extends Component {
+  playbackRate = 1
+  toggle = true
+  hls 
+  config
+  playerElement
+
+  didReceiveAttrs () {
     this._super(...arguments)
-    const video = this.$('#video')[0]
-    const self = this;
+    console.log('didReceiveAttrs')
+    const self = this
     const config = {
       xhrSetup (xhr, url) {
         // TODO: send a request to backend and get a signed url to the segment as 301
@@ -23,23 +28,35 @@ export default Ember.Component.extend({
         }
       }
     }
+    this.set('config', config)
     const hls = new Hls(config)
-    window.h = hls
     hls.loadSource(this.get('src'));
+    this.set('hls', hls)
+  }
+  didInsertElement () {
+    this._super(...arguments)
+    console.log('didInsertElement')
+    const video = this.$('#video')[0]
+    this.set('playerElement', video)
+  }
+  didRender() {
+    this._super(...arguments)
+    console.log('didRender')
+    const video = this.get('playerElement')
+    const hls = this.get('hls')
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play()
     })
-  },
+  }
 
-  actions: {
-     changeSpeed(val){
-         const rate = this.get('playbackRate')+val;
-         const video = this.$('#video')[0];
-         if(rate<=3 && rate>=0.5){
-     	    video.playbackRate = rate;
-	        this.set('playbackRate',rate);
-         }
+  @action
+  changeSpeed(val){
+     const rate = this.get('playbackRate')+val;
+     const video = this.$('#video')[0];
+     if(rate<=3 && rate>=0.5){
+  	    video.playbackRate = rate;
+      this.set('playbackRate',rate);
      }
   }
-});
+}
