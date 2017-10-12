@@ -1222,14 +1222,14 @@ section {
 
   .video-container {
     width: 75vw;
-    height: 60vw;
+    height: 50vw;
     @include width-height(75vw,60vw);
     @include position(fixed);
     @include padding(null,null,20px,null);
     z-index: 1000;
     left: 0;
     video {
-      height: 100%;
+      height: 87%;
       background: #222222;
       padding: 55px;
     }
@@ -1242,7 +1242,7 @@ section {
 
     .section-heading {
       position: absolute;
-      top: 60px;
+      top: 80px;
       padding: 10px;
       min-height: 100px;
       color: white;
@@ -1693,4 +1693,30 @@ section {
 // THE ONLY CSS WRITTEN BY @abhishek97, do not touch !
 a.content-link-sidebar.active {
   pointer-events: none;
+}
+.video-controls {
+  position: absolute;
+  display: block;
+  margin-top: -3rem;
+  color: white;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  border-top-color: #07d;
+  animation: spinner .6s linear infinite;
 }
