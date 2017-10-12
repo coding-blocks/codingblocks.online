@@ -15,22 +15,10 @@ export default Ember.Route.extend({
       })
       if (contentToResume)
         return controller.set('contentToResume', contentToResume.id)
-      //TODO: We probably need an else condition here
     })
-    /*
-    let breakFlag = false;
-    for (let i = 0; i < sections.get('length'); ++i) {
-      let section = sections.objectAt(i);
-      for (let j = 0; j < section.get('contents.length'); ++j) {
-        let content = section.get('contents').objectAt(j);
-        if (content.get('progress').content == null) {
-          controller.set('contentToResume', content.id);
-          breakFlag = true;
-          break;
-        }
-      }
-      if (breakFlag) break;
-    }
-    */
+
+    if (Ember.isNone(controller.get('contentToResume')))
+      controller.set("contentToResume", sections.objectAt(0).get('contents').objectAt(0).id)
+
   }
 });
