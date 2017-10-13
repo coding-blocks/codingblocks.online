@@ -33,6 +33,11 @@ Router.map(function() {
     })
       this.route('error');
   });
+  this.route('otp', function() {
+    this.route('done');
+  });
+
+  this.route('opt', function() {});
 });
 
 export default Router;
