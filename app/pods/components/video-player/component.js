@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import KeyboardShortcuts from 'ember-keyboard-shortcuts/mixins/component';
 
+
 export default Ember.Component.extend(KeyboardShortcuts, {
 
   keyboardShortcuts: {
@@ -23,7 +24,7 @@ export default Ember.Component.extend(KeyboardShortcuts, {
 
     const self = this
     const config = {
-      xhrSetup (xhr, url) {
+      xhrSetup(xhr, url) {
         // TODO: send a request to backend and get a signed url to the segment as 301
         try {
           const awsData = self.get('awsData')
@@ -33,7 +34,7 @@ export default Ember.Component.extend(KeyboardShortcuts, {
             "Policy": awsData.policyString
           })
           xhr.open('GET', `${url}?${encoded}`, true)
-        } catch(e) {
+        } catch (e) {
           console.error(e)
         }
       }
@@ -79,7 +80,7 @@ export default Ember.Component.extend(KeyboardShortcuts, {
      if ( rate >= -0.5 && rate <= 2) {
         video.playbackRate = +rate;
         this.set('pr', rate)
-      }  
+      }
    },
    toggleVideoPlayback () {
     const video = this.get("playerElement")
@@ -106,5 +107,5 @@ export default Ember.Component.extend(KeyboardShortcuts, {
     video.currentTime += 5
    }
   }
-  
+
 })
