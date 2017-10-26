@@ -1,10 +1,7 @@
+
 <div class = "progress-main">
 <div class="resume">
-{{#if nonPremiums.length}}
   {{#link-to 'classroom.run.attempt.content' contentToResume class="custom-btn " }}Resume{{/link-to}}
-{{else}}
-  {{#razorpay-buy-button price=(mul course.fees 100)  name=course.title text="Buy Course"  user=user run=run}}{{/razorpay-buy-button}}
-{{/if}}
 </div>
 
 {{#each course.sections as |section sIndex| }}
@@ -46,11 +43,7 @@
 
 {{/each}}
 <div class="resume">
-{{#if nonPremiums.length}}
   {{#link-to 'classroom.run.attempt.content' contentToResume class="custom-btn " }}Resume{{/link-to}}
-{{else}}
-  {{#razorpay-buy-button price=(mul course.fees 100)  name=course.title text="Buy Course"  user=user run=run}}{{/razorpay-buy-button}}
-{{/if}}
 </div>
 
 </div>
