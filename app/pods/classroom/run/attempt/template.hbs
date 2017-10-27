@@ -18,6 +18,21 @@
           <div id={{index}} class="collapse list-group-child">
             {{#each section.contents as |content| }}
               {{#link-to 'classroom.run.attempt.content' content.id class="list-group-child content-link-sidebar"}}
+                {{#if (eq content.contentable "document") }}
+                  <i class="fa fa-file-text" aria-hidden="true"></i>
+                {{/if}}
+                {{#if (eq content.contentable "lecture") }}
+                  <i class="fa fa-play" aria-hidden="true"></i>
+                {{/if}}
+                {{#if (eq content.contentable "code-challenge") }}
+                  <i class="fa fa-terminal" aria-hidden="true"></i>
+                {{/if}}
+                {{#if (eq content.contentable "video")}}
+                  <i class="fa fa-file-video-o" aria-hidden="true"></i>
+                {{/if}}
+                {{#if (eq content.contentable "quiz")}}
+                  <i class="fa fa-question" aria-hidden="true"></i>
+                {{/if}}
                 {{content.payload.name}}
               {{/link-to}}
             {{/each}}
