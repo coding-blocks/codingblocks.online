@@ -231,6 +231,7 @@ section {
     background-color: white;
     z-index: -2;
     cursor: pointer;
+    pointer-events: none;
   }
   &:hover {
     &::before {
