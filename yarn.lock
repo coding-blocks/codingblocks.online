@@ -2468,6 +2468,14 @@ ember-cli-sass@^7.0.0:
     broccoli-sass-source-maps "^2.0.0"
     ember-cli-version-checker "^1.0.2"
 
+ember-cli-sentry@^3.0.0-beta.2:
+  version "3.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-sentry/-/ember-cli-sentry-3.0.0-beta.2.tgz#5832ec436e36f2e0b4387ecceadf4db01d937522"
+  dependencies:
+    ember-cli-babel "^6.1.0"
+    ember-cli-node-assets "^0.2.2"
+    raven-js "^3.15.0"
+
 ember-cli-shims@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-shims/-/ember-cli-shims-1.1.0.tgz#0e3b8a048be865b4f81cc81d397ff1eeb13f75b6"
@@ -5303,6 +5311,10 @@ randomatic@^1.1.3:
 range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raven-js@^3.15.0:
+  version "3.20.0"
+  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.20.0.tgz#b6f92f3db7f168ac32cd466fd5743f40fff4cffe"
 
 raw-body@~1.1.0:
   version "1.1.7"

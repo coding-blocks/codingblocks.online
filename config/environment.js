@@ -5,6 +5,11 @@ module.exports = function(environment) {
     modulePrefix: 'vlyop-frontend',
     podModulePrefix: 'vlyop-frontend/pods',
     environment: environment,
+    sentry: {
+      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
+      exposedPropertyName: "raven",
+      globalErrorCatching: true
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -16,7 +21,7 @@ module.exports = function(environment) {
         // Prevent Ember Data from overriding Date.parse.
         Date: false
       }
-    },
+    }, 
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -36,6 +41,7 @@ module.exports = function(environment) {
     },
     ENV.publicUrl = 'http://localhost:4200';
     ENV.clientId = 7642172843
+    // ENV.sentry.development = true
   }
 
   if (environment === 'test') {
