@@ -27,6 +27,7 @@ export default class OtpController extends Controller {
 			this.set('error', null)
 		}).catch( err => {
 			this.set('error', 'Cannot Send OTP to that email. Please use your registered email.')
+			this.get('raven').captureException(new Error('Cannot Send OTP to that email. Please use your registered email.'), { err, email })
 		})
 	}).drop()
 
@@ -42,6 +43,7 @@ export default class OtpController extends Controller {
 			this.get('router').transitionTo('otp.done')
 		}).catch( err => {
 			this.set('error', 'OTP cannot be verified or has been used already')
+			this.get('raven').captureException(new Error('OTP cannot be verified or has been used already'), { err })
 		})	
 	}).drop()
 
