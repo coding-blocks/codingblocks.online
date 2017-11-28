@@ -10,8 +10,8 @@ export default Ember.Component.extend({
     mainSection: null,
 
     init() {
-      this._super(...arguments);
-      this.set("logoutURL", config.oneauthURL + 'logout?redirect=' + config.publicUrl + '/logout')
+      this._super();
+      this.get('routing.currentRouteName');
     },
 
     actions: {
@@ -21,8 +21,8 @@ export default Ember.Component.extend({
             localStorage.setItem('redirection-path', redirectionPath);
             window.location = `https://account.codingblocks.com/oauth/authorize?response_type=code&client_id=${config.clientId}&redirect_uri=${config.publicUrl}`
         },
-        invalidateSession () {
-            window.location.href = this.get('logoutURL')
+        invalidateSession() {
+            this.get('session').invalidate();
         }
 
     }
