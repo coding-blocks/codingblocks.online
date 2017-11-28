@@ -38,7 +38,6 @@ Router.map(function() {
   });
 
   this.route('opt', function() {});
-  this.route('logout');
 });
 
 export default Router;
