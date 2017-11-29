@@ -14,10 +14,11 @@ install:
 before_script: 
     - openssl aes-256-cbc -d -in key.pem.enc -out key.pem -k $ENC_KEY
 
-production
-  script:
-    - bash ./deployToProduction.sh
+script: 
+  - if [ "$TRAVIS_BRANCH" == "production" ]; then
+      bash ./deployToProduction.sh;
+    fi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      bash ./deployToStaging.sh;
+    fi
 
-master
-  script:
-    - bash ./deployToStaging.sh

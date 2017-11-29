@@ -61,5 +61,11 @@ module.exports = function(environment) {
     ENV.clientId = 5633768694
   }
 
+  if (environment === 'staging') {
+    ENV.publicUrl = 'https://staging.codingblocks.online/';
+    ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
+    ENV.clientId = 5633768694
+  }
+
   return ENV;
 };
