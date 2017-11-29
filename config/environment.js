@@ -70,6 +70,8 @@ module.exports = function(environment) {
     ENV.publicUrl = 'https://staging.codingblocks.online/';
     ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
     ENV.clientId = 5633768694
+    ENV.refreshTokenTimeout = 900000 // 15min
+    ENV.oneauthURL = 'https://account.codingblocks.com/'
   }
 
   return ENV;
