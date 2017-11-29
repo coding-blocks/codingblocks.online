@@ -58,7 +58,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.publicUrl = 'https://codingblocks.online/';
+    ENV.publicUrl = 'https://codingblocks.online';
     ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
     ENV.refreshTokenTimeout = 900000 // 15min
@@ -67,7 +67,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'staging') {
-    ENV.publicUrl = 'https://staging.codingblocks.online/';
+    ENV.publicUrl = 'https://staging.codingblocks.online';
     ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
     ENV.clientId = 5633768694
     ENV.refreshTokenTimeout = 900000 // 15min
