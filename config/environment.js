@@ -58,7 +58,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.publicUrl = 'https://codingblocks.online';
+    ENV.publicUrl = 'https://online.codingblocks.com';
     ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
     ENV.refreshTokenTimeout = 900000 // 15min
