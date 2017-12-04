@@ -1281,11 +1281,11 @@ section {
 
     .video-padding {
       @include padding(null, null, 93px, null);
-      @include margin(80px, null, null, null);
+      @include margin(94px, null, null, null);
       @include width-height(100%, 100%);
 
       .external-video {
-        height: calc(100vh - 78px)!important;
+        height: calc(100vh - 94px)!important;
       }
     }
 
@@ -1388,7 +1388,7 @@ section {
     width: 100%;
     position: fixed;
     z-index: 2000;
-    margin-top: 54px;
+    margin-top: 70px;
     height: 70px;
     padding-top: 30px;
     padding-left: 21px;
@@ -1403,7 +1403,7 @@ section {
   }
 
   .just-padding {
-    margin-top: 124px;
+    margin-top: 145px;
     .list-group {
       background: #222222;
       border-left: 1px solid #292828;
