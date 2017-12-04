@@ -208,7 +208,7 @@ section {
     nav ul li a:hover {
       color: #555;
     }
-    
+
     /* stroke */
     nav.stroke ul li a,
     nav.fill ul li a {
@@ -1775,6 +1775,10 @@ section {
   padding: 40px;
   margin-top: 70px;
   padding-top: 80px;
+   .custom-btn {
+     z-index: 2000;
+     background: #fff !important;
+   }
 }
 
 .resume {
