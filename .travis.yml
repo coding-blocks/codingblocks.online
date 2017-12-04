@@ -3,9 +3,6 @@ language: node_js
 node_js:
   - "7"
 
-branches:
-    only:
-        - master
 cache:
   yarn: true
 
@@ -17,5 +14,11 @@ install:
 before_script: 
     - openssl aes-256-cbc -d -in key.pem.enc -out key.pem -k $ENC_KEY
 
-script:
-  - bash ./deployToProduction.sh
+script: 
+  - if [ "$TRAVIS_BRANCH" == "production" ]; then
+      bash ./deployToProduction.sh;
+    fi
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      bash ./deployToStaging.sh;
+    fi
+
