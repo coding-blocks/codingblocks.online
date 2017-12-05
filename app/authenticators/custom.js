@@ -62,10 +62,7 @@ export default Base.extend({
   },
   invalidate(data) {
       return new Ember.RSVP.Promise(function (resolve, reject) {
-        window.setTimeout( () => {
-          window.location.href = "https://account.codingblocks.com/logout?redirect=" + env.publicUrl
-        }, 0)
-        resolve();
+       resolve()
       });
   }
 });
