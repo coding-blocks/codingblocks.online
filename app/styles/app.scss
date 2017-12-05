@@ -733,6 +733,15 @@ section {
 
 }
 
+.fixed-height-patch {
+  height: 500px;
+}
+
+.fixed-size-patch {
+  height: 250px;
+  width: 250px;
+}
+
 .all-courses-btn {
   @include button(400, 16px, $pink, 1.1, normal, auto, 240px);
   @include padding(15px, 30px, 15px, 30px);
