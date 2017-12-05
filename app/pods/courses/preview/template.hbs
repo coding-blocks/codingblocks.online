@@ -54,7 +54,7 @@
       <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
       <hr class="text">
 
-      <div class="flex-model row">
+      <div class="row">
         {{#each model.sections as |section index|}}
           {{course-content  section=section contents=section.contents course=model index=index
                             class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ember-card"}}
@@ -64,14 +64,15 @@
   </section>
 
   <section id="runs">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <h2 class="heading-main" style="color:{{model.color}}">Available Batches</h2>
       </div>
+      <hr class="text">
       <div class="course-card-wrapper row">
         <div class="courses">
           <div class="course-cards">
-            <div class="flex-model row">
+            <div class="flex row">
               {{#each  model.runs as |run index|}}
                 {{preview-component run=run index=index course=model user=user transition=(action 'transitionTo') class="ember-card"}}
               {{/each}}
