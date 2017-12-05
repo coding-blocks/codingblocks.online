@@ -37,7 +37,7 @@
         {{#if (not-eq sections.length course.sections.length)}}
           <div class="alert alert-warning" role="alert">
             Please buy the course to unlock further.
-              <div class="">
+              <div>
               {{#razorpay-buy-button price=(mul course.fees 100)  name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
               </div>
             </div>
