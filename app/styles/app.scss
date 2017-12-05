@@ -43,14 +43,34 @@ body {
   border-color: #363636 !important;
   color: white;
   margin-bottom: 0;
-  .custom-btn {
+}
+
+.custom-btn {
     margin-top: 10px;
-  }
-  .razorpay-payment-button {
-    background-color: #dc5a86;
-    border: none;
-    color: white;
-  }
+}
+  
+.razorpay-payment-button {
+  margin-top: 4px;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
 }
 
 .toggler-icon {
