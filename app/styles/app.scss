@@ -48,7 +48,7 @@ body {
 .custom-btn {
     margin-top: 10px;
 }
-  
+
 .razorpay-payment-button {
   margin-top: 4px;
   display: inline-block;
@@ -1288,7 +1288,7 @@ section {
   .video-container {
     width: 75vw;
     height: 50vw;
-    @include width-height(75vw,60vw);
+    @include width-height(75vw,auto);
     @include position(fixed);
     @include padding(null, null, 20px, null);
     z-index: 1000;
@@ -1300,12 +1300,12 @@ section {
     }
 
     .video-padding {
-      @include padding(null, null, 93px, null);
-      @include margin(94px, null, null, null);
+      @include padding(null, null, null, null);
+      @include margin(140px, null, null, null);
       @include width-height(100%, 100%);
 
       .external-video {
-        height: calc(100vh - 94px)!important;
+        height: calc(100vh - 140px)!important;
       }
     }
 
@@ -1313,16 +1313,18 @@ section {
       position: absolute;
       top: 80px;
       padding: 10px;
-      min-height: 100px;
+      height: 65px;
       color: white;
       width: 100%;
       font-size: 38px;
-      background: linear-gradient(180deg, rgba(0, 0, 0, .8) 0, transparent);
+      background: #363636;
       display: none;
       padding-left: 10px;
 
       p {
         min-width: 95%;
+        font-size: 20px;
+        margin: 14px 0;
       }
       .toggle-button {
         background: transparent;
@@ -1889,4 +1891,3 @@ nav ul li a:hover {
 #cb-footer{
   color: white;
 }
-
