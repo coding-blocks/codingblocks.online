@@ -43,14 +43,34 @@ body {
   border-color: #363636 !important;
   color: white;
   margin-bottom: 0;
-  .custom-btn {
+}
+
+.custom-btn {
     margin-top: 10px;
-  }
-  .razorpay-payment-button {
-    background-color: #dc5a86;
-    border: none;
-    color: white;
-  }
+}
+
+.razorpay-payment-button {
+  margin-top: 4px;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
 }
 
 .toggler-icon {
@@ -208,7 +228,7 @@ section {
     nav ul li a:hover {
       color: #555;
     }
-    
+
     /* stroke */
     nav.stroke ul li a,
     nav.fill ul li a {
@@ -713,6 +733,12 @@ section {
 
 }
 
+
+.fixed-size-patch {
+  height: 250px;
+  width: 250px;
+}
+
 .all-courses-btn {
   @include button(400, 16px, $pink, 1.1, normal, auto, 240px);
   @include padding(15px, 30px, 15px, 30px);
@@ -962,6 +988,7 @@ section {
   .course-card {
     border-radius: 3px;
     padding-bottom: 1rem;
+    display: flex;
     //@include bounceInUp(
     //  $duration: 2s,
     //  $delay: .6s,
@@ -978,6 +1005,11 @@ section {
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
+  }
+  .course-card .custom-prev-buy-btn-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
   }
 
   .course-card .course-card-header {
@@ -1268,7 +1300,7 @@ section {
   .video-container {
     width: 75vw;
     height: 50vw;
-    @include width-height(75vw,60vw);
+    @include width-height(75vw,auto);
     @include position(fixed);
     @include padding(null, null, 20px, null);
     z-index: 1000;
@@ -1280,12 +1312,12 @@ section {
     }
 
     .video-padding {
-      @include padding(null, null, 93px, null);
-      @include margin(80px, null, null, null);
+      @include padding(null, null, null, null);
+      @include margin(140px, null, null, null);
       @include width-height(100%, 100%);
 
       .external-video {
-        height: calc(100vh - 78px)!important;
+        height: calc(100vh - 140px)!important;
       }
     }
 
@@ -1293,16 +1325,18 @@ section {
       position: absolute;
       top: 80px;
       padding: 10px;
-      min-height: 100px;
+      height: 65px;
       color: white;
       width: 100%;
       font-size: 38px;
-      background: linear-gradient(180deg, rgba(0, 0, 0, .8) 0, transparent);
-      display: none;
+      background: #363636;
+      display: flex;
       padding-left: 10px;
 
       p {
         min-width: 95%;
+        font-size: 20px;
+        margin: 14px 0;
       }
       .toggle-button {
         background: transparent;
@@ -1388,7 +1422,7 @@ section {
     width: 100%;
     position: fixed;
     z-index: 2000;
-    margin-top: 54px;
+    margin-top: 70px;
     height: 70px;
     padding-top: 30px;
     padding-left: 21px;
@@ -1403,7 +1437,7 @@ section {
   }
 
   .just-padding {
-    margin-top: 124px;
+    margin-top: 145px;
     .list-group {
       background: #222222;
       border-left: 1px solid #292828;
@@ -1775,6 +1809,10 @@ section {
   padding: 40px;
   margin-top: 70px;
   padding-top: 80px;
+   .custom-btn {
+     z-index: 2000;
+     background: #fff !important;
+   }
 }
 
 .resume {
@@ -1862,3 +1900,6 @@ nav ul li a:hover {
   color: #555;
 }
 
+#cb-footer{
+  color: white;
+}

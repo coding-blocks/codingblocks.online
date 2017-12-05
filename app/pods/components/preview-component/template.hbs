@@ -1,10 +1,7 @@
 <div class="course-card">
   <div class="card ">
-    <div class="card-block ">
-      <div class="heading-main">
-        # {{sum index 1}}
-      </div>
-      <img class="card-img-top" src="https://placehold.it/250x250/f26354/ffffff" alt="suicidal thoughts" />
+    <div class="card-block fixed-height-patch">
+      <img class="card-img-top fixed-size-patch" src="/images/course1.jpg" alt="Run image" />
       <h3 class="card-title">{{course.title}}</h3>
       <div class="card-text">
         <p>{{course.subtitle}}</p>
@@ -17,8 +14,10 @@
             {{#if course.isFree}}
               <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
             {{else}}
-              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll in Preview</a>
-              {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
+              <div class="custom-prev-buy-btn-wrapper">
+                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Preview</a>
+                {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
+              </div>
             {{/if}}
           {{/if}}
         {{else}}
