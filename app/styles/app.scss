@@ -733,6 +733,12 @@ section {
 
 }
 
+
+.fixed-size-patch {
+  height: 250px;
+  width: 250px;
+}
+
 .all-courses-btn {
   @include button(400, 16px, $pink, 1.1, normal, auto, 240px);
   @include padding(15px, 30px, 15px, 30px);
@@ -982,6 +988,7 @@ section {
   .course-card {
     border-radius: 3px;
     padding-bottom: 1rem;
+    display: flex;
     //@include bounceInUp(
     //  $duration: 2s,
     //  $delay: .6s,
@@ -998,6 +1005,11 @@ section {
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
+  }
+  .course-card .custom-prev-buy-btn-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
   }
 
   .course-card .course-card-header {
