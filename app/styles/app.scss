@@ -733,9 +733,6 @@ section {
 
 }
 
-.fixed-height-patch {
-  height: 500px;
-}
 
 .fixed-size-patch {
   height: 250px;
@@ -1008,6 +1005,11 @@ section {
     &:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
+  }
+  .course-card .custom-prev-buy-btn-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
   }
 
   .course-card .course-card-header {
