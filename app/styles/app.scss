@@ -48,7 +48,7 @@ body {
 .custom-btn {
     margin-top: 10px;
 }
-  
+
 .razorpay-payment-button {
   margin-top: 4px;
   display: inline-block;
@@ -991,6 +991,7 @@ section {
   .course-card {
     border-radius: 3px;
     padding-bottom: 1rem;
+    display: flex;
     //@include bounceInUp(
     //  $duration: 2s,
     //  $delay: .6s,
@@ -1898,4 +1899,3 @@ nav ul li a:hover {
 #cb-footer{
   color: white;
 }
-
