@@ -1231,7 +1231,7 @@ section {
       box-shadow: 2px 5px 5px 0 rgba(46, 61, 73, 0.15);
     }
   }
-  .main {
+  .main-section {
     padding: 0;
     background-color: white;
   }
@@ -1909,7 +1909,7 @@ nav ul li a:hover {
 
 
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1136px) {
 
   .main {
     min-width: 100%;
@@ -1938,13 +1938,13 @@ nav ul li a:hover {
 
 }
 
-@media screen and (min-width: 1120px) {
+@media screen and (min-width: 1136px) {
 
-  .main {
-    max-width: 75%;
+  .main-section {
+    min-width: 75%;
     height: 100vh;
     .code-editor, .quiz-result, .video-container {
-      width: 100%;
+      min-width: 100%;
     }
   }
   .code-editor, .quiz-result, .video-container {
