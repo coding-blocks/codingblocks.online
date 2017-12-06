@@ -1209,8 +1209,11 @@ section {
 
 .video-section {
   background-color: #363636;
+
+
+
   .code-editor {
-    position: fixed;
+    position: relative;
     background: white;
     padding: 20px;
     padding-top: 60px;
@@ -1461,7 +1464,7 @@ section {
           border: 0;
           padding: 14px;
           margin: 5px;
-          min-width: 317px;
+          min-width: 90%;
 
         }
         i {
@@ -1903,3 +1906,65 @@ nav ul li a:hover {
 #cb-footer{
   color: white;
 }
+
+
+
+@media screen and (max-width: 1120px) {
+
+  .main {
+    min-width: 100%;
+    .code-editor {
+      width: 100%;
+    }
+  }
+  .code-editor, .quiz-result, .video-container {
+    position: relative;
+    width: 100%;
+
+  }
+
+  .sections {
+
+     min-width: 100%;
+    .just-padding {
+      margin-top: 20px;
+
+      .list-group-item {
+        width: 90%;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1120px) {
+
+  .main {
+    max-width: 75%;
+    height: 100vh;
+    .code-editor, .quiz-result, .video-container {
+      width: 100%;
+    }
+  }
+  .code-editor, .quiz-result, .video-container {
+    position: fixed;
+    width: 100%;
+
+  }
+
+  .sections {
+
+    min-width: 25%;
+    .just-padding {
+      margin-top: 20px;
+
+      .list-group-item {
+        width: 90%;
+      }
+    }
+  }
+
+
+}
+
