@@ -1,10 +1,19 @@
-<div class="card-container manual-flip content-container">
-  <div class="card" style="border-bottom: 7px solid {{course.color}}">
-    <h3 class="name">{{section.name}}</h3>
-    <div class="sub-topic">
-      {{#each contents as |content index|}}
-        <p>{{content.payload.name}}</p>
-      {{/each}}
+<p class="accordion-wrapper" data-toggle="collapse" data-parent="#accordion" href="#collapse{{index}}">
+  <div class="panel panel-default" onclick="changeicon()">
+    <div class="panel-heading" >
+      <h4 class="panel-title">
+        <div>
+        {{section.name}}<i class="fa fa-plus" id="plus" aria-hidden="true"></i></div>
+      </h4>
+    </div>
+    <div id="collapse{{index}}" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="sub-topic">
+          {{#each contents as |content index|}}
+            <div class="sub-wrapper"><i class="fa fa-play-circle" style="padding:10px;" aria-hidden="true"></i>{{content.payload.name}}</div>
+          {{/each}}
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</p>

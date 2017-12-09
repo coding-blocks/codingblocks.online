@@ -81,6 +81,34 @@ body {
   color: rgba(36, 36, 39, 0.52);
 }
 
+.accordion-wrapper {
+  color:#505763;
+  font-size:20px;
+}
+
+.panel-default {
+  background-color:#f9f9f9;
+  border:1px solid #e8e9eb;
+  padding:15px;
+}
+
+.fa-plus {
+  float:right;
+  color: #007791;
+  font-size:15px;
+  padding-top: 5px;
+}
+
+.sub-wrapper {
+  background-color:#ffffff;
+  border:1px solid #e8e9eb;
+  padding:15px;
+}
+
+.fa-play-circle {
+  padding:15px;
+}
+
 .progress-bar {
   background-color: #dc5b86 !important;
 }
