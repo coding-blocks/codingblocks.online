@@ -1,9 +1,9 @@
-<p class="accordion-wrapper" data-toggle="collapse" data-parent="#accordion" href="#collapse{{index}}" {{action "toggling" on="click"}}>
+<p class="accordion-wrapper" data-toggle="collapse" data-parent="#accordion" href="#collapse{{index}}" {{action "toggling" index on="click"}}>
   <div class="panel panel-default">
     <div class="panel-heading" >
       <h4 class="panel-title">
         <div>
-        {{section.name}}<i class="fa fa-plus" id="plus" aria-hidden="true"></i></div>
+        {{section.name}}<i class="fa fa-plus toggleicon" id="plus{{index}}" aria-hidden="true"></i></div>
       </h4>
     </div>
     <div id="collapse{{index}}" class="panel-collapse collapse in">

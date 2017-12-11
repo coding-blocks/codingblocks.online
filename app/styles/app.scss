@@ -83,8 +83,9 @@ body {
 
 .accordion-wrapper {
   color:#505763;
-  font-size:13px;
-  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
+  font-size:14px;
+  text-transform: capitalize;
+  cursor: pointer;
 }
 
 .panel-default {
@@ -94,19 +95,22 @@ body {
 }
 
 .panel-title {
-    font-size: 19px;
+    font-size: 24px;
 }
 
-#plus{
+.toggleicon{
   float:right;
-  font-size:10px;
+  font-size:15px !important;
   padding-top: 5px;
+}
+
+.accordion-main {
+  width:90%;
 }
 
 .sub-wrapper {
   background-color:#ffffff;
   border:1px solid #e8e9eb;
-  padding:15px;
 }
 
 .fa-book {

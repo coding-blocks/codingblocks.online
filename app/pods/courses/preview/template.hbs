@@ -54,7 +54,7 @@
       <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
       <hr class="text">
       <br>
-      <div>
+      <div class="container accordion-main">
         {{#each model.sections as |section index|}}
           {{course-content  section=section contents=section.contents course=model index=index}}
         {{/each}}
