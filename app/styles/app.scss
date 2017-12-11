@@ -83,7 +83,7 @@ body {
 
 .accordion-wrapper {
   color:#505763;
-  font-size:20px;
+  font-size:13px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
 }
 
@@ -93,10 +93,13 @@ body {
   padding:15px;
 }
 
-.fa-plus {
+.panel-title {
+    font-size: 19px;
+}
+
+#plus{
   float:right;
-  color: #007791;
-  font-size:15px;
+  font-size:10px;
   padding-top: 5px;
 }
 
