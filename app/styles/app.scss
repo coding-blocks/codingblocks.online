@@ -113,6 +113,12 @@ body {
   border:1px solid #e8e9eb;
 }
 
+@media (max-width:400px) {
+  .accordion-main {
+    width:100%;
+  }
+}
+
 .fa-book {
   padding:15px;
 }
