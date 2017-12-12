@@ -1,9 +1,7 @@
-<div class="">
-<div class="course-card">
-  <div class="card col-xs-6 col-sm-12">
+<div class="course-card card">
+  <div class="col-xs-12 col-sm-12">
     <div class="card-block fixed-height-patch">
-      <img class="card-img-top fixed-size-patch" style="max-width: 100%;
-    height: auto;" src="/images/course1.jpg" alt="Run image" />
+      <img class="card-img-top fixed-size-patch cardimg" src="/images/course1.jpg" alt="Run image" />
       <h3 class="card-title">{{course.title}}</h3>
       <div class="card-text">
         <p>{{course.subtitle}}</p>
@@ -11,22 +9,21 @@
         <p></p>
         {{#if session.isAuthenticated}}
           {{#if run.user}}
-            {{#link-to 'classroom.run.index' run.user.runAttempt.id class="btn btn-primary"}}Resume Course{{/link-to}}
+            {{#link-to 'classroom.run.index' run.user.runAttempt.id class="btn btn-primary spacings"}}Resume Course{{/link-to}}
           {{else}}
             {{#if course.isFree}}
-              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary" style="width:100%;">Enroll</a>
+              <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Enroll</a>
             {{else}}
-              <div class="custom-prev-buy-btn-wrapper" style="width:100%;">
-                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary" style="width:100%;">Preview</a>
+              <div class="custom-prev-buy-btn-wrapper">
+                <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Preview</a>
                 {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
               </div>
             {{/if}}
           {{/if}}
         {{else}}
-          <a href="#" class="btn btn-primary" style="width:100%;white-space: normal;" {{action "login"}}>Login to Enroll</a>
+          <a href="#" class="btn btn-primary spacings" {{action "login"}}>Login to Enroll</a>
         {{/if}}
       </div>
     </div>
   </div>
-</div>
 </div>
