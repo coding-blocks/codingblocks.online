@@ -81,6 +81,48 @@ body {
   color: rgba(36, 36, 39, 0.52);
 }
 
+.accordion-wrapper {
+  color:#505763;
+  font-size:14px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.panel-default {
+  background-color:#f9f9f9;
+  border:1px solid #e8e9eb;
+  padding:15px;
+}
+
+.panel-title {
+    font-size: 24px;
+}
+
+.toggleicon{
+  float:right;
+  font-size:15px !important;
+  padding-top: 5px;
+}
+
+.accordion-main {
+  width:90%;
+}
+
+.sub-wrapper {
+  background-color:#ffffff;
+  border:1px solid #e8e9eb;
+}
+
+@media (max-width:400px) {
+  .accordion-main {
+    width:100%;
+  }
+}
+
+.fa-book {
+  padding:15px;
+}
+
 .progress-bar {
   background-color: #dc5b86 !important;
 }

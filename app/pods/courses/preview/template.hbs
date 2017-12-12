@@ -53,11 +53,10 @@
     <div class="container-fluid">
       <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
       <hr class="text">
-
-      <div class="row">
+      <br>
+      <div class="container accordion-main">
         {{#each model.sections as |section index|}}
-          {{course-content  section=section contents=section.contents course=model index=index
-                            class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ember-card"}}
+          {{course-content  section=section contents=section.contents course=model index=index}}
         {{/each}}
       </div>
     </div>
