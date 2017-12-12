@@ -1258,8 +1258,11 @@ section {
 
 .video-section {
   background-color: #363636;
+
+
+
   .code-editor {
-    position: fixed;
+    position: relative;
     background: white;
     padding: 20px;
     padding-top: 60px;
@@ -1277,7 +1280,7 @@ section {
       box-shadow: 2px 5px 5px 0 rgba(46, 61, 73, 0.15);
     }
   }
-  .main {
+  .main-section {
     padding: 0;
     background-color: white;
   }
@@ -1323,8 +1326,7 @@ section {
       border-bottom: 1px solid #e9e9e9;
       border-radius: 0;
       box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .2);
-      margin-bottom: 45px;
-
+      margin-bottom: 45px
     }
 
   }
@@ -1510,7 +1512,7 @@ section {
           border: 0;
           padding: 14px;
           margin: 5px;
-          min-width: 317px;
+          min-width: 90%;
 
         }
         i {
@@ -1760,8 +1762,8 @@ section {
   .material-card {
     display: inline-block;
 
+
     .card {
-      width: 466px;
       height: 245px;
       display: block;
       margin: 0 auto;
@@ -1786,9 +1788,20 @@ section {
       }
       a {
         position: relative;
-        left: 250px;
+        left: 230px;
         bottom: -20px;
       }
+    }
+
+    @media (min-width: 400px) and (max-width:1400px) {
+
+      .card {
+        .custom-btn {
+          width: 170px;
+          left: 0;
+        }
+      }
+
     }
   }
 }
@@ -1952,3 +1965,66 @@ nav ul li a:hover {
 #cb-footer{
   color: white;
 }
+
+
+
+@media screen and (max-width: 1136px) {
+
+  .main {
+    min-width: 100%;
+    .code-editor {
+      width: 100%;
+    }
+  }
+  .code-editor, .quiz-result, .video-container {
+    position: relative;
+    width: 100%;
+
+  }
+
+  .sections {
+
+     min-width: 100%;
+    .just-padding {
+      margin-top: 20px;
+
+      .list-group-item {
+        width: 90%;
+      }
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 1136px) {
+
+  .main-section {
+    min-width: 75%;
+    height: 100vh;
+    .code-editor, .quiz-result, .video-container {
+      min-width: 100%;
+    }
+  }
+  .code-editor, .quiz-result, .video-container {
+    position: fixed;
+    width: 100%;
+
+  }
+
+  .sections {
+
+    min-width: 25%;
+    .just-padding {
+      margin-top: 140px;
+      position: fixed;
+
+      .list-group-item {
+        width: 90%;
+      }
+    }
+  }
+
+
+}
+
