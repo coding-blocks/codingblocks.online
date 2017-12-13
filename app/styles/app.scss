@@ -1470,6 +1470,7 @@ section {
   min-height: 100vh;
   background-color: #363636;
 
+
   .border-heading {
     width: 100%;
     position: fixed;
@@ -1513,7 +1514,6 @@ section {
           border: 0;
           padding: 14px;
           margin: 5px;
-          min-width: 90%;
 
         }
         i {
@@ -1542,6 +1542,14 @@ section {
 
       }
     }
+  }
+}
+
+
+@media screen and (max-width: 1135px) {
+  .border-heading {
+    margin-top: 0 !important;
+    position: relative !important;
   }
 }
 
@@ -1987,6 +1995,7 @@ nav ul li a:hover {
 
      min-width: 100%;
     .just-padding {
+      width: 100%;
       margin-top: 20px;
 
       .list-group-item {
@@ -1998,7 +2007,7 @@ nav ul li a:hover {
 
 }
 
-@media screen and (min-width: 1136px) {
+@media screen and (min-width: 1136px)  {
 
   .main-section {
     min-width: 75%;
@@ -2019,9 +2028,9 @@ nav ul li a:hover {
     .just-padding {
       margin-top: 140px;
       position: fixed;
-
+      width: 100%;
       .list-group-item {
-        width: 90%;
+        width: 22%;
       }
     }
   }
