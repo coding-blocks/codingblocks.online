@@ -22,3 +22,11 @@ script:
       bash ./deployToStaging.sh;
     fi
 
+group:
+  - "stable"
+
+dist:
+  - "precise"
+
+os:
+  - "linux"
