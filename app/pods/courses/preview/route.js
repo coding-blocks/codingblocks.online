@@ -4,7 +4,11 @@ export default Ember.Route.extend({
   'current-user': Ember.inject.service(),
   session: Ember.inject.service(),
   model(params) {
-    return this.get('store').queryRecord('course', {custom: {ext: 'url', url: 'preview\\' + params.courseId}});
+    return Ember.RSVP.hash({
+      run : this.store.query('run', {}),
+      course : this.get('store').queryRecord('course', {custom: {ext: 'url', url: 'preview\\' + params.courseId}})
+  })
+  // return this.get('store').queryRecord('course', {custom: {ext: 'url', url: 'preview\\' + params.courseId}});
   },
   setupController(controller, model) {
     this._super(controller, model);
