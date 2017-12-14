@@ -1,11 +1,26 @@
-<div class="card-container">
+<div class="card-container" >
   <div class="card">
     <div class="front" style="border-bottom: 7px solid {{course.color}}">
       <div class="cover" style="border-bottom: 7px solid {{course.color}}">
         <img src={{course.backgroundImage}}>
       </div>
       <div class="user">
-        <img class="img-circle" src="{{course.instructor.photo}}">
+        <img class="img-circle" src="{{course.instructor.photo}}" data-toggle="popover" data-placement="right" data-html="true" title="
+          <div style='background:#fff;padding:10px;'>
+            <div>
+          <div style='text-align:center;background:{{{course.color}}}'>
+            <img style='border-radius:50%;height:100px;border: 5px solid white; position:relative; top:45px; ' src='{{{course.instructor.photo}}}'>
+          </div>
+        </div>
+        <div style='height:50px'></div>
+          <div>
+            <div style='text-align:center;line-height:120%;'>
+              <h3 class='name'>{{{course.instructor.name}}}</h3>
+              <p style='color:#999999;font-size:20px;'>Instructor</p>
+              <p class='bio'>{{{course.instructor.description}}}</p>
+            </div>
+            </div>
+          </div>">
       </div>
       <div class="content">
         <div class="main">
@@ -33,29 +48,15 @@
         </div>
       </div>
     </div>
-    <div class="back" style="border-bottom: 7px solid {{course.color}}">
-      <div class="cover" style="background: {{course.color}};border-bottom: 7px solid {{course.color}}"></div>
-      <div class="user">
-        <img class="img-circle" src="{{course.instructor.photo}}">
-      </div>
-      <div class="content">
-        <div class="main">
-          <h3 class="name">{{course.instructor.name}}</h3>
-          <p class="subtitle">Instructor</p>
-          <p class="bio">{{markdown-to-html course.instructor.description}}</p>
-        </div>
-        <div class="footer">
-          {{#link-to 'courses.preview' course.id}}
-            {{#if course.color}}
-              <button class="btn" style="background: {{course.color}}">View Course</button>
-            {{else}}
-              <button class="btn" style="background: #292b2c">View Course</button>
-             {{/if}}
 
-          {{/link-to}}
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 {{yield}}
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+      trigger: 'hover',
+      delay:400
+    });
+});
+</script>

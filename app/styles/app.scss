@@ -515,10 +515,7 @@ section {
   /* flip the pane when hovered */
   &:not(.manual-flip):hover, &.hover.manual-flip {
     .card {
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-      transform: rotateY(180deg);
+
     }
   }
 
@@ -2037,4 +2034,3 @@ nav ul li a:hover {
 
 
 }
-
