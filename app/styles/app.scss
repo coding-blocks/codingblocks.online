@@ -1039,6 +1039,11 @@ section {
     border-radius: 3px;
     padding-bottom: 1rem;
     display: flex;
+    .startEnd{
+      text-align: center;
+      display: block;
+      width: 100%;
+    }    
     //@include bounceInUp(
     //  $duration: 2s,
     //  $delay: .6s,
