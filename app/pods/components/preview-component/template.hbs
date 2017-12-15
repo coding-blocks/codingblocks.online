@@ -3,6 +3,11 @@
     <div class="card-block fixed-height-patch">
       <img class="card-img-top fixed-size-patch cardimg" src="/images/course1.jpg" alt="Run image" />
       <h3 class="card-title">{{course.title}}</h3>
+      <div class="row">
+        <div class="startEnd">
+        <p>{{moment-format (multiply run.start) 'MMMM Do YYYY'}} - {{moment-format (multiply run.end) 'MMMM Do YYYY'}}</p>
+        </div>
+      </div>
       <div class="card-text">
         <p>{{course.subtitle}}</p>
         <strong><p>Rs. {{course.fees}}</p></strong>
