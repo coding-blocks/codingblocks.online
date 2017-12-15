@@ -1368,9 +1368,11 @@ section {
     z-index: 1000;
     left: 0;
     video {
-      height: 87%;
+      height: 92%;
       background: #222222;
-      padding: 55px;
+      margin-top: 100px;
+      padding-right: 0;
+      padding-left: 0;
     }
 
     .video-padding {
