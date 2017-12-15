@@ -1,4 +1,4 @@
-<div class="card-container" >
+<div class="card-container">
   <div class="card">
     <div class="front" style="border-bottom: 7px solid {{course.color}}">
       <div class="cover" style="border-bottom: 7px solid {{course.color}}">
@@ -15,9 +15,9 @@
         <div style='height:50px'></div>
           <div>
             <div style='text-align:center;line-height:120%;'>
-              <h3 class='name'>{{{course.instructor.name}}}</h3>
+              <h3>{{{course.instructor.name}}}</h3>
               <p style='color:#999999;font-size:20px;'>Instructor</p>
-              <p class='bio'>{{{course.instructor.description}}}</p>
+              <p>{{{course.instructor.description}}}</p>
             </div>
             </div>
           </div>">
@@ -48,7 +48,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 {{yield}}
