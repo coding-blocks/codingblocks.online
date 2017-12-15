@@ -8,7 +8,7 @@ cache:
 
 install:
   - yarn install
-  - npm install -g bower
+  - yarn global add bower
   - bower install
 
 before_script: 
@@ -22,4 +22,3 @@ script:
       bash ./deployToStaging.sh;
     fi
 
-group: deprecated-2017Q4
