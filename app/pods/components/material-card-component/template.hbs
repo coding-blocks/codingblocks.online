@@ -1,7 +1,6 @@
 
 
 <div class="card-container manual-flip content-container">
-  {{#link-to 'classroom.run.index' run.runAttemptId}}
   <div class="card" >
       <h3 class="name">{{run.course.title}}
         <p class="run-name">{{run.name}} </p>
@@ -12,6 +11,7 @@
         <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{run.percentComplete}}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{run.percentComplete}}%</div>
       </div>
       {{#link-to 'classroom.run.index' run.runAttemptId class="custom-btn"}}Resume Learning{{/link-to}}
+
   </div>
-  {{/link-to}}
+
 </div>
