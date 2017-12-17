@@ -989,6 +989,11 @@ section {
     border-radius: 3px;
     padding-bottom: 1rem;
     display: flex;
+    .startEnd{
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
     //@include bounceInUp(
     //  $duration: 2s,
     //  $delay: .6s,
@@ -1298,6 +1303,7 @@ section {
   }
 
   .video-container {
+    max-width: 100% !important;
     width: 75vw;
     height: 50vw;
     @include width-height(75vw,auto);
@@ -1306,7 +1312,7 @@ section {
     z-index: 1000;
     left: 0;
     video {
-      height: 87%;
+      height: 100vh;
       background: #222222;
       padding: 55px;
     }
@@ -1461,7 +1467,7 @@ section {
           border: 0;
           padding: 14px;
           margin: 5px;
-          min-width: 317px;
+          min-width: 90%;
 
         }
         i {
@@ -1902,4 +1908,99 @@ nav ul li a:hover {
 
 #cb-footer{
   color: white;
+}
+
+
+
+@media screen and (max-width: 1136px) {
+
+  //.main {
+  //  min-width: 100%;
+  //  .code-editor {
+  //    width: 100%;
+  //  }
+  //}
+  //.code-editor, .quiz-result, .video-container {
+  //  position: relative;
+  //  width: 100%;
+  //
+  //}
+  //
+  //.sections {
+  //
+  //   min-width: 100%;
+  //  .just-padding {
+  //    margin-top: 20px;
+  //
+  //    .list-group-item {
+  //      width: 90%;
+  //    }
+  //  }
+  //}
+
+
+}
+
+@media screen and (max-width: 927px) {
+
+
+.main-section {
+  .video-container {
+    width: 100vw;
+    position: relative;
+  }
+  max-width: 100%;
+}
+  .video-section {
+    display: block;
+
+    .sections {
+      .border-heading {
+        margin-top: 0;
+        position: relative;
+      }
+
+      .just-padding {
+        margin-top: 0;
+      }
+      max-width: 100%;
+    }
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+
+
+
+
+
+  //.main-section {
+  //  width: 75%;
+  //  height: 100vh;
+  //  .code-editor, .quiz-result, .video-container {
+  //    min-width: 100%;
+  //  }
+  //}
+  //.code-editor, .quiz-result, .video-container {
+  //  position: fixed;
+  //  width: 100%;
+  //
+  //}
+
+  .sections {
+
+    //min-width: 25%;
+    //.just-padding {
+    //  margin-top: 140px;
+    //  position: fixed;
+    //
+    //  .list-group-item {
+    //    width: 90%;
+    //  }
+    //}
+  }
+
+
 }
