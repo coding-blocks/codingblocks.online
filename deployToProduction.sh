@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -e
 rm -rf dist/
 ember build --environment=production
 chmod 600 key.pem
