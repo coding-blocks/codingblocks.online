@@ -21,7 +21,7 @@
             {{else}}
               <div class="custom-prev-buy-btn-wrapper">
                 <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Preview</a>
-                {{#razorpay-buy-button price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
+                {{#razorpay-buy-button isDisabled=true price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
               </div>
             {{/if}}
           {{/if}}
