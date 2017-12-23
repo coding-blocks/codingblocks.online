@@ -1,3 +1,7 @@
+{{#if isDisabled}}
+  <a class="btn razorpay-payment-button" disabled >Buy Course</a>
+  {{!-- Cursor is disabled in app.scss --}}
+{{else}}
 <form action={{redirectUrl}} method="POST" >
   <!-- Note that the amount is in paise = 50 INR -->
   <script
@@ -15,3 +19,4 @@
   <input type="hidden" value="{{user.id}}" name="user_id">
   <input type="hidden" value="{{run.id}}" name="run_id">
 </form>
+{{/if}}
