@@ -30,14 +30,12 @@
               {{#if session.isAuthenticated}}
                 {{#if run.user}}
                   {{#link-to 'classroom.run.index' run.user.runAttempt.id class="enroll-btn"}}Resume Course{{/link-to}}
-                {{else}}
-                  {{#if course.isFree}}
+                {{else if course.isFree}}
                     <a href="#" {{action 'enrollThisCourse' run}} class="enroll-btn">Enroll</a>
-                  {{else}}
+                {{else course.isFree}}
                     <div class="custom-prev-buy-btn-wrapper">
                       <a href="#" {{action 'enrollThisCourse' run}} class="enroll-btn">Preview</a>
                     </div>
-                  {{/if}}
                 {{/if}}
               {{else}}
                 <a href="#" class="enroll-btn" {{action "login"}}>Login to Enroll</a>

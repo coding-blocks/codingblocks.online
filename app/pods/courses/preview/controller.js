@@ -26,7 +26,7 @@ export default Ember.Controller.extend({
           this.get('transition')('classroom.run.index', data.id);
         }
       }).catch(err => {
-        // fuck off
+        
       })
     }
   }
