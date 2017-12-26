@@ -1,0 +1,3 @@
+#Redirects for netlify
+
+/admin/*         https://confident-minsky-8138ce.netlify.com/:splat              301
