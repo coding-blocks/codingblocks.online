@@ -1,17 +1,17 @@
 <div class="course-preview">
   <section>
-    <div class="color-line" style="background:{{model.color}}"></div>
+    <div class="color-line" style="background:{{model.course.color}}"></div>
     <div class="background-image">
       <div class="row">
-        <div class="course-title col-xs-12 col-sm-12 col-md-6 col-lg-6" style="color:{{model.color}}">
+        <div class="course-title col-xs-12 col-sm-12 col-md-6 col-lg-6" style="color:{{model.course.color}}">
           <div class="row title">
             <div class=" title-wrap">
               <h1 class="display-4">
-                {{model.title}}
+                {{model.course.title}}
               </h1>
             </div>
             <h3 class="subtitle">
-              {{model.subtitle}}
+              {{model.course.subtitle}}
             </h3>
           </div>
         </div>
@@ -26,7 +26,11 @@
           </div>
           <div class="enroll-row row col-12">
             <div class="enroll-wrap col-xs-12 col-sm-12 offset-md-4 col-md-8 ">
-              <a href="#runs" class="enroll-btn" style="background:{{model.color}}; border: {{model.color}}">Enroll</a>
+              {{#each model.run as |run RunIndex|}}
+              {{log run}}
+              {{log run.runAttemptId}}
+              {{/each}}
+              <a href="#runs" class="enroll-btn" style="background:{{model.course.color}}; border: {{model.course.color}}">Enroll</a>
             </div>
           </div>
         </div>
@@ -38,7 +42,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            <iframe class="iframe-video" src={{model.promoVideo}} frameborder="0"
+            <iframe class="iframe-video" src={{model.course.promoVideo}} frameborder="0"
                     allowfullscreen></iframe>
           </div>
         </div>
@@ -51,12 +55,12 @@
 <div class="main-wrapper main-wrapper-raised">
   <section>
     <div class="container-fluid">
-      <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
+      <h2 class="heading-main" style="color:{{model.course.color}}">Course Contents</h2>
       <hr class="text">
       <br>
       <div class="container accordion-main">
-        {{#each model.sections as |section index|}}
-          {{course-content  section=section contents=section.contents course=model index=index}}
+        {{#each model.course.sections as |section index|}}
+          {{course-content  section=section contents=section.contents course=model.course index=index}}
         {{/each}}
       </div>
     </div>
@@ -65,14 +69,15 @@
   <section id="runs">
     <div class="container-fluid">
       <div class="row">
-        <h2 class="heading-main" style="color:{{model.color}}">Available Batches</h2>
+        <h2 class="heading-main" style="color:{{model.course.color}}">Available Batches</h2>
       </div>
       <hr class="text">
       <div class="course-card-wrapper">
           <div class="course-cards">
             <div class="flex row">
-              {{#each  model.runs as |run index|}}
-                {{preview-component run=run index=index course=model user=user transition=(action 'transitionTo') class="ember-card col-xs-12 col-sm-4 col-md-3 col-lg-3"}}
+              {{log model.runAttempt}}
+              {{#each model.course.runs as |run index|}}
+                {{preview-component run=run index=index course=model.course user=user transition=(action 'transitionTo') class="ember-card col-xs-12 col-sm-4 col-md-3 col-lg-3"}}
               {{/each}}
             </div>
         </div>
