@@ -1,0 +1,4 @@
+#Redirects for netlify
+
+/*	/index.html	200
+/admin/*	https://admin-cbonline.netlify.com/:splat	301
