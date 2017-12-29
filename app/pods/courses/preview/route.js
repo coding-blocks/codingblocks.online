@@ -8,11 +8,5 @@ export default Ember.Route.extend({
     },
   setupController(controller, model) {
     this._super(controller, model);
-    if (this.get('session.isAuthenticated')) {
-      //FIXME: .getUSer() doesn't work for some reason. Needs to be fixed. Calling load() creates an extra http request.
-      this.get('currentUser').load().then(user => {
-        controller.set('user', user);
-      });
-    }
-  }
+        }
 });

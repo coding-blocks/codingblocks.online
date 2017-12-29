@@ -3,6 +3,8 @@ import config from '../../../config/environment';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  currentUser: Ember.inject.service('current-user'),
+  user: Ember.computed.alias('currentUser.user'),
   api: Ember.inject.service(),
   actions: {
     transitionTo(route, param) {
@@ -26,7 +28,7 @@ export default Ember.Controller.extend({
           this.get('transition')('classroom.run.index', data.id);
         }
       }).catch(err => {
-        
+
       })
     }
   }
