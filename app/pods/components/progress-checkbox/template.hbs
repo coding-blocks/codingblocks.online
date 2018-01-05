@@ -1,0 +1,9 @@
+
+<i class={{iconName}} aria-hidden="true"></i>
+
+{{#if (not isDone)}}
+	<button class="btn btn-success btn-sm allowClick" {{action 'markAsDone' bubbles=false}} >Mark as Done</button>
+{{else}}
+	<button class="btn btn-warning btn-sm allowClick" {{action 'markAsUnDone' bubbles=false}} >Mark as New</button>
+{{/if}}
+{{yield}}
