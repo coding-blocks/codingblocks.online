@@ -1,0 +1,4 @@
+#Redirects for netlify
+
+/admin/*	https://admin.codingblocks.online/:splat	301
+/*      /index.html     200

@@ -1,8 +1,8 @@
 <div class=" video-section row">
-    <div class="main col-9">
+    <div class="main-section col-md-9 col-xs-12">
       {{outlet}}
     </div>
-  <div class="col-3 sections">
+  <div class="col-md-3  col-xs-12 sections">
     <div class="border-heading">
       <span>Table of Contents</span>
     </div>
@@ -37,7 +37,7 @@
         {{#if (not-eq sections.length course.sections.length)}}
           <div class="alert alert-warning" role="alert">
             Please buy the course to unlock further.
-              <div class="custom-btn">
+              <div>
               {{#razorpay-buy-button price=(mul course.fees 100)  name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
               </div>
             </div>

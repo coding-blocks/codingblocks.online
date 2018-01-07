@@ -17,12 +17,12 @@
         </div>
         <div class="sample-video-container col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <div class="row">
-            <div class="col-md-4 col-xs-4 offset-xs-4 video-button justify-content-center">
+            {{!-- <div class="col-md-4 col-xs-4 offset-xs-4 video-button justify-content-center">
               <img src="/images/play-video.png" alt="play-video button" data-toggle="modal" data-target="#exampleModal">
-            </div>
-            <div class="col-md-8 hidden-sm-down display-4">
+            </div> --}}
+            {{!-- <div class="col-md-8 hidden-sm-down display-4">
               <p> Sample Video</p>
-            </div>
+            </div> --}}
           </div>
           <div class="enroll-row row col-12">
             <div class="enroll-wrap col-xs-12 col-sm-12 offset-md-4 col-md-8 ">
@@ -53,30 +53,28 @@
     <div class="container-fluid">
       <h2 class="heading-main" style="color:{{model.color}}">Course Contents</h2>
       <hr class="text">
-
-      <div class="flex-model row">
+      <br>
+      <div class="container accordion-main">
         {{#each model.sections as |section index|}}
-          {{course-content  section=section contents=section.contents course=model index=index
-                            class="col-xs-12 col-sm-4 col-md-3 col-lg-3 ember-card"}}
+          {{course-content  section=section contents=section.contents course=model index=index}}
         {{/each}}
       </div>
     </div>
   </section>
 
   <section id="runs">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <h2 class="heading-main" style="color:{{model.color}}">Available Runs</h2>
+        <h2 class="heading-main" style="color:{{model.color}}">Available Batches</h2>
       </div>
-      <div class="course-card-wrapper row">
-        <div class="courses">
+      <hr class="text">
+      <div class="course-card-wrapper">
           <div class="course-cards">
-            <div class="flex-model row">
+            <div class="flex row">
               {{#each  model.runs as |run index|}}
-                {{preview-component run=run index=index course=model user=user transition=(action 'transitionTo') class="ember-card"}}
+                {{preview-component run=run index=index course=model user=user transition=(action 'transitionTo') class="ember-card col-xs-12 col-sm-4 col-md-3 col-lg-3"}}
               {{/each}}
             </div>
-          </div>
         </div>
       </div>
     </div>
