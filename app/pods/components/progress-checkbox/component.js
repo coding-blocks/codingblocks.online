@@ -12,22 +12,6 @@ export default class ProgressCheckboxComponenet extends Component {
 
 	tagName = 'span'
 
-	// fa icon name for the progress
-	@computed ('content.progress')
-	iconName () {
-		let progressId = this.get('content.progress.id')
-		let progress = this.get('content.progress')
-		if (isNone (progressId)) {
-			return 'fa fa-exclamation-circle'
-		} 
-
-		switch (progress.get('status')) {
-			case 'ATTEMPTED' : return 'fa fa-times'; break;
-			case 'DONE': return 'fa fa-check'; break;
-			default: return 'fa fa-question-circle-o'; break;
-		}
-	}
-
 	@computed ('content.progress')
 	isDone () {
 		return (this.get('content.progress.status') === 'DONE')
@@ -37,7 +21,7 @@ export default class ProgressCheckboxComponenet extends Component {
 		progress = yield progress
 		yield progress.save()
 		this.get('content').set('progress', progress)
-	})
+	}).drop()
 
 	@action
 	markAsDone () {

@@ -2048,3 +2048,41 @@ nav ul li a:hover {
 .allowClick {
    pointer-events: all;
 }
+
+.circle {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(169, 169, 169, 0.36);
+    display: inline-block;
+    margin: 1px auto;
+    position: relative;
+    z-index: 100;
+    i {
+      color: white;
+      position: relative;
+      top: -8px;
+      right: 4px;
+
+    }
+  }
+
+  .circle-attempted {
+    width: 25px !important;
+    height: 25px !important;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: $majenta;
+    display: inline-block;
+    margin: 1px auto;
+    position: relative;
+    z-index: 100;
+    i {
+      color: white;
+      position: relative;
+      top: -8px;
+      right: 4px;
+
+    }
+  }

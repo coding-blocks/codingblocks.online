@@ -1,9 +1,11 @@
 
-<i class={{iconName}} aria-hidden="true"></i>
-
 {{#if (not isDone)}}
-	<button class="btn btn-success btn-sm allowClick" {{action 'markAsDone' bubbles=false}} >Mark as Done</button>
+	<span class="circle allowClick" title="Mark As Done" {{action 'markAsDone' bubbles=false}} >
+		<i aria-hidden="true" class="fa fa-dot-circle-o"></i>
+	</span>
 {{else}}
-	<button class="btn btn-warning btn-sm allowClick" {{action 'markAsUnDone' bubbles=false}} >Mark as New</button>
+	<span class="circle-attempted allowClick" title="Mark as UnDone" {{action 'markAsUnDone' bubbles=false}}>
+		<i aria-hidden="true" class="fa fa-check"></i>
+	</span>
 {{/if}}
 {{yield}}
