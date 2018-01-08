@@ -1,7 +1,8 @@
+{{toggle-component titleText=model.payload.name type=model.content.content-table}}
 {{outlet}}
 {{!-- See toggle-component for the other end --}}
 {{#ember-wormhole to="goToDisqusLink"}}
   {{#link-to 'doubts' model.id}}
-  	Post your doubts.
+  	Doubts Section
   {{/link-to}}
 {{/ember-wormhole}}
