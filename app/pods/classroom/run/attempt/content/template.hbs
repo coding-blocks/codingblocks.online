@@ -1,4 +1,7 @@
-
-  {{outlet}}
-
-{{!-- component model.componentName content=model.payload questionParam=q --}}
+{{outlet}}
+{{!-- See toggle-component for the other end --}}
+{{#ember-wormhole to="goToDisqusLink"}}
+  {{#link-to 'doubts' model.id}}
+  	Post your doubts.
+  {{/link-to}}
+{{/ember-wormhole}}

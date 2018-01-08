@@ -43,6 +43,9 @@ module.exports = function(environment) {
     ENV.clientId = 7642172843
     ENV.refreshTokenTimeout = 20000 // 20 sec
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
     // ENV.sentry.development = true
   }
 
@@ -63,6 +66,9 @@ module.exports = function(environment) {
     ENV.clientId = 5633768694
     ENV.refreshTokenTimeout = 900000 // 15min
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
 
   }
 
