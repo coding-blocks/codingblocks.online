@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   }),
   toggle: true,
   hidePlaylist(playlist,video) {
-    playlist.css({transform: 'translateX(1800px)',
+    playlist.css({transform: 'translateX(100vw)',
       transition: '.5s'
     });
     video.css({width: '100vw',
@@ -32,11 +32,12 @@ export default Ember.Component.extend({
         console.log("main");
         const playlist = Ember.$('.sections');
         const video    = Ember.$('.video-container');
-
         if(this.toggle) {
+          Ember.$('#content-header').addClass('full-width-header');
           this.hidePlaylist(playlist,video);
         }
         else {
+          Ember.$('#content-header').removeClass('full-width-header');
           this.showPlaylist(playlist,video);
         }
         console.log(this.toggle);
