@@ -72,11 +72,13 @@ body {
       .section-heading {
 
         top: 0 !important;
+
         i{
           display: none;
         }
 
       }
+
 
     }
     .sections {
@@ -1429,9 +1431,10 @@ section {
       @include padding(null, null, null, null);
       @include margin(140px, null, null, null);
       @include width-height(100%, 100%);
+      //margin-top: 40px;
 
       .external-video {
-        height: calc(100vh - 140px)!important;
+        height: calc(100vh)!important;
       }
     }
 
@@ -1467,12 +1470,14 @@ section {
       }
     }
 
+
     &:hover {
       .section-heading {
         display: flex;
       }
     }
   }
+
 
   .full-width {
     background-color: #ffffff;
@@ -2090,6 +2095,21 @@ nav ul li a:hover {
   .toggle-button {
     display: none;
   }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .main-section {
+    .video-container {
+      .section-heading {
+        position: absolute;
+        top: 0!important;
+      }
+    }
+  }
+
+
 
 }
 
