@@ -1,13 +1,11 @@
 <div id="content-header" class="section-heading col-lg-9  col-xs-12">
   <span class="title-text">{{titleText}}</span>
-  <p class="right-section">
-    <span id="goToDisqusLink">
-    	{{#link-to 'doubts' contentId}}
-  			Doubts Section
-  		{{/link-to}}
-    </span>
-    <button class="toggle-button" type="toggleplaylist" {{action 'togglePlaylist' }}>
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </button>
-  </p>
+  <span id="goToDisqusLink">
+    {{#link-to 'doubts' contentId}}
+      Doubts Section
+    {{/link-to}}
+  </span>
+  <button class="toggle-button" type="toggleplaylist" {{action 'togglePlaylist' }}>
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
 </div>
