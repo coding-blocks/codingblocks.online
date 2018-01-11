@@ -1,4 +1,8 @@
-
-  {{outlet}}
-
-{{!-- component model.componentName content=model.payload questionParam=q --}}
+{{toggle-component titleText=model.payload.name type=model.content.content-table contentId=model.id}}
+{{outlet}}
+{{!-- See toggle-component for the other end --}}
+{{#ember-wormhole to="goToDisqusLink"}}
+  {{#link-to 'doubts' model.id}}
+  	Doubts Section
+  {{/link-to}}
+{{/ember-wormhole}}
