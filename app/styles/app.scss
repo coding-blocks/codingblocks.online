@@ -130,6 +130,7 @@ body {
   background-color: #dc5b86 !important;
 }
 
+
 section {
   @include padding(40px, null, 40px, null);
 
@@ -1392,6 +1393,7 @@ section {
       @include padding(null, null, null, null);
       @include margin(140px, null, null, null);
       @include width-height(100%, 100%);
+      //margin-top: 40px;
 
       .external-video {
         height: calc(100vh - 140px) !important;
@@ -1472,6 +1474,7 @@ section {
     }
 
   }
+
 
   .full-width {
     background-color: #ffffff;
@@ -2092,3 +2095,87 @@ nav ul li a:hover {
   }
 
 }
+
+
+
+.section-heading {
+  top: 80px;
+}
+
+@media only screen  and (max-width: 800px) and (orientation: landscape) {
+
+  .container-fluid {
+    position: absolute;
+    bottom: -25px;
+
+  }
+  .video-section {
+
+
+
+    .main-section {
+      padding-bottom: 0;
+
+      .video-container {
+
+        width: 100vw !important;
+
+        .section-heading {
+          position: absolute;
+          top: 0 !important; ;
+
+          i{
+            display: none;
+          }
+
+        }
+
+        .video-controls {
+          margin-left: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+      }
+
+    }
+
+    .sections {
+      display: none;
+    }
+
+  }
+
+  .custom-nav {
+    display: none;
+  }
+
+  .border-heading {
+    display: none;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+  .main-section {
+    .video-container {
+      .section-heading {
+        position: absolute;
+        top: -60px!important;
+      }
+
+    }
+
+    .lecture {
+      .section-heading {
+        position: absolute;
+        top: 80px!important;
+      }
+    }
+  }
+
+}
+
+
