@@ -6,10 +6,14 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-    routing: Ember.inject.service('-routing'),
     session: Ember.inject.service(),
     currentUser: Ember.inject.service('current-user'),
     raven : Ember.inject.service(),
+    sessionAuthenticated () {
+        const redirectionPath = window.localStorage.getItem("redirectionPath")
+        if (! Ember.isNone(redirectionPath))
+            this.transitionTo(redirectionPath)
+    },
     beforeModel(transition) {
         if (!this.get('session.isAuthenticated') && transition.queryParams.code !== undefined) {
             return this.get('session').authenticate('authenticator:custom', transition.queryParams.code).then(() => {
@@ -31,10 +35,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     },
     _loadCurrentUser() {
         return this.get('currentUser').load();
-    },
-    setupController(controller, model) {
-      this._super(controller, model);
-      controller.set('routing', this.get('routing'));
     }
 });
 
