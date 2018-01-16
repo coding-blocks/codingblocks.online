@@ -1221,7 +1221,20 @@ section {
       }
     }
   }
+
+  .video-section {
+    padding: 5px 10px;
+    .section-heading {
+      max-width: 100vw;
+      display: block!important;
+      .title-text {
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    }
+  }
 }
+
 
 @media (min-width: 768px) {
   .course-preview {
@@ -1373,7 +1386,7 @@ section {
     video {
       height: 100vh;
       background: #222222;
-      padding: 55px;
+      padding: 150px 0 55px 0;
     }
 
     .video-padding {
@@ -1385,25 +1398,21 @@ section {
         height: calc(100vh - 140px) !important;
       }
     }
-
-    &:hover {
-      .section-heading {
-        display: flex;
-      }
-    }
   }
 
   .section-heading {
     position: fixed;
+    display: flex;
     top: 94px;
-    padding: 10px 20px;
+    padding: 5px 20px;
     color: white;
     background: #363636;
     padding-left: 10px;
     z-index: 9999;
     font-size: 18px;
     transition: .5s;
-
+    min-height: 38px;
+    max-height: 150px;
     &.full-width-header {
       width: 100% !important;
       max-width: 100vw;
@@ -1411,65 +1420,46 @@ section {
       transition: .5s;
     }
 
-    .title-text {
-      padding: 15px;
-      display: inline-block;
-      @media (max-width: 767px) {
-        padding-left: 10px;
-      }
+    .title-text, #goToDisqusLink {
+      padding-top: 8px;
     }
 
-    .right-section {
-      float: right;
-      margin: 0;
-      padding: 0;
+    .title-text {
+      flex: 7;
+      max-height: 65px;
+      overflow: hidden;
+    }
 
-      #goToDisqusLink {
-        margin-right: 10px;
-        vertical-align: super;
-        a {
-          font-size: 18px;
-          color: white;
-          background: darken(#363636, 10%);
-          padding: 5px 10px;
-          border-radius: 12px;
-          cursor: pointer;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-      .toggle-button {
-        background: transparent;
+    #goToDisqusLink {
+      flex: 2;
+      margin-right: 10px;
+      text-align: right;
+      a {
+        font-size: 18px;
         color: white;
-        border: none;
+        background: darken(#363636, 10%);
+        padding: 5px 10px;
+        border-radius: 12px;
         cursor: pointer;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        font-size: 38px;
 
         &:hover {
-          color: #d95787;
+          text-decoration: underline;
         }
       }
     }
-
-    @media (max-width: 767px) {
-      max-width: 100vw;
-      .right-section {
-        float: none;
-        padding-left: 10px;
-        display: inline;
-        vertical-align: -webkit-baseline-middle;
-        #goToDisqusLink {
-          margin: 0;
-          a {
-            font-size: 15px;
-            padding: 5px;
-          }
-        }
+    .toggle-button {
+      flex: 0.5;
+      background: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      font-size: 38px;
+      line-height: normal;
+      &:hover {
+        color: #d95787;
       }
     }
   }
