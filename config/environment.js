@@ -12,6 +12,7 @@ module.exports = function(environment) {
     },
     rootURL: '/',
     locationType: 'auto',
+    hbBaseUrl: "https://hack.codingblocks.com",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
