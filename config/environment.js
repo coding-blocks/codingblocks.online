@@ -12,6 +12,7 @@ module.exports = function(environment) {
     },
     rootURL: '/',
     locationType: 'auto',
+    hbBaseUrl: "https://hack.codingblocks.com",
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -65,7 +66,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'staging') {
-    ENV.publicUrl = 'http://development.staging.codingblocks.online';
+    ENV.publicUrl = 'https://staging.codingblocks.online';
     ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'

@@ -25,18 +25,18 @@ export default Base.extend({
       });
   },
   authenticate() {
-      var args = [...arguments];
-      return new Ember.RSVP.Promise( (resolve, reject) => {
-          Ember.$.get(env.apiEndpoint + '/api/jwt/login?grant_code=' + args[0],  (data) => {
-              if (!Ember.isNone(data.jwt) && !Ember.isNone(data.refresh_token) ) {
-                  this.refreshToken = data.refresh_token
-                  this._scheduleRefreshTokenRequest(data.jwt)
-                  resolve(data);
-              } else {
-                  reject(data);
-              }
-          });
-      });
+    var args = [...arguments];
+    return new Ember.RSVP.Promise( (resolve, reject) => {
+        Ember.$.get(env.apiEndpoint + '/api/jwt/login?grant_code=' + args[0],  (data) => {
+            if (!Ember.isNone(data.jwt) && !Ember.isNone(data.refresh_token) ) {
+                this.refreshToken = data.refresh_token
+                this._scheduleRefreshTokenRequest(data.jwt)
+                resolve(data);
+            } else {
+                reject(data);
+            }
+        });
+    });
   },
   // Schedules a refresh token request after @time ms
   _scheduleRefreshTokenRequest (rawJwt) {
