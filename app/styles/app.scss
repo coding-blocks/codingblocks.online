@@ -2134,3 +2134,44 @@ nav ul li a:hover {
 }
 
 
+.error404.container-fluid {
+  height: 100%;
+  margin:200px 0 0 0;
+  line-height:1.6em;
+  text-align:center;
+}
+
+.error404 div {
+  text-transform:uppercase;
+}
+.error404 div h1 {
+  font-size:80px;
+}
+.error404 div h1 span {
+  display:inline-block;
+  margin-left:5px;
+  padding:2px;
+  border:1px solid #CCCCCC;
+  overflow:hidden;
+}
+.error404 div h1 span strong {
+  display:inline-block;
+  padding:0 20px 20px;
+  border:1px solid #CCCCCC;
+  font-weight:normal;
+}
+.error404 div h2 {
+  font-size:60px;
+}
+.error404 div h2 span {
+  display:block;
+  font-size:30px;
+}
+.error404 p {
+  margin:25px 0 0 0;
+  padding:0;
+  font-size:16px;
+}
+.error404 p:first-child {
+  margin-top:0;
+}
