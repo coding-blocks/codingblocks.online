@@ -39,6 +39,7 @@ Router.map(function() {
 
   this.route('opt', function() {});
   this.route('logout');
+  this.route('error404', {path: '/*path'})
 });
 
 export default Router;
