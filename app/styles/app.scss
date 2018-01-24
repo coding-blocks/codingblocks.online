@@ -265,6 +265,7 @@ section {
   max-width: 100vw;
   background-color: white;
   top: 0;
+  height: 94px;
 
   .navbar-collapse {
 
@@ -1232,8 +1233,8 @@ section {
         display: block;
       }
       #goToDisqusLink {
-        text-align: left!important;
-        margin-right: 0!important;
+        text-align: left !important;
+        margin-right: 0 !important;
       }
     }
   }
@@ -1288,6 +1289,8 @@ section {
 }
 
 .video-section {
+  max-height: 100vh;
+  overflow: hidden;
   background-color: #363636;
 
   .code-editor {
@@ -1523,15 +1526,17 @@ section {
   height: auto;
   padding: 0;
   min-height: 100vh;
+  max-height: 100vh;
+  overflow: scroll;
   background-color: #363636;
 
   .border-heading {
     width: 100%;
     position: fixed;
     z-index: 2000;
-    margin-top: 70px;
-    height: 70px;
-    padding-top: 30px;
+    margin-top: 94px;
+    height: 54px;
+    padding-top: 5px;
     padding-left: 21px;
     background: #363636;
     span {
@@ -2067,6 +2072,7 @@ nav ul li a:hover {
   }
   .video-section {
     display: block;
+    max-height: 100%;
 
     .sections {
       .border-heading {
