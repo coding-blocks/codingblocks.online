@@ -1,0 +1,2 @@
+[context.development]
+	command = "ember build -e staging"
