@@ -128,6 +128,7 @@ body {
   background-color: #dc5b86 !important;
 }
 
+
 section {
   @include padding(40px, null, 40px, null);
 
@@ -1280,10 +1281,11 @@ section {
     background: white;
     padding: 20px;
     padding-top: 60px;
-    width: 75%;
+    height: 90vh;
     .question-container {
       background-color: #F8F8F8;
       padding: 20px;
+      height: 90vh;
     }
     .code-completed {
       position: relative;
@@ -1381,15 +1383,15 @@ section {
       @include padding(null, null, null, null);
       @include margin(140px, null, null, null);
       @include width-height(100%, 100%);
+      //margin-top: 40px;
 
       .external-video {
-        height: calc(100vh - 140px)!important;
+        height: calc(100vh)!important;
       }
     }
 
     .section-heading {
       position: absolute;
-      top: 80px;
       padding: 10px;
       height: 65px;
       color: white;
@@ -1419,12 +1421,14 @@ section {
       }
     }
 
+
     &:hover {
       .section-heading {
         display: flex;
       }
     }
   }
+
 
   .full-width {
     background-color: #ffffff;
@@ -2011,7 +2015,9 @@ nav ul li a:hover {
 }
 
 
-
+.m-l-5 {
+	margin-left:5%;
+}
 
 @media screen and (max-width: 927px) {
 
@@ -2043,4 +2049,129 @@ nav ul li a:hover {
     display: none;
   }
 
+}
+
+
+
+.section-heading {
+  top: 80px;
+}
+
+@media only screen  and (max-width: 800px) and (orientation: landscape) {
+
+  .container-fluid {
+    position: absolute;
+    bottom: -25px;
+
+  }
+  .video-section {
+
+
+
+    .main-section {
+      padding-bottom: 0;
+
+      .video-container {
+
+        width: 100vw !important;
+
+        .section-heading {
+          position: absolute;
+          top: 0 !important; ;
+
+          i{
+            display: none;
+          }
+
+        }
+
+        .video-controls {
+          margin-left: 0;
+          display: flex;
+          justify-content: center;
+        }
+
+      }
+
+    }
+
+    .sections {
+      display: none;
+    }
+
+  }
+
+  .custom-nav {
+    display: none;
+  }
+
+  .border-heading {
+    display: none;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+  .main-section {
+    .video-container {
+      .section-heading {
+        position: absolute;
+        top: -60px!important;
+      }
+
+    }
+
+    .lecture {
+      .section-heading {
+        position: absolute;
+        top: 80px!important;
+      }
+    }
+  }
+
+}
+
+
+.error404.container-fluid {
+  height: 100%;
+  margin:200px 0 0 0;
+  line-height:1.6em;
+  text-align:center;
+}
+
+.error404 div {
+  text-transform:uppercase;
+}
+.error404 div h1 {
+  font-size:80px;
+}
+.error404 div h1 span {
+  display:inline-block;
+  margin-left:5px;
+  padding:2px;
+  border:1px solid #CCCCCC;
+  overflow:hidden;
+}
+.error404 div h1 span strong {
+  display:inline-block;
+  padding:0 20px 20px;
+  border:1px solid #CCCCCC;
+  font-weight:normal;
+}
+.error404 div h2 {
+  font-size:60px;
+}
+.error404 div h2 span {
+  display:block;
+  font-size:30px;
+}
+.error404 p {
+  margin:25px 0 0 0;
+  padding:0;
+  font-size:16px;
+}
+.error404 p:first-child {
+  margin-top:0;
 }
