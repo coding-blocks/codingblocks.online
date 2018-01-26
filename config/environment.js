@@ -6,7 +6,7 @@ module.exports = function(environment) {
     podModulePrefix: 'vlyop-frontend/pods',
     environment: environment,
     sentry: {
-      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
+      dsn: "https://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
       exposedPropertyName: "raven",
       globalErrorCatching: true
     },
