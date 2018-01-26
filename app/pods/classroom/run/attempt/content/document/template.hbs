@@ -1,6 +1,11 @@
 <div class="quiz-result">
   <div class="inner-quiz-result">
     <h3>{{model.name}}</h3>
-    <p>{{markdown-to-html model.markdown}}</p>
+    <a class="btn custom-btn m-l-5" href="{{model.pdfLink}}" download="{{model.pdfLink}}.pdf">Download PDF</a>
+    {{#if model.markdown}}
+      <p>{{markdown-to-html model.markdown}}</p>
+    {{else}}
+      <p>{{pdf-js pdf=model.pdfLink}}</p>
+    {{/if}}
   </div>
 </div>

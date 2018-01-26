@@ -1,11 +1,5 @@
-
 <div class="question-container">
-  <h2>{{code.title}}</h2>
-
-  <p>
-      {{code.description}}
-  </p>
+  <iframe style="margin-top: 20px;" src={{code.hbUrl}} width=100% height="100%"></iframe>
 </div>
-{{code-editor codeChallenge=code onSubmitTask=submitCodeTask}}
 
 {{yield}}
