@@ -1432,9 +1432,11 @@ section {
       transition: .5s;
     }
 
+<<<<<<< HEAD
     .title-text, #goToDisqusLink {
       padding-top: 8px;
     }
+=======
     .section-heading {
       position: absolute;
       padding: 10px;
@@ -1445,6 +1447,7 @@ section {
       background: #363636;
       display: flex;
       padding-left: 10px;
+>>>>>>> development
 
     .title-text {
       flex: 7;
@@ -1469,6 +1472,7 @@ section {
         }
       }
     }
+<<<<<<< HEAD
     .toggle-button {
       flex: 0.5;
       background: transparent;
@@ -1482,9 +1486,13 @@ section {
       line-height: normal;
       &:hover {
         color: #d95787;
+=======
+
+
     &:hover {
       .section-heading {
         display: flex;
+>>>>>>> development
       }
     }
   }
@@ -2081,13 +2089,16 @@ nav ul li a:hover {
 
 @media screen and (max-width: 992px) {
 
+<<<<<<< HEAD
   .main-section {
     .video-container {
       width: 100vw;
       position: relative;
     }
     max-width: 100%;
-  }
+=======
+.m-l-5 {
+	margin-left:5%;
 }
 
 @media screen and (max-width: 927px) {
@@ -2097,6 +2108,7 @@ nav ul li a:hover {
   .video-container, .quiz-result {
     width: 100vw;
     position: relative;
+>>>>>>> development
   }
   .video-section {
     display: block;
