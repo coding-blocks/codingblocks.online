@@ -2,6 +2,10 @@
   <div class="inner-quiz-result">
     <h3>{{model.name}}</h3>
     <button class="btn custom-btn m-l-5" href="{{model.pdfLink}}" >Download PDF</button>
-    <p>{{markdown-to-html model.markdown}}</p>
+    {{#if model.markdown}}
+      <p>{{markdown-to-html model.markdown}}</p>
+    {{else}}
+      <p>{{pdf-js pdf=model.pdfLink}}</p>
+    {{/if}}
   </div>
 </div>
