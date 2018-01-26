@@ -1264,6 +1264,7 @@ section {
 .review-star {
   color: #B6C2CC;
   font-size: 18px;
+  display: none;
 }
 
 .review-star--active {
@@ -1328,6 +1329,11 @@ section {
         overflow-y: auto;
         max-height: 70vh;
       }
+
+      .custom-btn {
+        float: right;
+      }
+
     }
     h3 {
       font-size: 1.4rem;
@@ -2023,7 +2029,7 @@ nav ul li a:hover {
 
 
 .main-section {
-  .video-container {
+  .video-container, .quiz-result {
     width: 100vw;
     position: relative;
   }
@@ -2115,7 +2121,7 @@ nav ul li a:hover {
 @media screen and (max-width: 900px) {
 
   .main-section {
-    .video-container {
+    .video-container, .quiz-result {
       .section-heading {
         position: absolute;
         top: -60px!important;
@@ -2174,4 +2180,9 @@ nav ul li a:hover {
 }
 .error404 p:first-child {
   margin-top:0;
+}
+
+
+.ember-pdf-js {
+  display: none;
 }
