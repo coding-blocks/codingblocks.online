@@ -8,7 +8,9 @@ import Ember from 'ember';
 export default Ember.Route.extend({
     currentUser: Ember.inject.service(),
     model () {
-        return this.store.query('run', {})
+        return this.store.query('run', {
+            enrolled: true // qp for getting only runs which i'm enrolled In
+        })
     }
     // setupController (controller, model) {
       /*
