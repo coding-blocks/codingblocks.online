@@ -14,7 +14,11 @@ export default Ember.Route.extend({
     console.log('TAG: ', runAttemptId)
     return Ember.RSVP.hash({
       course,
-      sections: this.store.query('section', {courseId: course.get('id'), runId: run.id}),
+      sections: this.store.query('section', {
+        courseId: course.get('id'),
+        runId: run.id,
+        runAttemptId
+      }),
       run,
       runAttempt: this.store.findRecord('runAttempt', runAttemptId)
     })
