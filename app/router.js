@@ -12,7 +12,7 @@ Router.map(function() {
   });
 
   this.route('classroom', function() {
-    this.route('run', {path: 'run/:runAttemptId'}, function () {
+    this.route('run', {path: 'batch/:runAttemptId'}, function () {
       this.route('attempt', function () {
         this.route('content', {path: 'content/:contentId'}, function () {
           this.route('quiz', {path: 'quiz/:quizId'});
@@ -39,6 +39,7 @@ Router.map(function() {
 
   this.route('opt', function() {});
   this.route('logout');
+  this.route('error404', {path: '/*path'})
 });
 
 export default Router;

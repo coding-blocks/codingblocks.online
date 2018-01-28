@@ -19,6 +19,7 @@ module.exports = function(defaults) {
   app.import('vendor/js/jquery-slim.min.js');
   app.import('vendor/js/tether.min.js');
   app.import('vendor/js/bootstrap.min.js');
+  app.import('bower_components/hls.js/dist/hls.min.js');
 
   var extraAssets = new Funnel('bower_components/ace-builds/src-min-noconflict', {
     srcDir: '/',
