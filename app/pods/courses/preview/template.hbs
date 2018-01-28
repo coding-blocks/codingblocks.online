@@ -26,7 +26,21 @@
           </div>
           <div class="enroll-row row col-12">
             <div class="enroll-wrap col-xs-12 col-sm-12 offset-md-4 col-md-8 ">
-              <a href="#runs" class="enroll-btn" style="background:{{model.color}}; border: {{model.color}}">Enroll</a>
+              {{#each model.runs as |run index|}}
+              {{#if session.isAuthenticated}}
+                {{#if run.user}}
+                  {{#link-to 'classroom.run.index' run.user.runAttempt.id class="enroll-btn"}}Resume Course{{/link-to}}
+                {{else if course.isFree}}
+                    <a href="#" {{action 'enrollThisCourse' run}} class="enroll-btn">Enroll</a>
+                {{else course.isFree}}
+                    <div class="custom-prev-buy-btn-wrapper">
+                      <a href="#" {{action 'enrollThisCourse' run}} class="enroll-btn">Preview</a>
+                    </div>
+                {{/if}}
+              {{else}}
+                <a href="#" class="enroll-btn" {{action "login"}}>Login to Enroll</a>
+              {{/if}}
+              {{/each}}
             </div>
           </div>
         </div>
