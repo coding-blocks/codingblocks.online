@@ -43,6 +43,9 @@ module.exports = function(environment) {
     ENV.publicUrl = 'http://localhost:4200';
     ENV.clientId = 7642172843
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
     // ENV.sentry.development = true
   }
 
@@ -62,6 +65,9 @@ module.exports = function(environment) {
     ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
 
   }
 
