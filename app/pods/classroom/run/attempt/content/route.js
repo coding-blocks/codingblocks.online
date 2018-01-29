@@ -7,7 +7,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model (params) {
-    return this.store.findRecord('content', params.contentId, {reload: true})
+    //return this.store.findRecord('content', params.contentId, {reload: true})
+    return this.store.peekRecord("content", params.contentId)
   },
   afterModel (model, transition) {
     if (model.get('contentable') === 'quiz')
