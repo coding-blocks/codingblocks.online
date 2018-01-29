@@ -43,12 +43,10 @@ module.exports = function(environment) {
     ENV.publicUrl = 'http://localhost:4200';
     ENV.clientId = 7642172843
     ENV.oneauthURL = 'https://account.codingblocks.com/'
-    //ENV.sentry.development = true
-    ENV.sentry = {
-      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
-      exposedPropertyName: "raven",
-      globalErrorCatching: false
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
     }
+    // ENV.sentry.development = true
   }
 
   if (environment === 'test') {
@@ -67,10 +65,8 @@ module.exports = function(environment) {
     ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'
-    ENV.sentry = {
-      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
-      exposedPropertyName: "raven",
-      globalErrorCatching: true
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
     }
 
   }

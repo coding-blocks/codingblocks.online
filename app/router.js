@@ -39,6 +39,7 @@ Router.map(function() {
 
   this.route('opt', function() {});
   this.route('logout');
+  this.route('doubts', {path: 'doubts/:contentId'});
   this.route('error404', {path: '/*path'})
 });
 
