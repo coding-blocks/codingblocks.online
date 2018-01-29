@@ -3,7 +3,7 @@ import config from '../../../config/environment';
 
 export default Ember.Component.extend({
     session: Ember.inject.service('session'),
-    routing: Ember.inject.service('-routing'),
+    router: Ember.inject.service('router'),
     $ : Ember.$,
     img : null,
     anchorColor: null,
@@ -16,9 +16,8 @@ export default Ember.Component.extend({
 
     actions: {
         login() {
-            var redirectionPath = window.location.pathname;
-            redirectionPath = redirectionPath.replace(/^\/|\/$/g, '');
-            localStorage.setItem('redirection-path', redirectionPath);
+            var redirectionPath = this.get('router.currentURL');
+            localStorage.setItem('redirectionPath', redirectionPath);
             window.location = `https://account.codingblocks.com/oauth/authorize?response_type=code&client_id=${config.clientId}&redirect_uri=${config.publicUrl}`
         },
         invalidateSession () {

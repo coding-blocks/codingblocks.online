@@ -44,7 +44,8 @@ export default Ember.Component.extend(KeyboardShortcuts, {
     this.set('isPlaying', false)
 
     const hls = new Hls(config)
-    const video = this.get('playerElement')
+    const video = this.get('playerElement');
+
     if (!Ember.isNone(video)) {
       // already have the element
       hls.loadSource(this.get('src'));
@@ -60,17 +61,34 @@ export default Ember.Component.extend(KeyboardShortcuts, {
 
   didInsertElement () {
     this._super(...arguments)
-    console.log('didInsertElement')
-    const video = this.$('#video')[0]
-    const hls = this.get('hls')
+    const video = this.$('#video')[0];
+    const spinner = this.$('.spinner');
+    const lecture = this.$('.lecture');
 
-    this.set('playerElement', video)
+    const hls = this.get('hls');
+
+    this.set('playerElement', video);
 
     hls.loadSource(this.get('src'));
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play()
-    })
+    });
+
+    video.oncanplay = function() {
+       lecture.addClass('spinner');
+
+    };
+
+
+    video.oncanplaythrough = function() {
+       lecture.removeClass('spinner');
+    };
+
+    video.onwaiting = function() {
+      lecture.addClass('spinner');
+    };
+
   },
 
   actions: {
