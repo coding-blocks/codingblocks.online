@@ -55,6 +55,7 @@ export default class ProgressCheckboxComponenet extends Component {
 		}
 		this.get('saveProgressTask').perform(progress)
 	}
+	
 
 	@action
 	markAsUnDone () {
