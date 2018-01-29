@@ -43,6 +43,9 @@ module.exports = function(environment) {
     ENV.publicUrl = 'http://localhost:4200';
     ENV.clientId = 7642172843
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
     // ENV.sentry.development = true
   }
 
@@ -62,7 +65,12 @@ module.exports = function(environment) {
     ENV.apiEndpoint = 'https://api-online.cb.lk';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'
-
+    ENV.disqus = {
+      shortname: 'codingblocksonline'
+    }
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-83327907-9'
+    }
   }
 
   if (environment === 'staging') {
@@ -70,6 +78,11 @@ module.exports = function(environment) {
     ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.sentry = {
+      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
+      exposedPropertyName: "raven",
+      globalErrorCatching: true
+    }
   }
 
   return ENV;

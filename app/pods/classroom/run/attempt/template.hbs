@@ -2,7 +2,7 @@
     <div class="main-section col-md-9 col-xs-12">
       {{outlet}}
     </div>
-  <div class="col-md-3  col-xs-12 sections">
+  <div class="col-lg-3  col-xs-12 sections">
     <div class="border-heading">
       <span>Table of Contents</span>
     </div>
@@ -30,6 +30,7 @@
                   <i class="fa fa-question" aria-hidden="true"></i>
                 {{/if}}
                 {{content.payload.name}}
+                {{progress-checkbox content=content runAttempt=runAttempt}}
               {{/link-to}}
             {{/each}}
           </div>

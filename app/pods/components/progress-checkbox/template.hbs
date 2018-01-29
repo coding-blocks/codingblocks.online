@@ -1,0 +1,11 @@
+
+{{#if (not isDone)}}
+	<span class="circle allowClick" title="Mark As Done" {{action 'markAsDone' bubbles=false}} >
+		<i aria-hidden="true" class="fa fa-dot-circle-o"></i>
+	</span>
+{{else}}
+	<span class="circle-attempted allowClick" title="Mark as UnDone" {{action 'markAsUnDone' bubbles=false}}>
+		<i aria-hidden="true" class="fa fa-check"></i>
+	</span>
+{{/if}}
+{{yield}}
