@@ -68,7 +68,9 @@ module.exports = function(environment) {
     ENV.disqus = {
       shortname: 'codingblocksonline'
     }
-
+    ENV.googleAnalytics = {
+      webPropertyId: 'UA-83327907-9'
+    }
   }
 
   if (environment === 'staging') {
