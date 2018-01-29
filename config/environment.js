@@ -76,6 +76,11 @@ module.exports = function(environment) {
     ENV.apiEndpoint = 'https://codingblocks-online-staging.herokuapp.com';
     ENV.clientId = 5633768694
     ENV.oneauthURL = 'https://account.codingblocks.com/'
+    ENV.sentry = {
+      dsn: "http://4fa93081cc2e43ed893dba58a19103ee@sentry.cb.lk/7",
+      exposedPropertyName: "raven",
+      globalErrorCatching: true
+    }
   }
 
   return ENV;

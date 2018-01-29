@@ -20,5 +20,38 @@ export default Ember.Route.extend({
       this.transitionTo('classroom.run.attempt.content.document', model.get('document.id'))
     else if (model.get ('contentable') === 'video')
       this.transitionTo('classroom.run.attempt.content.video', model.get('video.id'))
+  },
+  actions: {
+    willTransition (transition) {
+      //mark this as progress marked
+      
+      const { runAttempt } = this.modelFor("classroom.run.attempt")
+      const content = this.modelFor('classroom.run.attempt.content')
+      const progress = content.get('progress')
+      if ( !progress.get("id")) {
+        transition.abort () // stop this transition
+        //create new progress
+        this.store.createRecord ('progress', {
+          status: 'DONE',
+          content,
+          runAttempt
+        }).save().then ( p => {
+          content.set('progress', p)
+          transition.retry()
+        })
+      } else {
+        // return if the status is already DONE
+        if (progress.get("status") === 'DONE') {
+          return true;
+        }
+        transition.abort () // stop this transition
+        // update this progress
+        progress.set("status", "DONE")
+        progress.then(p => {
+          p.save().then( () => transition.retry())
+        })
+      }
+    
+    }
   }
 });
