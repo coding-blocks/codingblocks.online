@@ -90,7 +90,11 @@ export default Ember.Component.extend(KeyboardShortcuts, {
     };
 
   },
-
+  willDestroyElement() {
+    this.get('hls').destroy()
+    this.get('playerElement').pause()
+    this._super(...arguments)
+  },
   actions: {
     changeSpeed(val) {
      const rate = +this.get('pr') +val;
