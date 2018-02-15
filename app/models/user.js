@@ -10,6 +10,7 @@ export default DS.Model.extend({
   firstName: DS.attr(),
   lastName: DS.attr(),
   email: DS.attr(),
+  verifiedemail: DS.attr(),
   contents: DS.hasMany('content'),
   courseRuns: DS.hasMany('run'),
   runAttempt: DS.belongsTo('run-attempt')
