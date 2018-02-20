@@ -45,6 +45,7 @@ Router.map(function () {
   this.route('logout');
   this.route('doubts', {path: 'doubts/:contentId'});
   this.route('error404', {path: '/*path'})
+  this.route('help', {path: 'help/:errorCode'});
 });
 
 export default Router;

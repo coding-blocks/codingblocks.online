@@ -10,6 +10,7 @@ import { task, timeout } from 'ember-concurrency';
 import env from '../config/environment';
 
 export default Base.extend({
+  api: Ember.inject.service('api'),
   refreshToken: null,
   jwt : null,
   restore(data) {
@@ -76,10 +77,6 @@ export default Base.extend({
     this.get('refreshTokenRequestTask').perform()
   },
   invalidate(data) {
-    return new Ember.RSVP.Promise( (resolve, reject) => {
-      Ember.$.get(env.apiEndpoint + '/api/jwt/logout?refresh_token=' + this.refreshToken, data => {
-        resolve();
-      })
-    });
+    return this.get('api').request('/jwt/logout')
   }
 });
