@@ -10,7 +10,7 @@
       </div>
       <div class="card-text">
         <p>{{course.subtitle}}</p>
-        <strong><p>Rs. {{course.fees}}</p></strong>
+        <strong><p>Rs. {{run.price}}</p></strong>
         <p></p>
         {{#if session.isAuthenticated}}
           {{#if run.user}}
@@ -21,7 +21,7 @@
             {{else}}
               <div class="custom-prev-buy-btn-wrapper">
                 <a href="#" {{action 'enrollThisCourse' run}} class="btn btn-primary">Preview</a>
-                {{#razorpay-buy-button isDisabled=true price=(mul course.fees 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
+                {{#razorpay-buy-button isDisabled=true price=(mul run.price 100) name=course.title text="Buy Course" user=user run=run}}{{/razorpay-buy-button}}
               </div>
             {{/if}}
           {{/if}}
