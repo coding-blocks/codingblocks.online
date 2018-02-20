@@ -6,8 +6,11 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
+  },
+  globals: {
+    Hls: true
   }
 };
