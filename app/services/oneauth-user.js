@@ -19,13 +19,12 @@ export default Ember.Service.extend({
                 withCredentials: true
             }
         }).done ( data => {
-            this._saveUserToStore()
+            this._saveUserToStore(data)
             resolve(data)
         })
     })
   },
-  _saveUserToStore () {
-      const user = this.get('user')
+  _saveUserToStore (user) {
       const obj = {user, timestamp: Date.now()}
       window.localStorage.setItem(this.get('localStorageKeyName'), JSON.stringify(obj))
   },
