@@ -19,7 +19,6 @@ export default Ember.Service.extend({
                 withCredentials: true
             }
         }).done ( data => {
-            this.set('user', data)
             this._saveUserToStore()
             resolve(data)
         })
@@ -35,7 +34,6 @@ export default Ember.Service.extend({
     if ( isNone(user) || isNone(timestamp) || Date.now() - timestamp > this.get('cacheInvalidationPeriod')) {
         return this._load()
     } else {
-        this.set('user', user);
         return Promise.resolve(user)
     }
   }
