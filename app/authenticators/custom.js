@@ -50,7 +50,7 @@ export default Base.extend({
   refreshTokenRequestTask: task(function * () {
     timeout(5000)
     const sendRequestPromise = new Promise( (resolve, reject) => {
-      Ember.$.get(env.apiEndpoint + '/api/jwt/refresh?refresh_token=' + this.refreshToken , (data) => {
+      this.get('api').request(env.apiEndpoint + '/api/jwt/refresh?refresh_token=' + this.refreshToken , (data) => {
         if (!Ember.isNone(data.jwt)) {
           resolve(data)
         } else {

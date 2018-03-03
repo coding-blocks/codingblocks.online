@@ -29,6 +29,7 @@ Router.map(function () {
 
         this.route('progress', function () {
         });
+        this.route('error', {path: 'error/:errorId'});
       });
 
       this.route('progress', function () {
