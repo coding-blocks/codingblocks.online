@@ -4,6 +4,7 @@ import config from '../../../config/environment';
 export default Ember.Component.extend({
   session: Ember.inject.service(),
   api: Ember.inject.service(),
+  router: Ember.inject.service(),
   init() {
     this._super();
   },
@@ -23,10 +24,8 @@ export default Ember.Component.extend({
         json: true
       }).then(data => {
         if (data.status === 'success') {
-          this.get('transition')('classroom.run.index', data.id);
+          this.get('router').transitionTo('classroom.run.index', data.id);
         }
-      }).catch(err => {
-        // fuck off
       })
     }
   }
