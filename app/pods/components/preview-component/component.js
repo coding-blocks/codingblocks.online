@@ -26,8 +26,6 @@ export default Ember.Component.extend({
         if (data.status === 'success') {
           this.get('router').transitionTo('classroom.run.index', data.id);
         }
-      }).catch(err => {
-        // fuck off
       })
     }
   }
