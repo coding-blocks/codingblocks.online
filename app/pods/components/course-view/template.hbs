@@ -5,14 +5,6 @@
 	</div>
 	<div class="card-body">
 		<p>{{course.subtitle}}</p>
-		<a>
-			<i class="user icon"></i>
-			{{#if course.is_free}}
-				Free
-			{{else}}
-				Rs. {{course.fees}}
-			{{/if}}
-		</a>
 		<p></p>
 		{{#link-to 'courses.preview' course.id class='btn btn-primary'}}Enroll Now!{{/link-to}}
 	</div>

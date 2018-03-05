@@ -5,14 +5,7 @@ export default DS.Model.extend({
   title: DS.attr(),
   subtitle: DS.attr(),
   summary: DS.attr(),
-  fees: DS.attr(),
   promoVideo: DS.attr(),
-  price: Ember.computed('fees', 'isFree', function () {
-    if (this.get('isFree'))
-      return 0
-    else
-      return this.get('fees').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }),
   popularity: DS.attr(),
   hoursPerDay: DS.attr(),
   isFree: DS.attr(),

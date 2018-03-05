@@ -33,7 +33,10 @@
             <span class="review-star review-star--active">★</span>
             <span class="review-star review-star--active">★</span>
           </div>
-          <p class="price">₹{{course.price}}</p>
+          <p style="font-size: 20px; margin-top:40px; text-align:center">
+            {{course.runs.length}} Available batch{{if (gt course.runs.length 1) 'es'}}
+          </p>
+          {{!-- <p class="price">₹{{course.price}}</p> --}}
         </div>
         <div class="footer">
           {{#link-to 'courses.preview' course.id}}
