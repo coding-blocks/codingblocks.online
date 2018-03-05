@@ -19,9 +19,11 @@ export default Ember.Route.extend({
       runAttempt: this.store.findRecord('runAttempt', runAttemptId)
     })
     
-    modelPromise.then ( ({sections}) => {
+    modelPromise.then ( ({sections, runAttempt}) => {
+      const isPremiumUser = runAttempt.get('premium')
+
       const contentsArray = sections.reduce( (acc, section) => {
-        return [...acc , ...section.get('contents').map( content => content.get('id'))]
+        return [...acc , ...section.get('contents').filter(content => isPremiumUser || !section.get('premium') ).map( content => content.get('id'))]
       }, [])
       this.set('contentsArray', contentsArray)
     })
@@ -43,7 +45,7 @@ export default Ember.Route.extend({
       const { contentId } = this.paramsFor('classroom.run.attempt.content')
       const contentsArray = this.get('contentsArray')
       const indexOfCurrentContent = contentsArray.indexOf(contentId)
-      const nextContentId = contentsArray[indexOfCurrentContent+1]
+      const nextContentId = contentsArray[(indexOfCurrentContent+1) % contentsArray.length]
       this.transitionTo ('classroom.run.attempt.content', nextContentId)
     }
   }

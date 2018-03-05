@@ -4,6 +4,7 @@
 'use strict';
 
 import Ember from 'ember';
+import { AdapterError } from 'ember-data/adapters/errors';
 
 export default Ember.Route.extend({
   model (params) {
@@ -52,7 +53,14 @@ export default Ember.Route.extend({
           p.save().then( () => transition.retry())
         })
       }
-    
+    },
+    error (err, transition) {
+      if (err instanceof AdapterError) {
+        if (err.errors[0].status == 402) {
+          this.transitionTo('classroom.run.attempt.error', 402)
+        }
+      }
+      this._super(...arguments)
     }
   }
 });
