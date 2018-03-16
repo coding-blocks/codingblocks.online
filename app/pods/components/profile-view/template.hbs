@@ -1,6 +1,6 @@
 {{yield}}
 
-<div class="container profile-container">
+<div class="container-fluid">
     
     <div class="row profile-head">
         <div class="col-sm-12 col-xs-12 text-center">
@@ -12,12 +12,12 @@
         </div>
     </div>
 
-<div class="classroom">
-  <h6>Current Enrollments</h6>
-    {{#each runs as |run RunIndex| }}
-      {{material-card-component run= run RunIndex= RunIndex class="material-card offset-md-1 col-md-4 col-xs-12 col-sm-12"}}
-    {{/each}}
-</div>
+    <div class="classroom">
+        <h6>Current Enrollments</h6>
+            {{#each runs as |run RunIndex| }}
+            {{material-card-component run= run RunIndex= RunIndex class="material-card offset-md-1 col-md-4 col-xs-12 col-sm-12"}}
+            {{/each}}
+    </div>
     
 
     
