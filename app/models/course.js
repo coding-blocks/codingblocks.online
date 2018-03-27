@@ -20,6 +20,5 @@ export default DS.Model.extend({
   image: DS.belongsTo('attachment'),
   runs: DS.hasMany('run'),
   sections: DS.hasMany('section'),
-  instructor: DS.belongsTo('instructor'),
-  coverImage: DS.attr(),
+  instructor: DS.belongsTo('instructor')
 })
