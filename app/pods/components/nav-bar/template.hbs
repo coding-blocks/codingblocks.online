@@ -31,9 +31,6 @@
         </ul>
        {{!-- </nav> --}}
         {{#if session.isAuthenticated}}
-            {{#link-to 'profile'}}
-                <button type="button" class="custom-btn">Profile</button>
-            {{/link-to}}
             <button type="button" class="custom-btn" {{action "invalidateSession"}}>Logout</button>
         {{else}}
             <button type="button" class="custom-btn" {{action "login"}}>Login</button>
