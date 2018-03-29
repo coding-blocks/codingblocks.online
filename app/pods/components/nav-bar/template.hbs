@@ -12,7 +12,7 @@
         </div>
     {{/link-to}}
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-       <nav class="stroke">
+       {{!-- <nav class="stroke"> --}}
         <ul class="navbar-nav mr-auto">
             {{#link-to 'index' class="nav-item" tagName="li"}}
                 <a class="custom-nav-link nav-link" href="#">Home</a>
@@ -29,7 +29,7 @@
                 {{/link-to}}
             {{/if}}
         </ul>
-       </nav>
+       {{!-- </nav> --}}
         {{#if session.isAuthenticated}}
             {{#link-to 'profile'}}
                 <button type="button" class="custom-btn">Profile</button>
@@ -40,3 +40,5 @@
         {{/if}}
     </div>
 </nav>
+
+
