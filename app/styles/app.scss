@@ -47,9 +47,9 @@ body {
   margin-bottom: 0;
 }
 
-// .custom-btn {
-//     // margin-top: 10px;
-// }
+.custom-btn {
+    height: 34px;
+}
 
 .razorpay-payment-button {
   cursor: not-allowed;
@@ -266,7 +266,7 @@ section {
   max-width: 100vw;
   background-color: white;
   top: 0;
-  height: 94px;
+  // height: 94px;
 
   .navbar-collapse {
 
@@ -324,6 +324,11 @@ section {
 
 }
 
+// .custom-nav{
+//   width: 100%;
+//   box-shadow: 4px 3px 2px 1px rgba(108, 97, 97, 0.42);
+// }
+
 .custom-btn {
   @include button(500, .875rem, #dc5a86, 1.875rem, nowrap, 32px, 32px);
   @include padding(0, 30px, 0, 30px);
@@ -342,6 +347,7 @@ section {
     z-index: -2;
     cursor: pointer;
     pointer-events: none;
+    height: 34px;
   }
   &:hover {
     &::before {
@@ -388,6 +394,7 @@ section {
   height: 55vh;
 
   .children {
+    margin-top: 94px;
     height: 55vh;
     max-width: 100vw;
     overflow-x: hidden;
@@ -1840,6 +1847,7 @@ section {
       margin: 0 auto;
       margin-top: 30px;
       padding: 20px;
+      position: relative;
 
       .name {
         font-weight: 600;
@@ -1857,11 +1865,21 @@ section {
         text-overflow: ellipsis;
         width: 100%;
       }
-      a {
-        position: relative;
-        left: 230px;
-        bottom: -20px;
+      // a {
+      //   position: relative;
+      //   left: 230px;
+      //   bottom: -20px;
+      // }
+      a{
+        position: absolute;
+        bottom: 15px;
+        left: unset;
+        right: 20px;
       }
+    }
+
+    .custom-btn{
+      margin: 0 0;  
     }
 
     @media (min-width: 400px) and (max-width: 1400px) {
@@ -1869,7 +1887,7 @@ section {
       .card {
         .custom-btn {
           width: 170px;
-          left: 0;
+          // left: 0;
         }
       }
 
@@ -2114,11 +2132,11 @@ nav ul li a:hover {
 
 @media only screen  and (max-width: 800px) and (orientation: landscape) {
 
-  .container-fluid {
-    position: absolute;
-    bottom: -25px;
+  // .container-fluid {
+  //   position: absolute;
+  //   bottom: -25px;
 
-  }
+  // }
   .video-section {
 
 
@@ -2156,9 +2174,9 @@ nav ul li a:hover {
 
   }
 
-  .custom-nav {
-    display: none;
-  }
+  // .custom-nav {
+  //   display: none;
+  // }
 
   .border-heading {
     display: none;
@@ -2272,3 +2290,42 @@ nav ul li a:hover {
 
     }
   }
+
+.profile{
+  padding-top: 50px;
+  margin-top: 20px;
+
+
+  img{
+    border-radius: 50%;
+    border: white 2px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .row{
+    margin: 4%;
+  }
+
+  .profile-head p{
+    margin: 0px;
+  }
+
+  .classroom{
+    padding-top: 0px;
+  }
+}
+
+.run-card{
+  border-radius: 3%;
+  box-shadow: 0px -1px 18px #ccc;
+
+  .card-img{
+    border-radius: 2%;
+  }
+
+  .startEnd{
+    font-size: 0.8em;
+  }
+
+}
