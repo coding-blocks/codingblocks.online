@@ -1,0 +1,26 @@
+
+<div class="run-card">
+    <div class="container text-center">
+        <div>
+            <h3>{{run.course.title  }}</h3>
+            <h4>{{run.name}}</h4>
+        </div>
+        <hr>
+        
+        <img class="card-img fixed-size-patch" src="{{if run.course.coverImage run.course.coverImage '/images/course3.jpg'}}" alt="">
+        
+        <div class="row">
+            <div class="col-sm-12 startEnd">
+                <p>{{moment-format (multiply run.start) 'MMMM Do YYYY'}} - {{moment-format (multiply run.end) 'MMMM Do YYYY'}}</p>
+            </div>
+        </div>
+         <div class="progress row">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{run.percentComplete}}"
+                aria-valuemin="0" aria-valuemax="100" style="width:{{run.percentComplete}}%">
+                <span class="sr">{{run.percentComplete}}%</span>
+            </div>
+        </div> 
+
+        {{#link-to 'classroom.run.index' run.runAttemptId class="custom-btn"}}Resume Learning{{/link-to}}
+    </div>
+</div>

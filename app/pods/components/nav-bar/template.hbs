@@ -12,7 +12,6 @@
         </div>
     {{/link-to}}
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-       <nav class="stroke">
         <ul class="navbar-nav mr-auto">
             {{#link-to 'index' class="nav-item" tagName="li"}}
                 <a class="custom-nav-link nav-link" href="#">Home</a>
@@ -29,11 +28,15 @@
                 {{/link-to}}
             {{/if}}
         </ul>
-       </nav>
         {{#if session.isAuthenticated}}
+            {{#link-to 'profile' class="custom-btn" tagName="button"}}
+                Profile
+            {{/link-to}}
             <button type="button" class="custom-btn" {{action "invalidateSession"}}>Logout</button>
         {{else}}
             <button type="button" class="custom-btn" {{action "login"}}>Login</button>
         {{/if}}
     </div>
 </nav>
+
+
