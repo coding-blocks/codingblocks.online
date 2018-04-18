@@ -603,7 +603,7 @@ section {
       .content {
 
         .main {
-          height: 160px;
+          height: 105px;
         }
       }
 
@@ -664,7 +664,7 @@ section {
       padding: 5px 20px 20px;
 
       .main {
-        min-height: 160px;
+        min-height: 105px;
       }
     }
 
@@ -683,11 +683,11 @@ section {
     }
 
     .name {
-      height: 30px;
+      max-height: 58px;
       overflow: hidden;
       font-size: 28px;
       line-height: 28px;
-      margin: 5px 0 0;
+      margin: 8px auto;
       text-align: center;
       text-transform: capitalize;
     }
@@ -700,12 +700,21 @@ section {
 
     .subtitle {
       font-size: 20px;
-      height: 25px;
+      line-height: 20px;
+      max-height: 40px;
       color: #999999;
       text-align: center;
-      margin-bottom: 5px;
+      margin-bottom: 0;
       margin-top: 5px;
       overflow: hidden;
+    }
+
+    .run-text{
+      color: #292b2c;
+      margin-top: 20px;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     .price {
