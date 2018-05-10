@@ -1,8 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  notify: Ember.inject.service (),
+
   model () {
     return this.modelFor('classroom.run')
+  },
+  afterModel (model, transition) {
+    if (model.get ('isEnded')) {
+      this.get ('notify').alert ('That batch has ended. Please buy the course again.')
+      return this.transitionTo ('courses.preview', model.get ('course'))
+    }
   },
   setupController (controller, model) {
     controller.set('run', model);
